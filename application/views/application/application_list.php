@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>CMS | List Of Activity</title>
+    <title>CMS | List Of Application</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -60,7 +60,7 @@
                     <a class="mobile-search morphsearch-search" href="#">
                         <i class="ti-search"></i>
                     </a>
-                    <a href="index">
+                    <a href="dashboard">
                         <img class="img-fluid" src="../vendor/assets/images/logo.png" alt="Theme-Logo" />
                     </a>
                     <a class="mobile-options">
@@ -118,7 +118,7 @@
                                 </a>
                                 <ul class="show-notification profile-notification">
                                     <li>
-                                        <a href="user-profile.html">
+                                        <a href="profile">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
@@ -199,7 +199,7 @@
         <div class="main-menu-content">
             <ul class="main-navigation">
                 <li class="more-details">
-                    <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
+                    <a href="profile"><i class="ti-user"></i>View Profile</a>
                     <a href="#!"><i class="ti-settings"></i>Settings</a>
                     <a href="#!"><i class="ti-layout-sidebar-left"></i>Logout</a>
                 </li>
@@ -210,10 +210,16 @@
                 </li>
                     <li class="nav-item single-item">
                         <a href="dashboard">
-                            <i class="ti-cut"></i>
+                            <i class="icofont icofont-home"></i>
                             <span data-i18n="nav.dash.main">Dashboard</span>
                         </a>
                     </li>
+                    <li class="nav-item single-item">
+                                <a href="profile">
+                                    <i class="icofont icofont-ui-user"></i>
+                                    <span data-i18n="nav.dash.main">Profile</span>
+                                </a>
+                            </li>
                     <li class="nav-item">
                         <a href="#!">
                             <i class="ti-layout-cta-right"></i>
@@ -225,15 +231,15 @@
                             <li><a href="application" data-i18n="nav.navigate.navbar-inverse">Application List</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item has-class">
+                    <li class="nav-item">
                         <a href="#!">
                             <i class="ti-layout-cta-right"></i>
                             <span data-i18n="nav.navigate.main">Activity</span>
                         </a>
-                        <ul class="tree-1 has-class">
+                        <ul class="tree-1">
                             <li><a href="activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
                             </li>
-                            <li class="has-class"><a href="activity" data-i18n="nav.navigate.navbar-inverse">Activity List</a></li>
+                            <li><a href="activity" data-i18n="nav.navigate.navbar-inverse">Activity List</a></li>
                         </ul>
                     </li>
                     <li class="nav-item single-item">
@@ -264,7 +270,7 @@
             <!-- Page-header start -->
             <div class="page-header">
                 <div class="page-header-title">
-                    <h4> List Of Activity</h4>
+                    <h4> List Of Application</h4>
                 </div>
 
                 <div class="page-header-breadcrumb">
@@ -274,9 +280,9 @@
                                 <i class="icofont icofont-home"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Activity</a>
+                        <li class="breadcrumb-item"><a href="#!">Application</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">List Of Activity</a>
+                        <li class="breadcrumb-item"><a href="#!">List Of Application</a>
                         </li>
                     </ul>
                 </div>
@@ -300,7 +306,9 @@
             <!-- Basic Button table start -->
                         <div class="card">
                             <div class="card-header">
-                                    <?php echo anchor(site_url('activity/create'), '<i class="icofont icofont-ui-add"></i> Create', 'class="btn btn-info"'); ?>
+                                    <?php echo anchor(site_url('application/create'), '<i class="icofont icofont-ui-add"></i> Create', 'class="btn btn-info"'); ?>
+		<?php echo anchor(site_url('application/excel'), '<i class="icofont icofont-download-alt"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
+		<?php echo anchor(site_url('application/word'), '<i class="icofont icofont-download-alt"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
                             </div>
                             <div class="card-block">
                                 <div class="dt-responsive table-responsive">
@@ -310,30 +318,22 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-		    <th>Act Name</th>
-		    <th>Act Post By</th>
-		    <th>Act Description</th>
-		    <th>Act Date</th>
-		    <th>Act Time</th>
-		    <th>Act Venue</th>
-		    <th>Act Category</th>
-		    <th>Act Image</th>
-		    <th>Act Fee</th>
+		    <th>Application Id</th>
+		    <th>User Id</th>
+		    <th>Application Date</th>
+		    <th>Application Evaluate Date</th>
+		    <th>Application Status</th>
 		    <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
-						<th>Act Name</th>
-						<th>Act Post By</th>
-						<th>Act Description</th>
-						<th>Act Date</th>
-						<th>Act Time</th>
-						<th>Act Venue</th>
-						<th>Act Category</th>
-						<th>Act Image</th>
-						<th>Act Fee</th>
+						<th>Application Id</th>
+						<th>User Id</th>
+						<th>Application Date</th>
+						<th>Application Evaluate Date</th>
+						<th>Application Status</th>
 						<th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -349,7 +349,7 @@
             <!-- Page-body start -->
         </div>
     </div>
-</div>
+
         <!-- Required Jquery -->
         <script type="text/javascript" src="../vendor/bower_components/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="../vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
@@ -409,12 +409,12 @@
                     },
                     processing: true,
                     serverSide: true,
-                    ajax: {"url": "activity/json", "type": "POST"},
+                    ajax: {"url": "application/json", "type": "POST"},
                     columns: [
                         {
-                            "data": "act_id",
+                            "data": "app_id",
                             "orderable": false
-                        },{"data": "act_name"},{"data": "act_post_by"},{"data": "act_description"},{"data": "act_date"},{"data": "act_time"},{"data": "act_venue"},{"data": "act_category"},{"data": "act_image"},{"data": "act_fee"},
+                        },{"data": "application_id"},{"data": "user_id"},{"data": "application_date"},{"data": "application_evaluate_date"},{"data": "application_status"},
                         {
                             "data" : "action",
                             "orderable": false,

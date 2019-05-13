@@ -16,35 +16,27 @@
         </style>
     </head>
     <body>
-        <h2>Activity List</h2>
+        <h2>Application List</h2>
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>Act Name</th>
-		<th>Act Post By</th>
-		<th>Act Description</th>
-		<th>Act Date</th>
-		<th>Act Time</th>
-		<th>Act Venue</th>
-		<th>Act Category</th>
-		<th>Act Image</th>
-		<th>Act Fee</th>
+		<th>Application Id</th>
+		<th>User Id</th>
+		<th>Application Date</th>
+		<th>Application Evaluate Date</th>
+		<th>Application Status</th>
 		
             </tr><?php
-            foreach ($activity_data as $activity)
+            foreach ($application_data as $application)
             {
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $activity->act_name ?></td>
-		      <td><?php echo $activity->act_post_by ?></td>
-		      <td><?php echo $activity->act_description ?></td>
-		      <td><?php echo $activity->act_date ?></td>
-		      <td><?php echo $activity->act_time ?></td>
-		      <td><?php echo $activity->act_venue ?></td>
-		      <td><?php echo $activity->act_category ?></td>
-		      <td><?php echo $activity->act_image ?></td>
-		      <td><?php echo $activity->act_fee ?></td>	
+		      <td><?php echo $application->application_id ?></td>
+		      <td><?php echo $application->user_id ?></td>
+		      <td><?php echo $application->application_date ?></td>
+		      <td><?php echo $application->application_evaluate_date ?></td>
+		      <td><?php echo $application->application_status ?></td>	
                 </tr>
                 <?php
             }

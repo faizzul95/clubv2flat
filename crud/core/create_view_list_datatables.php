@@ -62,7 +62,7 @@ $string = "<!DOCTYPE html>
                     <a class=\"mobile-search morphsearch-search\" href=\"#\">
                         <i class=\"ti-search\"></i>
                     </a>
-                    <a href=\"index\">
+                    <a href=\"dashboard\">
                         <img class=\"img-fluid\" src=\"../vendor/assets/images/logo.png\" alt=\"Theme-Logo\" />
                     </a>
                     <a class=\"mobile-options\">
@@ -120,7 +120,7 @@ $string = "<!DOCTYPE html>
                                 </a>
                                 <ul class=\"show-notification profile-notification\">
                                     <li>
-                                        <a href=\"user-profile.html\">
+                                        <a href=\"profile\">
                                             <i class=\"ti-user\"></i> Profile
                                         </a>
                                     </li>
@@ -157,7 +157,7 @@ $string = "<!DOCTYPE html>
                                 </div>
                                 <div class=\"dummy-column\">
                                     <h2>Popular</h2>
-                                    <a class=\dummy-media-object\" href=\"#!\">
+                                    <a class=\"dummy-media-object\" href=\"#!\">
                                         <img src=\"../vendor/assets/images/avatar-1.png\" alt=\"PagePreloadingEffect\" />
                                         <h3>Page Preloading Effect</h3>
                                     </a>
@@ -201,7 +201,7 @@ $string = "<!DOCTYPE html>
         <div class=\"main-menu-content\">
             <ul class=\"main-navigation\">
                 <li class=\"more-details\">
-                    <a href=\"user-profile.html\"><i class=\"ti-user\"></i>View Profile</a>
+                    <a href=\"profile\"><i class=\"ti-user\"></i>View Profile</a>
                     <a href=\"#!\"><i class=\"ti-settings\"></i>Settings</a>
                     <a href=\"#!\"><i class=\"ti-layout-sidebar-left\"></i>Logout</a>
                 </li>
@@ -211,11 +211,17 @@ $string = "<!DOCTYPE html>
                     <span>Navigation</span>
                 </li>
                     <li class=\"nav-item single-item\">
-                        <a href=\"image-crop.html\">
-                            <i class=\"ti-cut\"></i>
+                        <a href=\"dashboard\">
+                            <i class=\"icofont icofont-home\"></i>
                             <span data-i18n=\"nav.dash.main\">Dashboard</span>
                         </a>
                     </li>
+                    <li class=\"nav-item single-item\">
+                                <a href=\"profile\">
+                                    <i class=\"icofont icofont-ui-user\"></i>
+                                    <span data-i18n=\"nav.dash.main\">Profile</span>
+                                </a>
+                            </li>
                     <li class=\"nav-item\">
                         <a href=\"#!\">
                             <i class=\"ti-layout-cta-right\"></i>

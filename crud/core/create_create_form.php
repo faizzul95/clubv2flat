@@ -110,7 +110,7 @@ $string = "
                                 </a>
                                 <ul class=\"show-notification profile-notification\">
                                     <li>
-                                        <a href=\"user-profile.html\">
+                                        <a href=\"../profile\">
                                             <i class=\"ti-user\"></i> Profile
                                         </a>
                                     </li>
@@ -190,7 +190,7 @@ $string = "
                 <div class=\"main-menu-content\">
                     <ul class=\"main-navigation\">
                         <li class=\"more-details\">
-                            <a href=\"user-profile.html\"><i class=\"ti-user\"></i>View Profile</a>
+                            <a href=\"profile\"><i class=\"ti-user\"></i>View Profile</a>
                             <a href=\"#!\"><i class=\"ti-settings\"></i>Settings</a>
                             <a href=\"#!\"><i class=\"ti-layout-sidebar-left\"></i>Logout</a>
                         </li>
@@ -200,9 +200,15 @@ $string = "
                             <span>Navigation</span>
                         </li>
                             <li class=\"nav-item single-item\">
-                                <a href=\"image-crop.html\">
-                                    <i class=\"ti-cut\"></i>
+                                <a href=\"../dashboard\">
+                                    <i class=\"icofont icofont-home\"></i>
                                     <span data-i18n=\"nav.dash.main\">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class=\"nav-item single-item\">
+                                <a href=\"profile\">
+                                    <i class=\"icofont icofont-ui-user\"></i>
+                                    <span data-i18n=\"nav.dash.main\">Profile</span>
                                 </a>
                             </li>
                             <li class=\"nav-item\">
@@ -242,7 +248,7 @@ $string = "
                                 <span>GENERATOR</span>
                             </li>
                             <li class=\"nav-item single-item\">
-                                <a href=\"../../../crud/index.php\">
+                                <a href=\"../../crud/index.php\">
                                     <i class=\"ti-cloud-up\"></i>
                                     <span data-i18n=\"nav.file-upload.main\">CRUD GENERATOR</span>
                                 </a>
