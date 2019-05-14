@@ -1,10 +1,8 @@
- 
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-    <title>CMS | Update Activity</title>
-
+<head> 
+    <title>CMS | User View</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -78,28 +76,6 @@
                             </li>
                         </ul>
                         <ul class="nav-right">
-                            <li class="header-notification">
-                                <a href="#!">
-                                    <i class="ti-bell"></i>
-                                    <span class="badge">1</span>
-                                </a>
-                                <ul class="show-notification">
-                                    <li>
-                                        <h6>Notifications</h6>
-                                        <label class="label label-danger">New</label>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="d-flex align-self-center" src="../../../vendor/assets/images/user.png" alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">Fahmy Izwan</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
                             <li class="user-profile header-notification">
                                 <a href="#!">
                                     <img src="../../../vendor/assets/images/user.png" alt="User-Profile-Image">
@@ -108,7 +84,7 @@
                                 </a>
                                 <ul class="show-notification profile-notification">
                                     <li>
-                                        <a href="user-profile.html">
+                                        <a href="profile">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
@@ -131,41 +107,6 @@
                                 <input class="morphsearch-input" type="search" placeholder="Search..." />
                                 <button class="morphsearch-submit" type="submit">Search</button>
                             </form>
-                            <div class="morphsearch-content">
-                                <div class="dummy-column">
-                                    <h2>People</h2>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img class="round" src="http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G" alt="Sara Soueidan" />
-                                        <h3>Sara Soueidan</h3>
-                                    </a>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img class="round" src="http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G" alt="Shaun Dona" />
-                                        <h3>Shaun Dona</h3>
-                                    </a>
-                                </div>
-                                <div class="dummy-column">
-                                    <h2>Popular</h2>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../../../vendor/assets/images/avatar-1.png" alt="PagePreloadingEffect" />
-                                        <h3>Page Preloading Effect</h3>
-                                    </a>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../../../vendor/assets/images/avatar-1.png" alt="DraggableDualViewSlideshow" />
-                                        <h3>Draggable Dual-View Slideshow</h3>
-                                    </a>
-                                </div>
-                                <div class="dummy-column">
-                                    <h2>Recent</h2>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../../../vendor/assets/images/avatar-1.png" alt="TooltipStylesInspiration" />
-                                        <h3>Tooltip Styles Inspiration</h3>
-                                    </a>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../../../vendor/assets/images/avatar-1.png" alt="NotificationStyles" />
-                                        <h3>Notification Styles Inspiration</h3>
-                                    </a>
-                                </div>
-                            </div>
                             <!-- /morphsearch-content -->
                             <span class="morphsearch-close"><i class="icofont icofont-search-alt-1"></i></span>
                         </div>
@@ -188,7 +129,7 @@
                 <div class="main-menu-content">
                     <ul class="main-navigation">
                         <li class="more-details">
-                            <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
+                            <a href="profile"><i class="ti-user"></i>View Profile</a>
                             <a href="#!"><i class="ti-settings"></i>Settings</a>
                             <a href="#!"><i class="ti-layout-sidebar-left"></i>Logout</a>
                         </li>
@@ -198,10 +139,29 @@
                             <span>Navigation</span>
                         </li>
                             <li class="nav-item single-item">
-                                <a href="image-crop.html">
-                                    <i class="ti-cut"></i>
+                                <a href="dashboard">
+                                    <i class="icofont icofont-home"></i>
                                     <span data-i18n="nav.dash.main">Dashboard</span>
                                 </a>
+                            </li>
+                            <li class="nav-item single-item">
+                                <a href="profile">
+                                    <i class="icofont icofont-ui-user"></i>
+                                    <span data-i18n="nav.dash.main">Profile</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#!">
+                                    <i class="ti-layout-cta-right"></i>
+                                    <span data-i18n="nav.navigate.main">Membership</span>
+                                </a>
+                                <ul class="tree-1">
+                                    <li><a href="application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
+                                    </li>
+                                    <li><a href="application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
+                                    </li>
+                                    <li><a href="application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
+                                </ul>
                             </li>
                             <li class="nav-item">
                                 <a href="#!">
@@ -209,10 +169,9 @@
                                     <span data-i18n="nav.navigate.main">Activity</span>
                                 </a>
                                 <ul class="tree-1">
-                                    <li><a href="navbar-light.html" data-i18n="nav.navigate.navbar">Add New Activity</a>
+                                    <li><a href="activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
                                     </li>
-                                    <li><a href="navbar-dark.html" data-i18n="nav.navigate.navbar-inverse">Navbar Inverse</a></li>
-                                    <li><a href="navbar-elements.html" data-i18n="nav.navigate.navbar-with-elements">Navbar With Elements</a></li>
+                                    <li><a href="activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item single-item">
@@ -222,19 +181,6 @@
                                     <label class="label label-danger menu-caption">100+</label>
                                 </a>
                             </li>
-                            <li class="nav-item single-item">
-                                <a href="image-crop.html">
-                                    <i class="ti-cut"></i>
-                                    <span data-i18n="nav.image-cropper.main"> Image Cropper</span>
-                                </a>
-                            </li>
-                            <li class="nav-item single-item">
-                                <a href="file-upload.html">
-                                    <i class="ti-cloud-up"></i>
-                                    <span data-i18n="nav.file-upload.main">File Upload</span>
-                                </a>
-                            </li>
-
                             <li class="nav-title" data-i18n="nav.category.navigation">
                                 <i class="ti-line-dashed"></i>
                                 <span>GENERATOR</span>
@@ -250,13 +196,14 @@
             </div>
             <!-- Menu aside end -->
 
+
             <!-- Main-body start -->
             <div class="main-body">
                 <div class="page-wrapper">
                     <!-- Page header start -->
                     <div class="page-header">
                         <div class="page-header-title">
-                            <h4>Update Activity</h4>
+                            <h4>View User</h4>
                         </div>
                         <div class="page-header-breadcrumb">
                             <ul class="breadcrumb-title">
@@ -265,14 +212,14 @@
                                         <i class="icofont icofont-home"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#!">Activity</a>
+                                <li class="breadcrumb-item"><a href="#!">User</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#!">Update Activity</a>
+                                <li class="breadcrumb-item"><a href="#!">View User</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                     <!-- Page header end -->
+                    <!-- Page header end -->
                     <!-- Page body start -->
                     <div class="page-body">
                         <div class="row">
@@ -280,49 +227,37 @@
                                 <!-- Basic Form Inputs card start -->
                                 <div class="card">
                                     <div class="card-block">
-                                    <form action="<?php echo $action; ?>" method="post">
-	    <div class="form-group">
-                                                    <label for="varchar">Act Name <?php echo form_error('act_name') ?></label>
-                                                    <input type="text" class="form-control" name="act_name" id="act_name" placeholder="Act Name" value="<?php echo $act_name; ?>" />
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="act_post_by">Act Post By <?php echo form_error('act_post_by') ?></label>
-                                                    <textarea class="form-control" rows="3" name="act_post_by" id="act_post_by" placeholder="Act Post By"><?php echo $act_post_by; ?></textarea>
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="act_description">Act Description <?php echo form_error('act_description') ?></label>
-                                                    <textarea class="form-control" rows="3" name="act_description" id="act_description" placeholder="Act Description"><?php echo $act_description; ?></textarea>
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="date">Act Date <?php echo form_error('act_date') ?></label>
-                                                    <input type="date" class="form-control" name="act_date" id="act_date" placeholder="Act Date" value="<?php echo $act_date; ?>" />
-                                                    </div>
-	    <div class="form-group">
-                                                    <label for="time">Act Time <?php echo form_error('act_time') ?></label>
-                                                    <input type="text" class="form-control" name="act_time" id="act_time" placeholder="Act Time" value="<?php echo $act_time; ?>" />
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="varchar">Act Venue <?php echo form_error('act_venue') ?></label>
-                                                    <input type="text" class="form-control" name="act_venue" id="act_venue" placeholder="Act Venue" value="<?php echo $act_venue; ?>" />
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="enum">Act Category <?php echo form_error('act_category') ?></label>
-                                                    <input type="text" class="form-control" name="act_category" id="act_category" placeholder="Act Category" value="<?php echo $act_category; ?>" />
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="varchar">Act Image <?php echo form_error('act_image') ?></label>
-                                                    <input type="text" class="form-control" name="act_image" id="act_image" placeholder="Act Image" value="<?php echo $act_image; ?>" />
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="int">Act Fee <?php echo form_error('act_fee') ?></label>
-                                                    <input type="text" class="form-control" name="act_fee" id="act_fee" placeholder="Act Fee" value="<?php echo $act_fee; ?>" />
-                                                </div>
-	    <input type="hidden" name="act_id" value="<?php echo $act_id; ?>" /> 
-	    <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('activity') ?>" class="btn btn-danger">Cancel</a>
-	</form>
-
     
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Usr Username</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_username; ?>" disabled>
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Usr Password</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_password; ?>" disabled>
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Usr Role</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_role; ?>" disabled>
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Usr Status</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_status; ?>" disabled>
+                                                </div>
+                                            </div>
+	  <a href="<?php echo site_url('user') ?>" class="btn btn-info btn-square pull-right"><i class="icofont icofont-arrow-left"></i> Back</a>
+	
+
                                     </div>
                                 </div>
                                 <!-- Basic Form Inputs card end -->

@@ -1,8 +1,16 @@
+<?php
+    $application = false;
+    $activity = false;
+    $user = false;
+    $contactus = false;
+
+    $user = true;
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>CMS | List Of Activity</title>
+    <title>CMS | List Of User</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -60,7 +68,7 @@
                     <a class="mobile-search morphsearch-search" href="#">
                         <i class="ti-search"></i>
                     </a>
-                    <a href="index">
+                    <a href="dashboard">
                         <img class="img-fluid" src="../vendor/assets/images/logo.png" alt="Theme-Logo" />
                     </a>
                     <a class="mobile-options">
@@ -88,28 +96,6 @@
                             </li>
                         </ul>
                         <ul class="nav-right">
-                            <li class="header-notification">
-                                <a href="#!">
-                                    <i class="ti-bell"></i>
-                                    <span class="badge">1</span>
-                                </a>
-                                <ul class="show-notification">
-                                    <li>
-                                        <h6>Notifications</h6>
-                                        <label class="label label-danger">New</label>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="d-flex align-self-center" src="../vendor/assets/images/user.png" alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">Fahmy Izwan</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
                             <li class="user-profile header-notification">
                                 <a href="#!">
                                     <img src="../vendor/assets/images/user.png" alt="User-Profile-Image">
@@ -118,7 +104,7 @@
                                 </a>
                                 <ul class="show-notification profile-notification">
                                     <li>
-                                        <a href="user-profile.html">
+                                        <a href="profile">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
@@ -141,41 +127,6 @@
                                 <input class="morphsearch-input" type="search" placeholder="Search..." />
                                 <button class="morphsearch-submit" type="submit">Search</button>
                             </form>
-                            <div class="morphsearch-content">
-                                <div class="dummy-column">
-                                    <h2>People</h2>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img class="round" src="http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G" alt="Sara Soueidan" />
-                                        <h3>Sara Soueidan</h3>
-                                    </a>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img class="round" src="http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G" alt="Shaun Dona" />
-                                        <h3>Shaun Dona</h3>
-                                    </a>
-                                </div>
-                                <div class="dummy-column">
-                                    <h2>Popular</h2>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../vendor/assets/images/avatar-1.png" alt="PagePreloadingEffect" />
-                                        <h3>Page Preloading Effect</h3>
-                                    </a>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../vendor/assets/images/avatar-1.png" alt="DraggableDualViewSlideshow" />
-                                        <h3>Draggable Dual-View Slideshow</h3>
-                                    </a>
-                                </div>
-                                <div class="dummy-column">
-                                    <h2>Recent</h2>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../vendor/assets/images/avatar-1.png" alt="TooltipStylesInspiration" />
-                                        <h3>Tooltip Styles Inspiration</h3>
-                                    </a>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../vendor/assets/images/avatar-1.png" alt="NotificationStyles" />
-                                        <h3>Notification Styles Inspiration</h3>
-                                    </a>
-                                </div>
-                            </div>
                             <!-- /morphsearch-content -->
                             <span class="morphsearch-close"><i class="icofont icofont-search-alt-1"></i></span>
                         </div>
@@ -199,7 +150,7 @@
         <div class="main-menu-content">
             <ul class="main-navigation">
                 <li class="more-details">
-                    <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
+                    <a href="profile"><i class="ti-user"></i>View Profile</a>
                     <a href="#!"><i class="ti-settings"></i>Settings</a>
                     <a href="#!"><i class="ti-layout-sidebar-left"></i>Logout</a>
                 </li>
@@ -210,30 +161,38 @@
                 </li>
                     <li class="nav-item single-item">
                         <a href="dashboard">
-                            <i class="ti-cut"></i>
+                            <i class="icofont icofont-home"></i>
                             <span data-i18n="nav.dash.main">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item single-item">
+                                <a href="profile">
+                                    <i class="icofont icofont-ui-user"></i>
+                                    <span data-i18n="nav.dash.main">Profile</span>
+                                </a>
+                            </li>
+                    <li <?php if($application) { ?> class="nav-item has-class" <?php }else{ ?> class="nav-item"<?php } ?> >
                         <a href="#!">
                             <i class="ti-layout-cta-right"></i>
-                            <span data-i18n="nav.navigate.main">Application</span>
+                            <span data-i18n="nav.navigate.main">Membership</span>
                         </a>
                         <ul class="tree-1">
-                            <li><a href="application/create" data-i18n="nav.navigate.navbar">Add New Application</a>
+                            <li><a href="application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
                             </li>
-                            <li><a href="application" data-i18n="nav.navigate.navbar-inverse">Application List</a></li>
+                            <li><a href="application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
+                            </li>
+                            <li <?php if($application) { ?> class="has-class" <?php } ?> ><a href="application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item has-class">
+                    <li <?php if($activity) { ?> class="nav-item has-class" <?php }else{ ?> class="nav-item"<?php } ?>>
                         <a href="#!">
                             <i class="ti-layout-cta-right"></i>
                             <span data-i18n="nav.navigate.main">Activity</span>
                         </a>
-                        <ul class="tree-1 has-class">
+                        <ul class="tree-1">
                             <li><a href="activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
                             </li>
-                            <li class="has-class"><a href="activity" data-i18n="nav.navigate.navbar-inverse">Activity List</a></li>
+                            <li <?php if($activity) { ?> class="has-class" <?php } ?>><a href="activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
                         </ul>
                     </li>
                     <li class="nav-item single-item">
@@ -264,7 +223,7 @@
             <!-- Page-header start -->
             <div class="page-header">
                 <div class="page-header-title">
-                    <h4> List Of Activity</h4>
+                    <h4> List Of User</h4>
                 </div>
 
                 <div class="page-header-breadcrumb">
@@ -274,9 +233,9 @@
                                 <i class="icofont icofont-home"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Activity</a>
+                        <li class="breadcrumb-item"><a href="#!">User</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">List Of Activity</a>
+                        <li class="breadcrumb-item"><a href="#!">List Of User</a>
                         </li>
                     </ul>
                 </div>
@@ -300,7 +259,9 @@
             <!-- Basic Button table start -->
                         <div class="card">
                             <div class="card-header">
-                                    <?php echo anchor(site_url('activity/create'), '<i class="icofont icofont-ui-add"></i> Create', 'class="btn btn-info"'); ?>
+                                    <?php echo anchor(site_url('user/create'), '<i class="icofont icofont-ui-add"></i> Create', 'class="btn btn-info"'); ?>
+		<?php echo anchor(site_url('user/excel'), '<i class="icofont icofont-download-alt"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
+		<?php echo anchor(site_url('user/word'), '<i class="icofont icofont-download-alt"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
                             </div>
                             <div class="card-block">
                                 <div class="dt-responsive table-responsive">
@@ -310,30 +271,20 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-		    <th>Act Name</th>
-		    <th>Act Post By</th>
-		    <th>Act Description</th>
-		    <th>Act Date</th>
-		    <th>Act Time</th>
-		    <th>Act Venue</th>
-		    <th>Act Category</th>
-		    <th>Act Image</th>
-		    <th>Act Fee</th>
+		    <th>Usr Username</th>
+		    <th>Usr Password</th>
+		    <th>Usr Role</th>
+		    <th>Usr Status</th>
 		    <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
-						<th>Act Name</th>
-						<th>Act Post By</th>
-						<th>Act Description</th>
-						<th>Act Date</th>
-						<th>Act Time</th>
-						<th>Act Venue</th>
-						<th>Act Category</th>
-						<th>Act Image</th>
-						<th>Act Fee</th>
+						<th>Usr Username</th>
+						<th>Usr Password</th>
+						<th>Usr Role</th>
+						<th>Usr Status</th>
 						<th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -349,7 +300,7 @@
             <!-- Page-body start -->
         </div>
     </div>
-</div>
+
         <!-- Required Jquery -->
         <script type="text/javascript" src="../vendor/bower_components/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="../vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
@@ -409,12 +360,12 @@
                     },
                     processing: true,
                     serverSide: true,
-                    ajax: {"url": "activity/json", "type": "POST"},
+                    ajax: {"url": "user/json", "type": "POST"},
                     columns: [
                         {
-                            "data": "act_id",
+                            "data": "user_id",
                             "orderable": false
-                        },{"data": "act_name"},{"data": "act_post_by"},{"data": "act_description"},{"data": "act_date"},{"data": "act_time"},{"data": "act_venue"},{"data": "act_category"},{"data": "act_image"},{"data": "act_fee"},
+                        },{"data": "usr_username"},{"data": "usr_password"},{"data": "usr_role"},{"data": "usr_status"},
                         {
                             "data" : "action",
                             "orderable": false,

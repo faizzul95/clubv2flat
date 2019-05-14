@@ -10,7 +10,7 @@
 <html lang="en">
 
 <head>
-    <title>CMS | List Of Application</title>
+    <title>CMS | New Application</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,28 +25,28 @@
     <meta name="keywords" content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="Phoenixcoded">
     <!-- Favicon icon -->
-    <link rel="icon" href="../vendor/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../vendor/assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/assets/icon/icofont/css/icofont.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/icon/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/assets/icon/font-awesome/css/font-awesome.min.css">
     <!-- flag icon framework css -->
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/flag-icon/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/flag-icon/flag-icon.min.css">
     <!-- Menu-Search css -->
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/menu-search/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/menu-search/css/component.css">
     <!-- Data Table Css -->
-    <link rel="stylesheet" type="text/css" href="../vendor/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/data-table/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="../vendor/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/data-table/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css">
     <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/assets/css/style.css">
 </head>
   <body class="fix-menu">
 
@@ -69,7 +69,7 @@
                         <i class="ti-search"></i>
                     </a>
                     <a href="dashboard">
-                        <img class="img-fluid" src="../vendor/assets/images/logo.png" alt="Theme-Logo" />
+                        <img class="img-fluid" src="../../vendor/assets/images/logo.png" alt="Theme-Logo" />
                     </a>
                     <a class="mobile-options">
                         <i class="ti-more"></i>
@@ -98,13 +98,13 @@
                         <ul class="nav-right">
                             <li class="user-profile header-notification">
                                 <a href="#!">
-                                    <img src="../vendor/assets/images/user.png" alt="User-Profile-Image">
+                                    <img src="../../vendor/assets/images/user.png" alt="User-Profile-Image">
                                     <span>Fahmy Izwan</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
                                     <li>
-                                        <a href="profile">
+                                        <a href="../profile">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
@@ -141,7 +141,7 @@
     <!-- Menu aside start -->
     <div class="main-menu">
         <div class="main-menu-header">
-            <img class="img-40" src="../vendor/assets/images/user.png" alt="User-Profile-Image">
+            <img class="img-40" src="../../vendor/assets/images/user.png" alt="User-Profile-Image">
             <div class="user-details">
                 <span>Fahmy Izwan</span>
                 <span id="more-details">Programmer<i class="ti-angle-down"></i></span>
@@ -150,7 +150,7 @@
         <div class="main-menu-content">
             <ul class="main-navigation">
                 <li class="more-details">
-                    <a href="profile"><i class="ti-user"></i>View Profile</a>
+                    <a href="../profile"><i class="ti-user"></i>View Profile</a>
                     <a href="#!"><i class="ti-settings"></i>Settings</a>
                     <a href="#!"><i class="ti-layout-sidebar-left"></i>Logout</a>
                 </li>
@@ -166,7 +166,7 @@
                         </a>
                     </li>
                     <li class="nav-item single-item">
-                                <a href="profile">
+                                <a href="../profile">
                                     <i class="icofont icofont-ui-user"></i>
                                     <span data-i18n="nav.dash.main">Profile</span>
                                 </a>
@@ -177,11 +177,11 @@
                             <span data-i18n="nav.navigate.main">Membership</span>
                         </a>
                         <ul class="tree-1">
-                            <li><a href="application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
+                            <li <?php if($application) { ?> class="has-class" <?php } ?>><a href="../application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
                             </li>
-                            <li><a href="application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
+                            <li><a href="../application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
                             </li>
-                            <li <?php if($application) { ?> class="has-class" <?php } ?> ><a href="application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
+                            <li ><a href="../application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
                         </ul>
                     </li>
                     <li <?php if($activity) { ?> class="nav-item has-class" <?php }else{ ?> class="nav-item"<?php } ?>>
@@ -256,39 +256,38 @@
                     </div>
                     <?php } ?>
 
-            <!-- Basic Button table start -->
+                        <!-- Basic Button table start -->
                         <div class="card">
                             <div class="card-header">
-                                    <?php echo anchor(site_url('application/create'), '<i class="icofont icofont-ui-add"></i> Create', 'class="btn btn-info"'); ?>
-		<?php echo anchor(site_url('application/excel'), '<i class="icofont icofont-download-alt"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
-		<?php echo anchor(site_url('application/word'), '<i class="icofont icofont-download-alt"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
+                                    <?php //echo anchor(site_url('application/create'), '<i class="icofont icofont-ui-add"></i> Create', 'class="btn btn-info"'); ?>
+                                    <?php echo anchor(site_url('application/excel'), '<i class="icofont icofont-download-alt"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
+                                    <?php echo anchor(site_url('application/word'), '<i class="icofont icofont-download-alt"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
                             </div>
                             <div class="card-block">
                                 <div class="dt-responsive table-responsive">
                                      <div class="dt-responsive table-responsive">
                                         <table id="mytable" class="table table-striped table-bordered nowrap">
-
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                    		    <th>Application Id</th>
-                                    		    <th>User Id</th>
-                                    		    <th>Application Date</th>
-                                    		    <th>Application Evaluate Date</th>
-                                    		    <th>Action</th>
+                                                <th>Application ID</th>
+                                                <th>Name</th>
+                                                <th>Phone Number</th>
+                                                <th>Address</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
-                        						<th>Application Id</th>
-                        						<th>User Id</th>
-                        						<th>Application Date</th>
-                        						<th>Application Evaluate Date</th>
-                        						<th>Action</th>
+                                                <th>Application ID</th>
+                                                <th>Name</th>
+                                                <th>Phone Number</th>
+                                                <th>Address</th>
+                                                <th>Action</th>
                                             </tr>
                                         </tfoot>
-	    
+        
                                     </table>
                                  </div>
                             </div>
@@ -302,42 +301,42 @@
     </div>
 
         <!-- Required Jquery -->
-        <script type="text/javascript" src="../vendor/bower_components/jquery/dist/jquery.min.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/tether/dist/js/tether.min.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/tether/dist/js/tether.min.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- jquery slimscroll js -->
-        <script type="text/javascript" src="../vendor/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
         <!-- modernizr js -->
-        <script type="text/javascript" src="../vendor/bower_components/modernizr/modernizr.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/modernizr/modernizr.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
         <!-- classie js -->
-        <script type="text/javascript" src="../vendor/bower_components/classie/classie.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/classie/classie.js"></script>
         <!-- data-table js -->
-        <script src="../vendor/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="../vendor/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-        <script src="../vendor/assets/pages/data-table/js/jszip.min.js"></script>
-        <script src="../vendor/assets/pages/data-table/js/pdfmake.min.js"></script>
-        <script src="../vendor/assets/pages/data-table/js/vfs_fonts.js"></script>
-        <script src="../vendor/assets/pages/data-table/extensions/buttons/js/dataTables.buttons.min.js"></script>
-        <script src="../vendor/assets/pages/data-table/extensions/buttons/js/buttons.flash.min.js"></script>
-        <script src="../vendor/assets/pages/data-table/extensions/buttons/js/jszip.min.js"></script>
-        <script src="../vendor/assets/pages/data-table/extensions/buttons/js/pdfmake.min.js"></script>
-        <script src="../vendor/assets/pages/data-table/extensions/buttons/js/vfs_fonts.js"></script>
-        <script src="../vendor/assets/pages/data-table/extensions/buttons/js/buttons.colVis.min.js"></script>
-        <script src="../vendor/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
-        <script src="../vendor/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
-        <script src="../vendor/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-        <script src="../vendor/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="../vendor/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+        <script src="../../vendor/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="../../vendor/bower_components/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="../../vendor/assets/pages/data-table/js/jszip.min.js"></script>
+        <script src="../../vendor/assets/pages/data-table/js/pdfmake.min.js"></script>
+        <script src="../../vendor/assets/pages/data-table/js/vfs_fonts.js"></script>
+        <script src="../../vendor/assets/pages/data-table/extensions/buttons/js/dataTables.buttons.min.js"></script>
+        <script src="../../vendor/assets/pages/data-table/extensions/buttons/js/buttons.flash.min.js"></script>
+        <script src="../../vendor/assets/pages/data-table/extensions/buttons/js/jszip.min.js"></script>
+        <script src="../../vendor/assets/pages/data-table/extensions/buttons/js/pdfmake.min.js"></script>
+        <script src="../../vendor/assets/pages/data-table/extensions/buttons/js/vfs_fonts.js"></script>
+        <script src="../../vendor/assets/pages/data-table/extensions/buttons/js/buttons.colVis.min.js"></script>
+        <script src="../../vendor/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="../../vendor/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="../../vendor/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script src="../../vendor/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="../../vendor/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
         <!-- i18next.min.js -->
-        <script type="text/javascript" src="../vendor/bower_components/i18next/i18next.min.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/i18next/i18next.min.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
         <!-- Custom js -->
-        <script src="../vendor/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js"></script>
-        <script type="text/javascript" src="../vendor/assets/js/script.js"></script>
+        <script src="../../vendor/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js"></script>
+        <script type="text/javascript" src="../../vendor/assets/js/script.js"></script>
 
         <script type="text/javascript">
             $(document).ready(function() {
@@ -360,12 +359,23 @@
                     },
                     processing: true,
                     serverSide: true,
-                    ajax: {"url": "application/json", "type": "POST"},
+                    ajax: {"url": "../application/newapp", "type": "POST"},
+                    // columns: [
+                    //     {
+                    //         "data": "app_id",
+                    //         "orderable": false
+                    //     },{"data": "application_id"},{"data": "user_id"},{"data": "application_date"},
+                    //     {
+                    //         "data" : "action",
+                    //         "orderable": false,
+                    //         "className" : "text-center"
+                    //     }
+                    // ],
                     columns: [
                         {
                             "data": "app_id",
                             "orderable": false
-                        },{"data": "application_id"},{"data": "user_id"},{"data": "application_date"},{"data": "application_evaluate_date"},
+                        },{"data": "application_id"},{"data": "detail_fullname"},{"data": "detail_phone"},{"data": "detail_address"},
                         {
                             "data" : "action",
                             "orderable": false,

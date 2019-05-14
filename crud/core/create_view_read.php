@@ -27,8 +27,6 @@ $string = "<!DOCTYPE html>
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../../../vendor/assets/pages/menu-search/css/component.css\">
     <!-- Style.css -->
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../../../vendor/assets/css/style.css\">
-    <!-- color .css -->
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"../../../vendor/assets/css/color/color-1.css\" id=\"color\"/>
 </head>
 
 <body class=\"fix-menu\">
@@ -78,28 +76,6 @@ $string = "<!DOCTYPE html>
                             </li>
                         </ul>
                         <ul class=\"nav-right\">
-                            <li class=\"header-notification\">
-                                <a href=\"#!\">
-                                    <i class=\"ti-bell\"></i>
-                                    <span class=\"badge\">1</span>
-                                </a>
-                                <ul class=\"show-notification\">
-                                    <li>
-                                        <h6>Notifications</h6>
-                                        <label class=\"label label-danger\">New</label>
-                                    </li>
-                                    <li>
-                                        <div class=\"media\">
-                                            <img class=\"d-flex align-self-center\" src=\"../../../vendor/assets/images/user.png\" alt=\"Generic placeholder image\">
-                                            <div class=\"media-body\">
-                                                <h5 class=\"notification-user\">Fahmy Izwan</h5>
-                                                <p class=\"notification-msg\">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                <span class=\"notification-time\">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
                             <li class=\"user-profile header-notification\">
                                 <a href=\"#!\">
                                     <img src=\"../../../vendor/assets/images/user.png\" alt=\"User-Profile-Image\">
@@ -131,41 +107,6 @@ $string = "<!DOCTYPE html>
                                 <input class=\"morphsearch-input\" type=\"search\" placeholder=\"Search...\" />
                                 <button class=\"morphsearch-submit\" type=\"submit\">Search</button>
                             </form>
-                            <div class=\"morphsearch-content\">
-                                <div class=\"dummy-column\">
-                                    <h2>People</h2>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img class=\"round\" src=\"http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G\" alt=\"Sara Soueidan\" />
-                                        <h3>Sara Soueidan</h3>
-                                    </a>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img class=\"round\" src=\"http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G\" alt=\"Shaun Dona\" />
-                                        <h3>Shaun Dona</h3>
-                                    </a>
-                                </div>
-                                <div class=\"dummy-column\">
-                                    <h2>Popular</h2>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img src=\"../../../vendor/assets/images/avatar-1.png\" alt=\"PagePreloadingEffect\" />
-                                        <h3>Page Preloading Effect</h3>
-                                    </a>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img src=\"../../../vendor/assets/images/avatar-1.png\" alt=\"DraggableDualViewSlideshow\" />
-                                        <h3>Draggable Dual-View Slideshow</h3>
-                                    </a>
-                                </div>
-                                <div class=\"dummy-column\">
-                                    <h2>Recent</h2>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img src=\"../../../vendor/assets/images/avatar-1.png\" alt=\"TooltipStylesInspiration\" />
-                                        <h3>Tooltip Styles Inspiration</h3>
-                                    </a>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img src=\"../../../vendor/assets/images/avatar-1.png\" alt=\"NotificationStyles\" />
-                                        <h3>Notification Styles Inspiration</h3>
-                                    </a>
-                                </div>
-                            </div>
                             <!-- /morphsearch-content -->
                             <span class=\"morphsearch-close\"><i class=\"icofont icofont-search-alt-1\"></i></span>
                         </div>
@@ -212,13 +153,25 @@ $string = "<!DOCTYPE html>
                             <li class=\"nav-item\">
                                 <a href=\"#!\">
                                     <i class=\"ti-layout-cta-right\"></i>
+                                    <span data-i18n=\"nav.navigate.main\">Membership</span>
+                                </a>
+                                <ul class=\"tree-1\">
+                                    <li><a href=\"application/newlist\" data-i18n=\"nav.navigate.navbar\">List of New Application</a>
+                                    </li>
+                                    <li><a href=\"application/disapprove\" data-i18n=\"nav.navigate.navbar\">List of Disapprove Application</a>
+                                    </li>
+                                    <li><a href=\"application\" data-i18n=\"nav.navigate.navbar-inverse\">List of Club Member</a></li>
+                                </ul>
+                            </li>
+                            <li class=\"nav-item\">
+                                <a href=\"#!\">
+                                    <i class=\"ti-layout-cta-right\"></i>
                                     <span data-i18n=\"nav.navigate.main\">Activity</span>
                                 </a>
                                 <ul class=\"tree-1\">
-                                    <li><a href=\"navbar-light.html\" data-i18n=\"nav.navigate.navbar\">Add New Activity</a>
+                                    <li><a href=\"activity/create\" data-i18n=\"nav.navigate.navbar\">Add New Activity</a>
                                     </li>
-                                    <li><a href=\"navbar-dark.html\" data-i18n=\"nav.navigate.navbar-inverse\">Navbar Inverse</a></li>
-                                    <li><a href=\"navbar-elements.html\" data-i18n=\"nav.navigate.navbar-with-elements\">Navbar With Elements</a></li>
+                                    <li><a href=\"activity\" data-i18n=\"nav.navigate.navbar-inverse\">List of Activity</a></li>
                                 </ul>
                             </li>
                             <li class=\"nav-item single-item\">
@@ -228,19 +181,6 @@ $string = "<!DOCTYPE html>
                                     <label class=\"label label-danger menu-caption\">100+</label>
                                 </a>
                             </li>
-                            <li class=\"nav-item single-item\">
-                                <a href=\"image-crop.html\">
-                                    <i class=\"ti-cut\"></i>
-                                    <span data-i18n=\"nav.image-cropper.main\"> Image Cropper</span>
-                                </a>
-                            </li>
-                            <li class=\"nav-item single-item\">
-                                <a href=\"file-upload.html\">
-                                    <i class=\"ti-cloud-up\"></i>
-                                    <span data-i18n=\"nav.file-upload.main\">File Upload</span>
-                                </a>
-                            </li>
-
                             <li class=\"nav-title\" data-i18n=\"nav.category.navigation\">
                                 <i class=\"ti-line-dashed\"></i>
                                 <span>GENERATOR</span>

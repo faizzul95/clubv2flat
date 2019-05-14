@@ -1,6 +1,14 @@
 <?php 
 
-$string = "<!DOCTYPE html>
+$string = "<?php
+    \$application = false;
+    \$activity = false;
+    \$user = false;
+    \$contactus = false;
+
+    $".$table_name." = true;
+ ?>
+<!DOCTYPE html>
 <html lang=\"en\">
 
 <head>
@@ -28,6 +36,8 @@ $string = "<!DOCTYPE html>
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/icon/themify-icons/themify-icons.css\">
     <!-- ico font -->
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/icon/icofont/css/icofont.css\">
+    <!-- Font Awesome -->
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/icon/font-awesome/css/font-awesome.min.css\">
     <!-- flag icon framework css -->
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/pages/flag-icon/flag-icon.min.css\">
     <!-- Menu-Search css -->
@@ -39,8 +49,6 @@ $string = "<!DOCTYPE html>
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css\">
     <!-- Style.css -->
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/css/style.css\">
-    <!-- color .css -->
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/css/color/color-1.css\" id=\"color\"/>
 </head>
   <body class=\"fix-menu\">
 
@@ -90,28 +98,6 @@ $string = "<!DOCTYPE html>
                             </li>
                         </ul>
                         <ul class=\"nav-right\">
-                            <li class=\"header-notification\">
-                                <a href=\"#!\">
-                                    <i class=\"ti-bell\"></i>
-                                    <span class=\"badge\">1</span>
-                                </a>
-                                <ul class=\"show-notification\">
-                                    <li>
-                                        <h6>Notifications</h6>
-                                        <label class=\"label label-danger\">New</label>
-                                    </li>
-                                    <li>
-                                        <div class=\"media\">
-                                            <img class=\"d-flex align-self-center\" src=\"../vendor/assets/images/user.png\" alt=\"Generic placeholder image\">
-                                            <div class=\"media-body\">
-                                                <h5 class=\"notification-user\">Fahmy Izwan</h5>
-                                                <p class=\"notification-msg\">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                <span class=\"notification-time\">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
                             <li class=\"user-profile header-notification\">
                                 <a href=\"#!\">
                                     <img src=\"../vendor/assets/images/user.png\" alt=\"User-Profile-Image\">
@@ -143,41 +129,6 @@ $string = "<!DOCTYPE html>
                                 <input class=\"morphsearch-input\" type=\"search\" placeholder=\"Search...\" />
                                 <button class=\"morphsearch-submit\" type=\"submit\">Search</button>
                             </form>
-                            <div class=\"morphsearch-content\">
-                                <div class=\"dummy-column\">
-                                    <h2>People</h2>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img class=\"round\" src=\"http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G\" alt=\"Sara Soueidan\" />
-                                        <h3>Sara Soueidan</h3>
-                                    </a>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img class=\"round\" src=\"http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G\" alt=\"Shaun Dona\" />
-                                        <h3>Shaun Dona</h3>
-                                    </a>
-                                </div>
-                                <div class=\"dummy-column\">
-                                    <h2>Popular</h2>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img src=\"../vendor/assets/images/avatar-1.png\" alt=\"PagePreloadingEffect\" />
-                                        <h3>Page Preloading Effect</h3>
-                                    </a>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img src=\"../vendor/assets/images/avatar-1.png\" alt=\"DraggableDualViewSlideshow\" />
-                                        <h3>Draggable Dual-View Slideshow</h3>
-                                    </a>
-                                </div>
-                                <div class=\"dummy-column\">
-                                    <h2>Recent</h2>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img src=\"../vendor/assets/images/avatar-1.png\" alt=\"TooltipStylesInspiration\" />
-                                        <h3>Tooltip Styles Inspiration</h3>
-                                    </a>
-                                    <a class=\"dummy-media-object\" href=\"#!\">
-                                        <img src=\"../vendor/assets/images/avatar-1.png\" alt=\"NotificationStyles\" />
-                                        <h3>Notification Styles Inspiration</h3>
-                                    </a>
-                                </div>
-                            </div>
                             <!-- /morphsearch-content -->
                             <span class=\"morphsearch-close\"><i class=\"icofont icofont-search-alt-1\"></i></span>
                         </div>
@@ -222,18 +173,20 @@ $string = "<!DOCTYPE html>
                                     <span data-i18n=\"nav.dash.main\">Profile</span>
                                 </a>
                             </li>
-                    <li class=\"nav-item\">
+                    <li <?php if(\$application) { ?> class=\"nav-item has-class\" <?php }else{ ?> class=\"nav-item\"<?php } ?> >
                         <a href=\"#!\">
                             <i class=\"ti-layout-cta-right\"></i>
-                            <span data-i18n=\"nav.navigate.main\">Application</span>
+                            <span data-i18n=\"nav.navigate.main\">Membership</span>
                         </a>
                         <ul class=\"tree-1\">
-                            <li><a href=\"application/create\" data-i18n=\"nav.navigate.navbar\">Add New Application</a>
+                            <li><a href=\"application/newlist\" data-i18n=\"nav.navigate.navbar\">List of New Application</a>
                             </li>
-                            <li><a href=\"application\" data-i18n=\"nav.navigate.navbar-inverse\">Application List</a></li>
+                            <li><a href=\"application/disapprove\" data-i18n=\"nav.navigate.navbar\">List of Disapprove Application</a>
+                            </li>
+                            <li <?php if(\$application) { ?> class=\"has-class\" <?php } ?> ><a href=\"application\" data-i18n=\"nav.navigate.navbar-inverse\">List of Club Member</a></li>
                         </ul>
                     </li>
-                    <li class=\"nav-item\">
+                    <li <?php if(\$activity) { ?> class=\"nav-item has-class\" <?php }else{ ?> class=\"nav-item\"<?php } ?>>
                         <a href=\"#!\">
                             <i class=\"ti-layout-cta-right\"></i>
                             <span data-i18n=\"nav.navigate.main\">Activity</span>
@@ -241,7 +194,7 @@ $string = "<!DOCTYPE html>
                         <ul class=\"tree-1\">
                             <li><a href=\"activity/create\" data-i18n=\"nav.navigate.navbar\">Add New Activity</a>
                             </li>
-                            <li><a href=\"activity\" data-i18n=\"nav.navigate.navbar-inverse\">Activity List</a></li>
+                            <li <?php if(\$activity) { ?> class=\"has-class\" <?php } ?>><a href=\"activity\" data-i18n=\"nav.navigate.navbar-inverse\">List of Activity</a></li>
                         </ul>
                     </li>
                     <li class=\"nav-item single-item\">

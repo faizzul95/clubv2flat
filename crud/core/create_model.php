@@ -31,7 +31,7 @@ $string .="\n\n    // datatables
         \$this->datatables->from('".$table_name."');
         //add this line for join
         //\$this->datatables->join('table2', '".$table_name.".field = table2.field');
-        \$this->datatables->add_column('action', anchor(site_url('".$c_url."/read/\$1'),'Read').\" | \".anchor(site_url('".$c_url."/update/\$1'),'Update').\" | \".anchor(site_url('".$c_url."/delete/\$1'),'Delete','onclick=\"javasciprt: return confirm(\\'Are You Sure ?\\')\"'), '$pk');
+        \$this->datatables->add_column('action', anchor(site_url('".$c_url."/read/\$1'),'<i class=\"fa fa-eye\" aria-hidden=\"true\"></i> View', array('class' => 'btn btn-info btn-sm')).\" | \".anchor(site_url('".$c_url."/update/\$1'),'<i class=\"fa fa-eye\" aria-hidden=\"true\"></i> Update', array('class' => 'btn btn-success btn-sm')).\" | \".anchor(site_url('".$c_url."/delete/\$1'),'<i class=\"icofont icofont-ui-delete\" aria-hidden=\"true\"></i> Delete', array('class' => 'btn btn-danger btn-sm'),'onclick=\"javasciprt: return confirm(\\'Are You Sure ?\\')\"'), '$pk');
         return \$this->datatables->generate();
     }";
 }

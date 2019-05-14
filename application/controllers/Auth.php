@@ -23,6 +23,19 @@ Class Auth extends CI_Controller{
 
     }
 
+    public function register(){
+         //load session library
+        $this->load->library('session');
+
+        //restrict users to go back to login if session has been set
+        if($this->session->userdata('user')){
+            redirect('dasboard');
+        }
+        else{
+             $this->load->view('auth/register');
+        }
+    }
+
     public function cheklogin(){
             //load session library
             $this->load->library('session');

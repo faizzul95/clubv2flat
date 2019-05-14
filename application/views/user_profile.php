@@ -2,14 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Flat Able - Premium Admin Template by Phoenixcoded</title>
-    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
-    <!-- Meta -->
+    <title>CMS | Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -94,28 +87,6 @@
                             </li>
                         </ul>
                         <ul class="nav-right">
-                            <li class="header-notification">
-                                <a href="#!">
-                                    <i class="ti-bell"></i>
-                                    <span class="badge">1</span>
-                                </a>
-                                <ul class="show-notification">
-                                    <li>
-                                        <h6>Notifications</h6>
-                                        <label class="label label-danger">New</label>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="d-flex align-self-center" src="../vendor/assets/images/user.png" alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">Fahmy Izwan</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
                             <li class="user-profile header-notification">
                                 <a href="#!">
                                     <img src="../vendor/assets/images/user.png" alt="User-Profile-Image">
@@ -147,41 +118,6 @@
                                 <input class="morphsearch-input" type="search" placeholder="Search..." />
                                 <button class="morphsearch-submit" type="submit">Search</button>
                             </form>
-                            <div class="morphsearch-content">
-                                <div class="dummy-column">
-                                    <h2>People</h2>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img class="round" src="http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G" alt="Sara Soueidan" />
-                                        <h3>Sara Soueidan</h3>
-                                    </a>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img class="round" src="http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G" alt="Shaun Dona" />
-                                        <h3>Shaun Dona</h3>
-                                    </a>
-                                </div>
-                                <div class="dummy-column">
-                                    <h2>Popular</h2>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../vendor/assets/images/avatar-1.png" alt="PagePreloadingEffect" />
-                                        <h3>Page Preloading Effect</h3>
-                                    </a>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../vendor/assets/images/avatar-1.png" alt="DraggableDualViewSlideshow" />
-                                        <h3>Draggable Dual-View Slideshow</h3>
-                                    </a>
-                                </div>
-                                <div class="dummy-column">
-                                    <h2>Recent</h2>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../vendor/assets/images/avatar-1.png" alt="TooltipStylesInspiration" />
-                                        <h3>Tooltip Styles Inspiration</h3>
-                                    </a>
-                                    <a class="dummy-media-object" href="#!">
-                                        <img src="../vendor/assets/images/avatar-1.png" alt="NotificationStyles" />
-                                        <h3>Notification Styles Inspiration</h3>
-                                    </a>
-                                </div>
-                            </div>
                             <!-- /morphsearch-content -->
                             <span class="morphsearch-close"><i class="icofont icofont-search-alt-1"></i></span>
                         </div>
@@ -191,81 +127,84 @@
             </div>
         </nav>
         <!-- Menu header end -->
-    <!-- Menu aside start -->
-    <div class="main-menu">
-        <div class="main-menu-header">
-            <img class="img-40" src="../vendor/assets/images/user.png" alt="User-Profile-Image">
-            <div class="user-details">
-                <span>Fahmy Izwan</span>
-                <span id="more-details">Programmer<i class="ti-angle-down"></i></span>
+       <!-- Menu aside start -->
+        <div class="main-menu">
+            <div class="main-menu-header">
+                <img class="img-40" src="../vendor/assets/images/user.png" alt="User-Profile-Image">
+                <div class="user-details">
+                    <span>Fahmy Izwan</span>
+                    <span id="more-details">Programmer<i class="ti-angle-down"></i></span>
+                </div>
             </div>
-        </div>
-        <div class="main-menu-content">
-            <ul class="main-navigation">
-                <li class="more-details">
-                    <a href="profile"><i class="ti-user"></i>View Profile</a>
-                    <a href="#!"><i class="ti-settings"></i>Settings</a>
-                    <a href="#!"><i class="ti-layout-sidebar-left"></i>Logout</a>
-                </li>
+            <div class="main-menu-content">
+                <ul class="main-navigation">
+                    <li class="more-details">
+                        <a href="profile"><i class="ti-user"></i>View Profile</a>
+                        <a href="#!"><i class="ti-settings"></i>Settings</a>
+                        <a href="#!"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                    </li>
 
-                <li class="nav-title" data-i18n="nav.category.navigation">
-                    <i class="ti-line-dashed"></i>
-                    <span>Navigation</span>
-                </li>
-                    <li class="nav-item single-item">
-                        <a href="dashboard">
-                            <i class="icofont icofont-home"></i>
-                            <span data-i18n="nav.dash.main">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item single-item">
-                                <a href="profile">
-                                    <i class="icofont icofont-ui-user"></i>
-                                    <span data-i18n="nav.dash.main">Profile</span>
-                                </a>
-                            </li>
-                    <li class="nav-item">
-                        <a href="#!">
-                            <i class="ti-layout-cta-right"></i>
-                            <span data-i18n="nav.navigate.main">Application</span>
-                        </a>
-                        <ul class="tree-1">
-                            <li><a href="application/create" data-i18n="nav.navigate.navbar">Add New Application</a>
-                            </li>
-                            <li><a href="application" data-i18n="nav.navigate.navbar-inverse">Application List</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#!">
-                            <i class="ti-layout-cta-right"></i>
-                            <span data-i18n="nav.navigate.main">Activity</span>
-                        </a>
-                        <ul class="tree-1">
-                            <li><a href="activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
-                            </li>
-                            <li><a href="activity" data-i18n="nav.navigate.navbar-inverse">Activity List</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item single-item">
-                        <a href="widget.html">
-                            <i class="ti-view-grid"></i>
-                            <span data-i18n="nav.widget.main"> Widget</span>
-                            <label class="label label-danger menu-caption">100+</label>
-                        </a>
-                    </li>
                     <li class="nav-title" data-i18n="nav.category.navigation">
                         <i class="ti-line-dashed"></i>
-                        <span>GENERATOR</span>
+                        <span>Navigation</span>
                     </li>
-                    <li class="nav-item single-item">
-                        <a href="../crud/index.php">
-                            <i class="ti-cloud-up"></i>
-                            <span data-i18n="nav.file-upload.main">CRUD GENERATOR</span>
-                        </a>
-                    </li>
-            </ul>
+                        <li class="nav-item single-item">
+                            <a href="dashboard">
+                                <i class="icofont icofont-home"></i>
+                                <span data-i18n="nav.dash.main">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item single-item has-class">
+                                    <a href="profile">
+                                        <i class="icofont icofont-ui-user"></i>
+                                        <span data-i18n="nav.dash.main">Profile</span>
+                                    </a>
+                                </li>
+                        <li class="nav-item">
+                            <a href="#!">
+                                <i class="ti-layout-cta-right"></i>
+                                <span data-i18n="nav.navigate.main">Membership</span>
+                            </a>
+                            <ul class="tree-1">
+                                <li><a href="application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
+                                </li>
+                                <li><a href="application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
+                                </li>
+                                <li><a href="application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#!">
+                                <i class="ti-layout-cta-right"></i>
+                                <span data-i18n="nav.navigate.main">Activity</span>
+                            </a>
+                            <ul class="tree-1">
+                                <li><a href="activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
+                                </li>
+                                <li><a href="activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item single-item">
+                            <a href="widget.html">
+                                <i class="ti-view-grid"></i>
+                                <span data-i18n="nav.widget.main"> Widget</span>
+                                <label class="label label-danger menu-caption">100+</label>
+                            </a>
+                        </li>
+                        <li class="nav-title" data-i18n="nav.category.navigation">
+                            <i class="ti-line-dashed"></i>
+                            <span>GENERATOR</span>
+                        </li>
+                        <li class="nav-item single-item">
+                            <a href="../crud/index.php">
+                                <i class="ti-cloud-up"></i>
+                                <span data-i18n="nav.file-upload.main">CRUD GENERATOR</span>
+                            </a>
+                        </li>
+                </ul>
+            </div>
         </div>
-    </div>
+        <!-- Menu aside end -->
     <!-- Main body start -->
     <div class="main-body user-profile">
         <div class="page-wrapper">
@@ -307,14 +246,8 @@
                                         <div class="media-body row">
                                             <div class="col-lg-12">
                                                 <div class="user-title">
-                                                    <h2>Josephin Villa</h2>
-                                                    <span class="text-white">Web designer</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="pull-right cover-btn">
-                                                    <button type="button" class="btn btn-primary m-r-10"><i class="icofont icofont-plus"></i> Follow</button>
-                                                    <button type="button" class="btn btn-primary"><i class="icofont icofont-ui-messaging"></i> Message</button>
+                                                    <h2>Fahmy Izwan</h2>
+                                                    <span class="text-white">Programmer</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -327,28 +260,6 @@
                 <!--profile cover end-->
                 <div class="row">
                     <div class="col-lg-12">
-                        <!-- tab header start -->
-                        <div class="tab-header">
-                            <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist" id="mytab">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#personal" role="tab">Personal Info</a>
-                                    <div class="slide"></div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#binfo" role="tab">User's Services</a>
-                                    <div class="slide"></div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#contacts" role="tab">User's Contacts</a>
-                                    <div class="slide"></div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#review" role="tab">Reviews</a>
-                                    <div class="slide"></div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- tab header end -->
                         <!-- tab content start -->
                         <div class="tab-content">
                             <!-- tab panel personal start -->
@@ -367,7 +278,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="general-info">
                                                         <div class="row">
-                                                            <div class="col-lg-12 col-xl-6">
+                                                            <div class="col-lg-12 col-xl-12">
                                                                 <table class="table m-0">
                                                                     <tbody>
                                                                         <tr>
@@ -393,34 +304,6 @@
                                                                     </tbody>
                                                                 </table>
                                                             </div>
-                                                            <!-- end of table col-lg-6 -->
-                                                            <div class="col-lg-12 col-xl-6">
-                                                                <table class="table">
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <th scope="row">Email</th>
-                                                                            <td><a href="#!">Demo@phenix.com</a></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th scope="row">Mobile Number</th>
-                                                                            <td>(0123) - 4567891</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th scope="row">Twitter</th>
-                                                                            <td>@phoenixcoded</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th scope="row">Skype</th>
-                                                                            <td>phoenixcoded.demo</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th scope="row">Website</th>
-                                                                            <td><a href="#!">www.demo.com</a></td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                            <!-- end of table col-lg-6 -->
                                                         </div>
                                                         <!-- end of row -->
                                                     </div>
