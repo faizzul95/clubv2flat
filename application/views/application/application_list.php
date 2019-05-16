@@ -259,9 +259,9 @@
             <!-- Basic Button table start -->
                         <div class="card">
                             <div class="card-header">
-                                    <?php echo anchor(site_url('application/create'), '<i class="icofont icofont-ui-add"></i> Create', 'class="btn btn-info"'); ?>
-		<?php echo anchor(site_url('application/excel'), '<i class="icofont icofont-download-alt"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
-		<?php echo anchor(site_url('application/word'), '<i class="icofont icofont-download-alt"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
+                                    <?php //echo anchor(site_url('application/create'), '<i class="icofont icofont-ui-add"></i> Create', 'class="btn btn-info"'); ?>
+                            		<?php echo anchor(site_url('application/excel'), '<i class="icofont icofont-download-alt"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
+                            		<?php echo anchor(site_url('application/word'), '<i class="icofont icofont-download-alt"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
                             </div>
                             <div class="card-block">
                                 <div class="dt-responsive table-responsive">
@@ -271,20 +271,20 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                    		    <th>Application Id</th>
-                                    		    <th>User Id</th>
-                                    		    <th>Application Date</th>
-                                    		    <th>Application Evaluate Date</th>
+                                    		    <th>Name</th>
+                                                <th>Phone Number</th>
+                                                <th>Address</th>
+                                    		    <th>Status</th>
                                     		    <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
-                        						<th>Application Id</th>
-                        						<th>User Id</th>
-                        						<th>Application Date</th>
-                        						<th>Application Evaluate Date</th>
+                        						<th>Name</th>
+                                                <th>Phone Number</th>
+                                                <th>Address</th>
+                                                <th>Status</th>
                         						<th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -365,7 +365,7 @@
                         {
                             "data": "app_id",
                             "orderable": false
-                        },{"data": "application_id"},{"data": "user_id"},{"data": "application_date"},{"data": "application_evaluate_date"},
+                        },{"data": "detail_fullname"},{"data": "detail_phone"},{"data": "detail_address"},{"data": "usr_status"},
                         {
                             "data" : "action",
                             "orderable": false,

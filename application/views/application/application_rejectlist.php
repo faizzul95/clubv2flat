@@ -138,84 +138,84 @@
         <!-- Menu header end -->
 
 
-    <!-- Menu aside start -->
-    <div class="main-menu">
-        <div class="main-menu-header">
-            <img class="img-40" src="../../vendor/assets/images/user.png" alt="User-Profile-Image">
-            <div class="user-details">
-                <span>Fahmy Izwan</span>
-                <span id="more-details">Programmer<i class="ti-angle-down"></i></span>
+        <!-- Menu aside start -->
+        <div class="main-menu">
+            <div class="main-menu-header">
+                <img class="img-40" src="../../vendor/assets/images/user.png" alt="User-Profile-Image">
+                <div class="user-details">
+                    <span>Fahmy Izwan</span>
+                    <span id="more-details">Programmer<i class="ti-angle-down"></i></span>
+                </div>
             </div>
-        </div>
-        <div class="main-menu-content">
-            <ul class="main-navigation">
-                <li class="more-details">
-                    <a href="../profile"><i class="ti-user"></i>View Profile</a>
-                    <a href="#!"><i class="ti-settings"></i>Settings</a>
-                    <a href="#!"><i class="ti-layout-sidebar-left"></i>Logout</a>
-                </li>
+            <div class="main-menu-content">
+                <ul class="main-navigation">
+                    <li class="more-details">
+                        <a href="../profile"><i class="ti-user"></i>View Profile</a>
+                        <a href="#!"><i class="ti-settings"></i>Settings</a>
+                        <a href="#!"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                    </li>
 
-                <li class="nav-title" data-i18n="nav.category.navigation">
-                    <i class="ti-line-dashed"></i>
-                    <span>Navigation</span>
-                </li>
-                    <li class="nav-item single-item">
-                        <a href="dashboard">
-                            <i class="icofont icofont-home"></i>
-                            <span data-i18n="nav.dash.main">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item single-item">
-                                <a href="../profile">
-                                    <i class="icofont icofont-ui-user"></i>
-                                    <span data-i18n="nav.dash.main">Profile</span>
-                                </a>
-                            </li>
-                    <li <?php if($application) { ?> class="nav-item has-class" <?php }else{ ?> class="nav-item"<?php } ?> >
-                        <a href="#!">
-                            <i class="ti-layout-cta-right"></i>
-                            <span data-i18n="nav.navigate.main">Membership</span>
-                        </a>
-                        <ul class="tree-1">
-                            <li><a href="../application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
-                            </li>
-                            <li <?php if($application) { ?> class="has-class" <?php } ?>><a href="application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
-                            </li>
-                            <li ><a href="../application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
-                        </ul>
-                    </li>
-                    <li <?php if($activity) { ?> class="nav-item has-class" <?php }else{ ?> class="nav-item"<?php } ?>>
-                        <a href="#!">
-                            <i class="ti-layout-cta-right"></i>
-                            <span data-i18n="nav.navigate.main">Activity</span>
-                        </a>
-                        <ul class="tree-1">
-                            <li><a href="activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
-                            </li>
-                            <li <?php if($activity) { ?> class="has-class" <?php } ?>><a href="activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item single-item">
-                        <a href="widget.html">
-                            <i class="ti-view-grid"></i>
-                            <span data-i18n="nav.widget.main"> Widget</span>
-                            <label class="label label-danger menu-caption">100+</label>
-                        </a>
-                    </li>
                     <li class="nav-title" data-i18n="nav.category.navigation">
                         <i class="ti-line-dashed"></i>
-                        <span>GENERATOR</span>
+                        <span>Navigation</span>
                     </li>
-                    <li class="nav-item single-item">
-                        <a href="../crud/index.php">
-                            <i class="ti-cloud-up"></i>
-                            <span data-i18n="nav.file-upload.main">CRUD GENERATOR</span>
-                        </a>
-                    </li>
-            </ul>
+                        <li class="nav-item single-item">
+                            <a href="dashboard">
+                                <i class="icofont icofont-home"></i>
+                                <span data-i18n="nav.dash.main">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item single-item">
+                                    <a href="../profile">
+                                        <i class="icofont icofont-ui-user"></i>
+                                        <span data-i18n="nav.dash.main">Profile</span>
+                                    </a>
+                                </li>
+                        <li <?php if($application) { ?> class="nav-item has-class" <?php }else{ ?> class="nav-item"<?php } ?> >
+                            <a href="#!">
+                                <i class="ti-layout-cta-right"></i>
+                                <span data-i18n="nav.navigate.main">Membership</span>
+                            </a>
+                            <ul class="tree-1">
+                                <li><a href="../application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
+                                </li>
+                                <li <?php if($application) { ?> class="has-class" <?php } ?>><a href="application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
+                                </li>
+                                <li ><a href="../user" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
+                            </ul>
+                        </li>
+                        <li <?php if($activity) { ?> class="nav-item has-class" <?php }else{ ?> class="nav-item"<?php } ?>>
+                            <a href="#!">
+                                <i class="ti-layout-cta-right"></i>
+                                <span data-i18n="nav.navigate.main">Activity</span>
+                            </a>
+                            <ul class="tree-1">
+                                <li><a href="activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
+                                </li>
+                                <li <?php if($activity) { ?> class="has-class" <?php } ?>><a href="activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item single-item">
+                            <a href="widget.html">
+                                <i class="ti-view-grid"></i>
+                                <span data-i18n="nav.widget.main"> Widget</span>
+                                <label class="label label-danger menu-caption">100+</label>
+                            </a>
+                        </li>
+                        <li class="nav-title" data-i18n="nav.category.navigation">
+                            <i class="ti-line-dashed"></i>
+                            <span>GENERATOR</span>
+                        </li>
+                        <li class="nav-item single-item">
+                            <a href="../crud/index.php">
+                                <i class="ti-cloud-up"></i>
+                                <span data-i18n="nav.file-upload.main">CRUD GENERATOR</span>
+                            </a>
+                        </li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <!-- Menu aside end -->
+        <!-- Menu aside end -->
 
     <!-- Main-body start -->
     <div class="main-body">

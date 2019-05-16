@@ -4,13 +4,13 @@
     $user = false;
     $contactus = false;
 
-    $user = true;
+    $user_detail = true;
  ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>CMS | List Of User</title>
+    <title>CMS | List Of User_detail</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -171,7 +171,7 @@
                                     <span data-i18n="nav.dash.main">Profile</span>
                                 </a>
                             </li>
-                    <li <?php if($user) { ?> class="nav-item has-class" <?php }else{ ?> class="nav-item"<?php } ?> >
+                    <li <?php if($application) { ?> class="nav-item has-class" <?php }else{ ?> class="nav-item"<?php } ?> >
                         <a href="#!">
                             <i class="ti-layout-cta-right"></i>
                             <span data-i18n="nav.navigate.main">Membership</span>
@@ -181,7 +181,7 @@
                             </li>
                             <li><a href="application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
                             </li>
-                            <li <?php if($user) { ?> class="has-class" <?php } ?> ><a href="user" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
+                            <li <?php if($application) { ?> class="has-class" <?php } ?> ><a href="application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
                         </ul>
                     </li>
                     <li <?php if($activity) { ?> class="nav-item has-class" <?php }else{ ?> class="nav-item"<?php } ?>>
@@ -223,7 +223,7 @@
             <!-- Page-header start -->
             <div class="page-header">
                 <div class="page-header-title">
-                    <h4> List Of User</h4>
+                    <h4> List Of User_detail</h4>
                 </div>
 
                 <div class="page-header-breadcrumb">
@@ -233,9 +233,9 @@
                                 <i class="icofont icofont-home"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">User</a>
+                        <li class="breadcrumb-item"><a href="#!">User_detail</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">List Of User</a>
+                        <li class="breadcrumb-item"><a href="#!">List Of User_detail</a>
                         </li>
                     </ul>
                 </div>
@@ -247,29 +247,19 @@
                 <div class="row">
                     <div class="col-sm-12">
 
-                    <?php if ($this->session->userdata('message')) { ?>
-                         <?php if ($this->session->userdata('message') == "Record Not Found") { ?>
-                             <div id="message" class="alert alert-danger icons-alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="icofont icofont-error"></i>
-                                </button>
-                                <p><strong>Error !</strong> <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></p>
-                            </div>
-                        <?php }else{ ?>
-                             <div id="message" class="alert alert-success icons-alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="icofont icofont-error"></i>
-                                </button> <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></p>
-                            </div>
-                        <?php } ?>
+                     <?php if ($this->session->userdata('message')) { ?>
+                         <div id="message" class="alert alert-info icons-alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="icofont icofont-close-line-circled"></i>
+                        </button>
+                        <p><strong>Info!</strong> <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></p>
+                    </div>
                     <?php } ?>
 
             <!-- Basic Button table start -->
                         <div class="card">
                             <div class="card-header">
-                                    <?php //echo anchor(site_url('user/create'), '<i class="icofont icofont-ui-add"></i> Create', 'class="btn btn-info"'); ?>
-                            		<?php echo anchor(site_url('user/excel'), '<i class="icofont icofont-download-alt"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
-                            		<?php echo anchor(site_url('user/word'), '<i class="icofont icofont-download-alt"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
+                                    <?php echo anchor(site_url('user_detail/create'), '<i class="icofont icofont-ui-add"></i> Create', 'class="btn btn-info"'); ?>
                             </div>
                             <div class="card-block">
                                 <div class="dt-responsive table-responsive">
@@ -278,22 +268,24 @@
 
                                         <thead>
                                             <tr>
-                                               <th>No</th>
-                                                <th>Name</th>
-                                                <th>Phone Number</th>
-                                                <th>Address</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                                                <th>No</th>
+		    <th>Detail Fullname</th>
+		    <th>Detail Phone</th>
+		    <th>Detail Email</th>
+		    <th>Detail Address</th>
+		    <th>User Id</th>
+		    <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                               <th>No</th>
-                                                <th>Name</th>
-                                                <th>Phone Number</th>
-                                                <th>Address</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                                                <th>No</th>
+						<th>Detail Fullname</th>
+						<th>Detail Phone</th>
+						<th>Detail Email</th>
+						<th>Detail Address</th>
+						<th>User Id</th>
+						<th>Action</th>
                                             </tr>
                                         </tfoot>
 	    
@@ -368,17 +360,12 @@
                     },
                     processing: true,
                     serverSide: true,
-                    ajax: {"url": "user/json", "type": "POST"},
+                    ajax: {"url": "user_detail/json", "type": "POST"},
                     columns: [
                         {
-                            "data": "user_id",
+                            "data": "detail_id",
                             "orderable": false
-                        }
-                        // ,{"data": "usr_username"},{"data": "usr_password"},{"data": "usr_role"},{"data": "usr_status"},
-                        
-                        // user_id,usr_username,usr_password,usr_role,usr_status
-
-                        ,{"data": "detail_fullname"},{"data": "detail_phone"},{"data": "detail_address"},{"data": "usr_status"},
+                        },{"data": "detail_fullname"},{"data": "detail_phone"},{"data": "detail_email"},{"data": "detail_address"},{"data": "user_id"},
                         {
                             "data" : "action",
                             "orderable": false,

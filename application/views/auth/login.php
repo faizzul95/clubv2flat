@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../vendor/assets/css/color/color-1.css" id="color"/>
 </head>
 
-<body class="fix-menu dark-layout">
+<body class="fix-menu">
     <section class="login p-fixed d-flex text-center bg-primary common-img-bg">
         <!-- Container-fluid starts -->
         <div class="container-fluid">
@@ -41,11 +41,22 @@
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     <div class="login-card card-block auth-body">
-                        <form method="POST" action="<?php echo base_url(); ?>index.php/auth/cheklogin" class="md-float-material">
-                            <div class="text-center">
-                                <img src="../vendor/assets/images/auth/logo.png" alt="logo.png">
-                            </div>
+
+                        <div class="text-center">
+                            <img src="../vendor/assets/images/auth/logo.png" alt="logo.png">
+                        </div>
+
+                            <?php
+                                if($this->session->flashdata('msg')){
+                                    ?>
+                                    <div class="alert alert-danger text-center" style="margin-top:20px;">
+                                        <?php echo $this->session->flashdata('msg'); ?>
+                                    </div>
+                                    <?php
+                                }
+                            ?>
                             <div class="auth-box">
+                                <form class="md-float-material" action="<?php echo site_url('auth/cheklogin');?>" method="post">
                                 <div class="row m-b-20">
                                     <div class="col-md-12">
                                         <h3 class="text-left txt-primary">Sign In</h3>
@@ -53,11 +64,11 @@
                                 </div>
                                 <hr/>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                                    <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off" required="required">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                                    <input type="password" class="form-control" name="password" placeholder="Password"  autocomplete="off" required="required">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="row m-t-30">
@@ -71,19 +82,8 @@
                                         <p class="text-inverse text-left m-b-0"><b>Come and join us. </b> <a href="auth/register" class="text-right f-w-600 text-inverse"> <font color="blue">Click Here</font></a> <b>to register</b></p>
                                     </div>
                                 </div>
-
+                                </form>
                             </div>
-                        </form>
-
-                        <?php
-                            if($this->session->flashdata('error')){
-                                ?>
-                                <div class="alert alert-danger text-center" style="margin-top:20px;">
-                                    <?php echo $this->session->flashdata('error'); ?>
-                                </div>
-                                <?php
-                            }
-                        ?>
                         <!-- end of form -->
                     </div>
                     <!-- Authentication card end -->

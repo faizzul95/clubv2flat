@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Flat Able - Premium Admin Template by Phoenixcoded</title>
+    <title>CMS | Register</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -41,10 +41,21 @@
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     <div class="login-card card-block auth-body">
-                        <form class="md-float-material">
                             <div class="text-center">
                                 <img src="../../vendor/assets/images/auth/logo.png" alt="logo.png">
                             </div>
+
+                            <?php
+                                if($this->session->flashdata('msg')){
+                                    ?>
+                                    <div class="alert alert-danger text-center" style="margin-top:20px;">
+                                        <?php echo $this->session->flashdata('msg'); ?>
+                                    </div>
+                                    <?php
+                                }
+                            ?>
+                        <div class="md-float-material">
+                            <?php  echo  form_open('auth/register_application'); ?>
                             <div class="auth-box">
                                 <div class="row m-b-20">
                                     <div class="col-md-12">
@@ -70,7 +81,7 @@
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign up now.</button>
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign up now.</button>
                                     </div>
                                 </div>
                                 <hr/>
@@ -80,7 +91,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                            <?php echo form_close(); ?>
+                        </div>
                         <!-- end of form -->
                     </div>
                     <!-- Authentication card end -->

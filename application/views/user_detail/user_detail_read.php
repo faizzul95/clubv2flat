@@ -1,10 +1,8 @@
- 
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-    <title>CMS | Add New User</title>
-
+<head> 
+    <title>CMS | User_detail View</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,21 +10,21 @@
     <meta name="keywords" content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="Phoenixcoded">
     <!-- Favicon icon -->
-    <link rel="icon" href="../../vendor/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../../vendor/assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/assets/icon/icofont/css/icofont.css">
     <!-- flag icon framework css -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/flag-icon/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/assets/pages/flag-icon/flag-icon.min.css">
     <!-- Menu-Search css -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/menu-search/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/assets/pages/menu-search/css/component.css">
     <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/assets/css/style.css">
 </head>
 
 <body class="fix-menu">
@@ -49,7 +47,7 @@
                         <i class="ti-search"></i>
                     </a>
                     <a href="index">
-                        <img class="img-fluid" src="../../vendor/assets/images/logo.png" alt="Theme-Logo" />
+                        <img class="img-fluid" src="../../../vendor/assets/images/logo.png" alt="Theme-Logo" />
                     </a>
                     <a class="mobile-options">
                         <i class="ti-more"></i>
@@ -78,13 +76,13 @@
                         <ul class="nav-right">
                             <li class="user-profile header-notification">
                                 <a href="#!">
-                                    <img src="../../vendor/assets/images/user.png" alt="User-Profile-Image">
+                                    <img src="../../../vendor/assets/images/user.png" alt="User-Profile-Image">
                                     <span>Fahmy Izwan</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
                                     <li>
-                                        <a href="../profile">
+                                        <a href="profile">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
@@ -120,7 +118,7 @@
              <!-- Menu aside start -->
             <div class="main-menu">
                 <div class="main-menu-header">
-                    <img class="img-40" src="../../vendor/assets/images/user.png" alt="User-Profile-Image">
+                    <img class="img-40" src="../../../vendor/assets/images/user.png" alt="User-Profile-Image">
                     <div class="user-details">
                         <span>Fahmy Izwan</span>
                         <span id="more-details">Programmer<i class="ti-angle-down"></i></span>
@@ -139,7 +137,7 @@
                             <span>Navigation</span>
                         </li>
                             <li class="nav-item single-item">
-                                <a href="../dashboard">
+                                <a href="dashboard">
                                     <i class="icofont icofont-home"></i>
                                     <span data-i18n="nav.dash.main">Dashboard</span>
                                 </a>
@@ -150,17 +148,17 @@
                                     <span data-i18n="nav.dash.main">Profile</span>
                                 </a>
                             </li>
-                             <li class="nav-item">
+                            <li class="nav-item">
                                 <a href="#!">
                                     <i class="ti-layout-cta-right"></i>
                                     <span data-i18n="nav.navigate.main">Membership</span>
                                 </a>
                                 <ul class="tree-1">
-                                    <li><a href="../application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
+                                    <li><a href="application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
                                     </li>
-                                    <li><a href="../application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
+                                    <li><a href="application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
                                     </li>
-                                    <li><a href="../application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
+                                    <li><a href="application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -169,9 +167,9 @@
                                     <span data-i18n="nav.navigate.main">Activity</span>
                                 </a>
                                 <ul class="tree-1">
-                                    <li><a href="../activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
+                                    <li><a href="activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
                                     </li>
-                                    <li><a href="../activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
+                                    <li><a href="activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item single-item">
@@ -186,7 +184,7 @@
                                 <span>GENERATOR</span>
                             </li>
                             <li class="nav-item single-item">
-                                <a href="../../crud/index.php">
+                                <a href="../../../crud/index.php">
                                     <i class="ti-cloud-up"></i>
                                     <span data-i18n="nav.file-upload.main">CRUD GENERATOR</span>
                                 </a>
@@ -196,13 +194,14 @@
             </div>
             <!-- Menu aside end -->
 
+
             <!-- Main-body start -->
             <div class="main-body">
                 <div class="page-wrapper">
                     <!-- Page header start -->
                     <div class="page-header">
                         <div class="page-header-title">
-                            <h4>Add New User</h4>
+                            <h4>View User_detail</h4>
                         </div>
                         <div class="page-header-breadcrumb">
                             <ul class="breadcrumb-title">
@@ -211,14 +210,14 @@
                                         <i class="icofont icofont-home"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#!">User</a>
+                                <li class="breadcrumb-item"><a href="#!">User_detail</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#!">Add NewUser</a>
+                                <li class="breadcrumb-item"><a href="#!">View User_detail</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                     <!-- Page header end -->
+                    <!-- Page header end -->
                     <!-- Page body start -->
                     <div class="page-body">
                         <div class="row">
@@ -226,29 +225,44 @@
                                 <!-- Basic Form Inputs card start -->
                                 <div class="card">
                                     <div class="card-block">
-                                    <form action="<?php echo $action; ?>" method="post">
-	    <div class="form-group">
-                                                    <label for="varchar">Usr Username <?php echo form_error('usr_username') ?></label>
-                                                    <input type="text" class="form-control" name="usr_username" id="usr_username" placeholder="Usr Username" value="<?php echo $usr_username; ?>" />
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="varchar">Usr Password <?php echo form_error('usr_password') ?></label>
-                                                    <input type="text" class="form-control" name="usr_password" id="usr_password" placeholder="Usr Password" value="<?php echo $usr_password; ?>" />
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="varchar">Usr Role <?php echo form_error('usr_role') ?></label>
-                                                    <input type="text" class="form-control" name="usr_role" id="usr_role" placeholder="Usr Role" value="<?php echo $usr_role; ?>" />
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="enum">Usr Status <?php echo form_error('usr_status') ?></label>
-                                                    <input type="text" class="form-control" name="usr_status" id="usr_status" placeholder="Usr Status" value="<?php echo $usr_status; ?>" />
-                                                </div>
-	    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" /> 
-	    <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('user') ?>" class="btn btn-danger">Cancel</a>
-	</form>
-
     
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Detail Fullname</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_fullname; ?>" disabled>
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Detail Phone</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_phone; ?>" disabled>
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Detail Email</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_email; ?>" disabled>
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Detail Address</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_address; ?>" disabled>
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">User Id</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $user_id; ?>" disabled>
+                                                </div>
+                                            </div>
+	  <a href="<?php echo site_url('user_detail') ?>" class="btn btn-info btn-square pull-right"><i class="icofont icofont-arrow-left"></i> Back</a>
+	
+
                                     </div>
                                 </div>
                                 <!-- Basic Form Inputs card end -->
@@ -262,24 +276,24 @@
     
 
   <!-- Required Jquery -->
-    <script type="text/javascript" src="../../vendor/bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/tether/dist/js/tether.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/tether/dist/js/tether.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="../../vendor/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
     <!-- modernizr js -->
-    <script type="text/javascript" src="../../vendor/bower_components/modernizr/modernizr.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
     <!-- classie js -->
-    <script type="text/javascript" src="../../vendor/bower_components/classie/classie.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/classie/classie.js"></script>
     <!-- i18next.min.js -->
-    <script type="text/javascript" src="../../vendor/bower_components/i18next/i18next.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
-    <script type="text/javascriptv" src="../../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/i18next/i18next.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
+    <script type="text/javascriptv" src="../../../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
     <!-- Custom js -->
-    <script type="text/javascript" src="../../vendor/assets/js/script.js"></script>
+    <script type="text/javascript" src="../../../vendor/assets/js/script.js"></script>
 </body>
 
 </html>

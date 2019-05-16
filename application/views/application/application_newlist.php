@@ -160,7 +160,7 @@
                     <span>Navigation</span>
                 </li>
                     <li class="nav-item single-item">
-                        <a href="dashboard">
+                        <a href="../dashboard">
                             <i class="icofont icofont-home"></i>
                             <span data-i18n="nav.dash.main">Dashboard</span>
                         </a>
@@ -181,7 +181,7 @@
                             </li>
                             <li><a href="../application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
                             </li>
-                            <li ><a href="../application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
+                            <li ><a href="../user" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
                         </ul>
                     </li>
                     <li <?php if($activity) { ?> class="nav-item has-class" <?php }else{ ?> class="nav-item"<?php } ?>>
@@ -190,9 +190,9 @@
                             <span data-i18n="nav.navigate.main">Activity</span>
                         </a>
                         <ul class="tree-1">
-                            <li><a href="activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
+                            <li><a href="../activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
                             </li>
-                            <li <?php if($activity) { ?> class="has-class" <?php } ?>><a href="activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
+                            <li <?php if($activity) { ?> class="has-class" <?php } ?>><a href="../activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
                         </ul>
                     </li>
                     <li class="nav-item single-item">

@@ -59,6 +59,12 @@
         </nav><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
 
+      <?php if ($this->session->userdata('msg_alert')) { ?>
+          <script type="text/javascript">
+               alert(<?php $this->session->userdata('msg_alert'); ?>);
+           </script>
+        <?php } ?>
+
     <div class="main" id="main"><!-- Main Section-->
       <div class="hero-section app-hero">
         <div class="container">
@@ -68,7 +74,12 @@
                 <p class="wow fadeInUp" data-wow-delay="0.2s">
                   Already register with us ? <br class="hidden-xs"> Check your application here.
                 </p>
-				<a class="btn btn-primary btn-action" data-wow-delay="0.2s" href="index.php/checkapplication">Check Application Now</a>
+                  <?php  echo  form_open('application/checkApp'); ?>
+                    <div class ='subscribe-form'>
+                    <input class="mail" type="text" name="checkApp" placeholder="Enter Application ID" required autocomplete="off">
+                    <input class="submit-button" type="submit" value="Check Application Now">
+                    </div>
+                  <?php echo form_close(); ?>
             </div>
           <div class="col-md-12">
             <div class="hero-image">

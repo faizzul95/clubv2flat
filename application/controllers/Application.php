@@ -50,12 +50,12 @@ class Application extends CI_Controller
         $row = $this->Application_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'app_id' => $row->app_id,
-		'application_id' => $row->application_id,
-		'user_id' => $row->user_id,
-		'application_date' => $row->application_date,
-		'application_evaluate_date' => $row->application_evaluate_date,
-		'application_status' => $row->application_status,
+    		'app_id' => $row->app_id,
+    		'application_id' => $row->application_id,
+    		'user_id' => $row->user_id,
+    		'application_date' => $row->application_date,
+    		'application_evaluate_date' => $row->application_evaluate_date,
+    		'application_status' => $row->application_status,
 	    );
             $this->load->view('application/application_read', $data);
         } else {
@@ -145,10 +145,13 @@ class Application extends CI_Controller
     
     public function delete($id) 
     {
+        // get user id from table application
         $row = $this->Application_model->get_by_id($id);
 
         if ($row) {
-            $this->Application_model->delete($id);
+            $userid = $row->user_id;
+            // $this->Application_model->delete($id);
+            $this->Application_model->deleteUser($userid);
             $this->session->set_flashdata('message', 'Delete Record Success');
             redirect(site_url('application'));
         } else {
@@ -210,6 +213,27 @@ class Application extends CI_Controller
         $this->db->update('application');
 
         redirect(site_url('application/disapprove'));
+    }
+
+     public function checkApp(){
+        $checkApp  = $this->input->post('checkApp',TRUE);
+        $validate = $this->Application_model->validate($checkApp);
+        if($validate->num_rows() > 0){
+            $data  = $validate->row_array();
+            $application_status  = $data['application_status'];
+            $user_id  = $data['user_id'];
+
+            if ($application_status == "approve") {
+                $this->session->set_flashdata('msg_alert', 'Congratulation ! your application have been approve.');
+                redirect(site_url('auth'));
+            }elseif ($application_status == "reject") {
+                $this->session->set_flashdata('msg_alert', 'Your application has been rejected by admin.');
+                redirect(site_url('welcome'));
+            }
+        }else{
+            $this->session->set_flashdata('msg_alert','Application ID not found');
+            redirect(site_url('welcome'));
+        }
     }
 
     // reject application

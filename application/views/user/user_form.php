@@ -27,8 +27,6 @@
     <link rel="stylesheet" type="text/css" href="../../../vendor/assets/pages/menu-search/css/component.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="../../../vendor/assets/css/style.css">
-    <!-- color .css -->
-    <link rel="stylesheet" type="text/css" href="../../../vendor/assets/css/color/color-1.css" id="color"/>
 </head>
 
 <body class="fix-menu">

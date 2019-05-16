@@ -250,12 +250,20 @@ $string = "<?php
                     <div class=\"col-sm-12\">
 
                      <?php if (\$this->session->userdata('message')) { ?>
-                         <div id=\"message\" class=\"alert alert-info icons-alert\">
-                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
-                            <i class=\"icofont icofont-close-line-circled\"></i>
-                        </button>
-                        <p><strong>Info!</strong> <?php echo \$this->session->userdata('message') <> '' ? \$this->session->userdata('message') : ''; ?></p>
-                    </div>
+                         <?php if (\$this->session->userdata('message') == \"Record Not Found\") { ?>
+                             <div id=\"message\" class=\"alert alert-danger icons-alert\">
+                                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                                    <i class=\"icofont icofont-error\"></i>
+                                </button>
+                                <p><strong>Error !</strong> <?php echo \$this->session->userdata('message') <> '' ? \$this->session->userdata('message') : ''; ?></p>
+                            </div>
+                        <?php }else{ ?>
+                             <div id=\"message\" class=\"alert alert-success icons-alert\">
+                                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+                                    <i class=\"icofont icofont-error\"></i>
+                                </button> <?php echo \$this->session->userdata('message') <> '' ? \$this->session->userdata('message') : ''; ?></p>
+                            </div>
+                        <?php } ?>
                     <?php } ?>
 
             <!-- Basic Button table start -->

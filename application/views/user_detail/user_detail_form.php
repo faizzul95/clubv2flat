@@ -3,7 +3,7 @@
     <html lang="en">
 
     <head>
-    <title>CMS | Add New User</title>
+    <title>CMS | Update User_detail</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -12,21 +12,21 @@
     <meta name="keywords" content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="Phoenixcoded">
     <!-- Favicon icon -->
-    <link rel="icon" href="../../vendor/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../../vendor/assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/assets/icon/icofont/css/icofont.css">
     <!-- flag icon framework css -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/flag-icon/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/assets/pages/flag-icon/flag-icon.min.css">
     <!-- Menu-Search css -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/menu-search/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/assets/pages/menu-search/css/component.css">
     <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../vendor/assets/css/style.css">
 </head>
 
 <body class="fix-menu">
@@ -49,7 +49,7 @@
                         <i class="ti-search"></i>
                     </a>
                     <a href="index">
-                        <img class="img-fluid" src="../../vendor/assets/images/logo.png" alt="Theme-Logo" />
+                        <img class="img-fluid" src="../../../vendor/assets/images/logo.png" alt="Theme-Logo" />
                     </a>
                     <a class="mobile-options">
                         <i class="ti-more"></i>
@@ -78,13 +78,13 @@
                         <ul class="nav-right">
                             <li class="user-profile header-notification">
                                 <a href="#!">
-                                    <img src="../../vendor/assets/images/user.png" alt="User-Profile-Image">
+                                    <img src="../../../vendor/assets/images/user.png" alt="User-Profile-Image">
                                     <span>Fahmy Izwan</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
                                     <li>
-                                        <a href="../profile">
+                                        <a href="profile">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
@@ -120,7 +120,7 @@
              <!-- Menu aside start -->
             <div class="main-menu">
                 <div class="main-menu-header">
-                    <img class="img-40" src="../../vendor/assets/images/user.png" alt="User-Profile-Image">
+                    <img class="img-40" src="../../../vendor/assets/images/user.png" alt="User-Profile-Image">
                     <div class="user-details">
                         <span>Fahmy Izwan</span>
                         <span id="more-details">Programmer<i class="ti-angle-down"></i></span>
@@ -139,7 +139,7 @@
                             <span>Navigation</span>
                         </li>
                             <li class="nav-item single-item">
-                                <a href="../dashboard">
+                                <a href="dashboard">
                                     <i class="icofont icofont-home"></i>
                                     <span data-i18n="nav.dash.main">Dashboard</span>
                                 </a>
@@ -150,17 +150,17 @@
                                     <span data-i18n="nav.dash.main">Profile</span>
                                 </a>
                             </li>
-                             <li class="nav-item">
+                            <li class="nav-item">
                                 <a href="#!">
                                     <i class="ti-layout-cta-right"></i>
                                     <span data-i18n="nav.navigate.main">Membership</span>
                                 </a>
                                 <ul class="tree-1">
-                                    <li><a href="../application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
+                                    <li><a href="../../application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
                                     </li>
-                                    <li><a href="../application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
+                                    <li><a href="../../application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
                                     </li>
-                                    <li><a href="../application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
+                                    <li><a href="../../application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -169,9 +169,9 @@
                                     <span data-i18n="nav.navigate.main">Activity</span>
                                 </a>
                                 <ul class="tree-1">
-                                    <li><a href="../activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
+                                    <li><a href="../../activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
                                     </li>
-                                    <li><a href="../activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
+                                    <li><a href="../../activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item single-item">
@@ -181,12 +181,13 @@
                                     <label class="label label-danger menu-caption">100+</label>
                                 </a>
                             </li>
+                           
                             <li class="nav-title" data-i18n="nav.category.navigation">
                                 <i class="ti-line-dashed"></i>
                                 <span>GENERATOR</span>
                             </li>
                             <li class="nav-item single-item">
-                                <a href="../../crud/index.php">
+                                <a href="../../../crud/index.php">
                                     <i class="ti-cloud-up"></i>
                                     <span data-i18n="nav.file-upload.main">CRUD GENERATOR</span>
                                 </a>
@@ -202,7 +203,7 @@
                     <!-- Page header start -->
                     <div class="page-header">
                         <div class="page-header-title">
-                            <h4>Add New User</h4>
+                            <h4>Update User_detail</h4>
                         </div>
                         <div class="page-header-breadcrumb">
                             <ul class="breadcrumb-title">
@@ -211,9 +212,9 @@
                                         <i class="icofont icofont-home"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#!">User</a>
+                                <li class="breadcrumb-item"><a href="#!">User_detail</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#!">Add NewUser</a>
+                                <li class="breadcrumb-item"><a href="#!">Update User_detail</a>
                                 </li>
                             </ul>
                         </div>
@@ -228,24 +229,28 @@
                                     <div class="card-block">
                                     <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
-                                                    <label for="varchar">Usr Username <?php echo form_error('usr_username') ?></label>
-                                                    <input type="text" class="form-control" name="usr_username" id="usr_username" placeholder="Usr Username" value="<?php echo $usr_username; ?>" />
+                                                    <label for="varchar">Detail Fullname <?php echo form_error('detail_fullname') ?></label>
+                                                    <input type="text" class="form-control" name="detail_fullname" id="detail_fullname" placeholder="Detail Fullname" value="<?php echo $detail_fullname; ?>" />
                                                 </div>
 	    <div class="form-group">
-                                                    <label for="varchar">Usr Password <?php echo form_error('usr_password') ?></label>
-                                                    <input type="text" class="form-control" name="usr_password" id="usr_password" placeholder="Usr Password" value="<?php echo $usr_password; ?>" />
+                                                    <label for="varchar">Detail Phone <?php echo form_error('detail_phone') ?></label>
+                                                    <input type="text" class="form-control" name="detail_phone" id="detail_phone" placeholder="Detail Phone" value="<?php echo $detail_phone; ?>" />
                                                 </div>
 	    <div class="form-group">
-                                                    <label for="varchar">Usr Role <?php echo form_error('usr_role') ?></label>
-                                                    <input type="text" class="form-control" name="usr_role" id="usr_role" placeholder="Usr Role" value="<?php echo $usr_role; ?>" />
+                                                    <label for="varchar">Detail Email <?php echo form_error('detail_email') ?></label>
+                                                    <input type="text" class="form-control" name="detail_email" id="detail_email" placeholder="Detail Email" value="<?php echo $detail_email; ?>" />
                                                 </div>
 	    <div class="form-group">
-                                                    <label for="enum">Usr Status <?php echo form_error('usr_status') ?></label>
-                                                    <input type="text" class="form-control" name="usr_status" id="usr_status" placeholder="Usr Status" value="<?php echo $usr_status; ?>" />
+                                                    <label for="detail_address">Detail Address <?php echo form_error('detail_address') ?></label>
+                                                    <textarea class="form-control" rows="3" name="detail_address" id="detail_address" placeholder="Detail Address"><?php echo $detail_address; ?></textarea>
                                                 </div>
-	    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" /> 
+	    <div class="form-group">
+                                                    <label for="int">User Id <?php echo form_error('user_id') ?></label>
+                                                    <input type="text" class="form-control" name="user_id" id="user_id" placeholder="User Id" value="<?php echo $user_id; ?>" />
+                                                </div>
+	    <input type="hidden" name="detail_id" value="<?php echo $detail_id; ?>" /> 
 	    <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('user') ?>" class="btn btn-danger">Cancel</a>
+	    <a href="<?php echo site_url('user_detail') ?>" class="btn btn-danger">Cancel</a>
 	</form>
 
     
@@ -262,24 +267,24 @@
     
 
   <!-- Required Jquery -->
-    <script type="text/javascript" src="../../vendor/bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/tether/dist/js/tether.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/tether/dist/js/tether.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="../../vendor/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
     <!-- modernizr js -->
-    <script type="text/javascript" src="../../vendor/bower_components/modernizr/modernizr.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
     <!-- classie js -->
-    <script type="text/javascript" src="../../vendor/bower_components/classie/classie.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/classie/classie.js"></script>
     <!-- i18next.min.js -->
-    <script type="text/javascript" src="../../vendor/bower_components/i18next/i18next.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
-    <script type="text/javascriptv" src="../../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/i18next/i18next.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
+    <script type="text/javascriptv" src="../../../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
     <!-- Custom js -->
-    <script type="text/javascript" src="../../vendor/assets/js/script.js"></script>
+    <script type="text/javascript" src="../../../vendor/assets/js/script.js"></script>
 </body>
 
 </html>

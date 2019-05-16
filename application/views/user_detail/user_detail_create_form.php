@@ -3,7 +3,7 @@
     <html lang="en">
 
     <head>
-    <title>CMS | Add New User</title>
+    <title>CMS | Add New User_detail</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -202,7 +202,7 @@
                     <!-- Page header start -->
                     <div class="page-header">
                         <div class="page-header-title">
-                            <h4>Add New User</h4>
+                            <h4>Add New User_detail</h4>
                         </div>
                         <div class="page-header-breadcrumb">
                             <ul class="breadcrumb-title">
@@ -211,9 +211,9 @@
                                         <i class="icofont icofont-home"></i>
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#!">User</a>
+                                <li class="breadcrumb-item"><a href="#!">User_detail</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#!">Add NewUser</a>
+                                <li class="breadcrumb-item"><a href="#!">Add NewUser_detail</a>
                                 </li>
                             </ul>
                         </div>
@@ -228,24 +228,28 @@
                                     <div class="card-block">
                                     <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
-                                                    <label for="varchar">Usr Username <?php echo form_error('usr_username') ?></label>
-                                                    <input type="text" class="form-control" name="usr_username" id="usr_username" placeholder="Usr Username" value="<?php echo $usr_username; ?>" />
+                                                    <label for="varchar">Detail Fullname <?php echo form_error('detail_fullname') ?></label>
+                                                    <input type="text" class="form-control" name="detail_fullname" id="detail_fullname" placeholder="Detail Fullname" value="<?php echo $detail_fullname; ?>" />
                                                 </div>
 	    <div class="form-group">
-                                                    <label for="varchar">Usr Password <?php echo form_error('usr_password') ?></label>
-                                                    <input type="text" class="form-control" name="usr_password" id="usr_password" placeholder="Usr Password" value="<?php echo $usr_password; ?>" />
+                                                    <label for="varchar">Detail Phone <?php echo form_error('detail_phone') ?></label>
+                                                    <input type="text" class="form-control" name="detail_phone" id="detail_phone" placeholder="Detail Phone" value="<?php echo $detail_phone; ?>" />
                                                 </div>
 	    <div class="form-group">
-                                                    <label for="varchar">Usr Role <?php echo form_error('usr_role') ?></label>
-                                                    <input type="text" class="form-control" name="usr_role" id="usr_role" placeholder="Usr Role" value="<?php echo $usr_role; ?>" />
+                                                    <label for="varchar">Detail Email <?php echo form_error('detail_email') ?></label>
+                                                    <input type="text" class="form-control" name="detail_email" id="detail_email" placeholder="Detail Email" value="<?php echo $detail_email; ?>" />
                                                 </div>
 	    <div class="form-group">
-                                                    <label for="enum">Usr Status <?php echo form_error('usr_status') ?></label>
-                                                    <input type="text" class="form-control" name="usr_status" id="usr_status" placeholder="Usr Status" value="<?php echo $usr_status; ?>" />
+                                                    <label for="detail_address">Detail Address <?php echo form_error('detail_address') ?></label>
+                                                    <textarea class="form-control" rows="3" name="detail_address" id="detail_address" placeholder="Detail Address"><?php echo $detail_address; ?></textarea>
                                                 </div>
-	    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" /> 
+	    <div class="form-group">
+                                                    <label for="int">User Id <?php echo form_error('user_id') ?></label>
+                                                    <input type="text" class="form-control" name="user_id" id="user_id" placeholder="User Id" value="<?php echo $user_id; ?>" />
+                                                </div>
+	    <input type="hidden" name="detail_id" value="<?php echo $detail_id; ?>" /> 
 	    <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('user') ?>" class="btn btn-danger">Cancel</a>
+	    <a href="<?php echo site_url('user_detail') ?>" class="btn btn-danger">Cancel</a>
 	</form>
 
     
