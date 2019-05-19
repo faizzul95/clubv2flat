@@ -226,29 +226,54 @@
                                 <div class="card">
                                     <div class="card-block">
     
+                                            <h3 class="text-center txt-primary">Personnal Information</h3>
+                                            <hr>
+
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Usr Username</label>
+                                                <label class="col-sm-2 col-form-label">Full Name</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_fullname; ?>" disabled>
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Phone Number</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_phone; ?>" disabled>
+                                                </div>
+                                            </div>
+
+                                             <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Email</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_email; ?>" disabled>
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Address</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_address; ?>" disabled>
+                                                </div>
+                                            </div>
+
+                                            <h3 class="text-center txt-primary">Account Information</h3>
+                                            <hr>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Username</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_username; ?>" disabled>
                                                 </div>
                                             </div>
     
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Usr Password</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_password; ?>" disabled>
-                                                </div>
-                                            </div>
-    
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Usr Role</label>
+                                                <label class="col-sm-2 col-form-label">Role</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_role; ?>" disabled>
                                                 </div>
                                             </div>
-    
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Usr Status</label>
+                                                <label class="col-sm-2 col-form-label">Status</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_status; ?>" disabled>
                                                 </div>

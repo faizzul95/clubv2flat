@@ -224,15 +224,18 @@ class Application extends CI_Controller
             $user_id  = $data['user_id'];
 
             if ($application_status == "approve") {
-                $this->session->set_flashdata('msg_alert', 'Congratulation ! your application have been approve.');
-                redirect(site_url('auth'));
+                $this->session->set_flashdata('msg_alert_success', 'Congratulation ! your application have been approve.');
+                redirect(site_url('welcome/homepage'));
             }elseif ($application_status == "reject") {
-                $this->session->set_flashdata('msg_alert', 'Your application has been rejected by admin.');
-                redirect(site_url('welcome'));
+                $this->session->set_flashdata('msg_alert_reject', 'Your application has been rejected by admin.');
+                redirect(site_url('welcome/homepage'));
+            }elseif ($application_status == "pending") {
+                $this->session->set_flashdata('msg_alert_pending', 'Your application still in process.');
+                redirect(site_url('welcome/homepage'));
             }
         }else{
-            $this->session->set_flashdata('msg_alert','Application ID not found');
-            redirect(site_url('welcome'));
+            $this->session->set_flashdata('msg_alert_notfound','Application ID not found');
+            redirect(site_url('welcome/homepage'));
         }
     }
 

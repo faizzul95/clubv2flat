@@ -38,6 +38,8 @@ $string = "<?php
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/icon/icofont/css/icofont.css\">
     <!-- Font Awesome -->
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/icon/font-awesome/css/font-awesome.min.css\">
+     <!-- sweet alert framework -->
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/bower_components/sweetalert/dist/sweetalert.css\">
     <!-- flag icon framework css -->
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/pages/flag-icon/flag-icon.min.css\">
     <!-- Menu-Search css -->
@@ -47,6 +49,10 @@ $string = "<?php
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/pages/data-table/css/buttons.dataTables.min.css\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css\">
+     <!-- notify js Fremwork -->
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/bower_components/pnotify/dist/pnotify.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/bower_components/pnotify/dist/pnotify.brighttheme.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"../assets/pages/pnotify/notify.css\">
     <!-- Style.css -->
     <link rel=\"stylesheet\" type=\"text/css\" href=\"../vendor/assets/css/style.css\">
 </head>
@@ -249,23 +255,6 @@ $string = "<?php
                 <div class=\"row\">
                     <div class=\"col-sm-12\">
 
-                     <?php if (\$this->session->userdata('message')) { ?>
-                         <?php if (\$this->session->userdata('message') == \"Record Not Found\") { ?>
-                             <div id=\"message\" class=\"alert alert-danger icons-alert\">
-                                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
-                                    <i class=\"icofont icofont-error\"></i>
-                                </button>
-                                <p><strong>Error !</strong> <?php echo \$this->session->userdata('message') <> '' ? \$this->session->userdata('message') : ''; ?></p>
-                            </div>
-                        <?php }else{ ?>
-                             <div id=\"message\" class=\"alert alert-success icons-alert\">
-                                <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
-                                    <i class=\"icofont icofont-error\"></i>
-                                </button> <?php echo \$this->session->userdata('message') <> '' ? \$this->session->userdata('message') : ''; ?></p>
-                            </div>
-                        <?php } ?>
-                    <?php } ?>
-
             <!-- Basic Button table start -->
                         <div class=\"card\">
                             <div class=\"card-header\">
@@ -353,6 +342,17 @@ $string .= "\n\t
         <script src=\"../vendor/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js\"></script>
         <script src=\"../vendor/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js\"></script>
         <script src=\"../vendor/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js\"></script>
+        <!-- pnotify js -->
+        <script type=\"text/javascript\" src=\"../vendor/bower_components/pnotify/dist/pnotify.js\"></script>
+        <script type=\"text/javascript\" src=\"../vendor/bower_components/pnotify/dist/pnotify.desktop.js\"></script>
+        <script type=\"text/javascript\" src=\"../vendor/assets/pages/pnotify/notify.js\"></script>
+        <!-- sweet alert js -->
+        <script type=\"text/javascript\" src=\"../vendor/bower_components/sweetalert/dist/sweetalert.min.js\"></script>
+        <script type=\"text/javascript\" src=\"../vendor/assets/js/modal.js\"></script>
+        <!-- sweet alert modal.js intialize js -->
+        <!-- modalEffects js nifty modal window effects -->
+        <script type=\"text/javascript\" src=\"../vendor/assets/js/modalEffects.js\"></script>
+        <script type=\"text/javascript\" src=\"../vendor/assets/js/classie.js\"></script>
         <!-- i18next.min.js -->
         <script type=\"text/javascript\" src=\"../vendor/bower_components/i18next/i18next.min.js\"></script>
         <script type=\"text/javascript\" src=\"../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js\"></script>
@@ -406,6 +406,77 @@ $string .= "\n\t
                 });
             });
         </script>
+
+        <?php if (\$this->session->flashdata('message')) { ?>
+             <?php if (\$this->session->flashdata('message') == \"Record Not Found\") { ?>
+                 <script type=\"text/javascript\">
+                   // new PNotify({
+                   //          title: 'ERROR !',
+                   //          text:  '<?= \$this->session->flashdata('message')?>',
+                   //          icon: 'icofont icofont-info-circle',
+                   //          type: 'error'
+                   //      });
+                   swal({
+                        title: \"ERROR !\",
+                        text: '<?= \$this->session->flashdata('message')?>',
+                        timer: 1800,
+                        showConfirmButton: false,
+                        allowOutsideClick: true,
+                        type: 'error'
+                    });
+                </script>
+            <?php }else{ ?>
+                <script type=\"text/javascript\">
+                    setTimeout(function () {
+                        swal({
+                            title: \"Success\",
+                            text: '<?= \$this->session->flashdata('message')?>',
+                            timer: 1800,
+                            showConfirmButton: false,
+                            allowOutsideClick: true,
+                            type: 'success'
+                        });
+                        }, 500);
+                </script>
+            <?php } ?>
+        <?php } ?>
+
+        <script type=\"text/javascript\">
+            $('body').on('click', '.delete-btn', function(event){
+                 event.preventDefault();
+            var url = $(this).attr('href');
+            swal({
+                title: \"Are you sure?\",
+                text: \"Record will permanently deleted !\",
+                type: \"warning\",
+                showCancelButton: true,
+                confirmButtonClass: \"btn-danger\",
+                confirmButtonText: \"Yes, delete !\",
+                cancelButtonText: \"Cancel\",
+                closeOnConfirm: false,
+                closeOnCancel: true,
+                allowOutsideClick: true  
+              },
+
+              function(isConfirm) {
+              if (isConfirm) {
+                 $.ajax({
+                     url: url,
+                     error: function() {
+                        alert('Something is wrong');
+                     },
+                     success: function(data) {
+                          swal(\"Deleted!\", \"Your record has been deleted.\", \"success\");
+
+                     }
+                  });
+                } 
+                 $('#mytable').DataTable().ajax.reload();
+              });
+
+            })
+        </script>
+
     </body>
 </html>";
 

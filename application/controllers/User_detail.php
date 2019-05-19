@@ -28,12 +28,12 @@ class User_detail extends CI_Controller
         $row = $this->User_detail_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'detail_id' => $row->detail_id,
-		'detail_fullname' => $row->detail_fullname,
-		'detail_phone' => $row->detail_phone,
-		'detail_email' => $row->detail_email,
-		'detail_address' => $row->detail_address,
-		'user_id' => $row->user_id,
+    		'detail_id' => $row->detail_id,
+    		'detail_fullname' => $row->detail_fullname,
+    		'detail_phone' => $row->detail_phone,
+    		'detail_email' => $row->detail_email,
+    		'detail_address' => $row->detail_address,
+    		'user_id' => $row->user_id,
 	    );
             $this->load->view('user_detail/user_detail_read', $data);
         } else {

@@ -45,6 +45,8 @@
     <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/data-table/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="../../vendor/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css">
+     <!-- sweet alert framework -->
+    <link rel="stylesheet" type="text/css" href="../../vendor/bower_components/sweetalert/dist/sweetalert.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="../../vendor/assets/css/style.css">
 </head>
@@ -246,16 +248,6 @@
             <div class="page-body">
                 <div class="row">
                     <div class="col-sm-12">
-
-                     <?php if ($this->session->userdata('message')) { ?>
-                         <div id="message" class="alert alert-info icons-alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <i class="icofont icofont-close-line-circled"></i>
-                        </button>
-                        <p><strong>Info!</strong> <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?></p>
-                    </div>
-                    <?php } ?>
-
                         <!-- Basic Button table start -->
                         <div class="card">
                             <div class="card-header">
@@ -329,6 +321,17 @@
         <script src="../../vendor/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
         <script src="../../vendor/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
         <script src="../../vendor/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+         <!-- pnotify js -->
+        <script type="text/javascript" src="../../vendor/bower_components/pnotify/dist/pnotify.js"></script>
+        <script type="text/javascript" src="../../vendor/bower_components/pnotify/dist/pnotify.desktop.js"></script>
+        <script type="text/javascript" src="../../vendor/assets/pages/pnotify/notify.js"></script>
+        <!-- sweet alert js -->
+        <script type="text/javascript" src="../../vendor/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+        <script type="text/javascript" src="../../vendor/assets/js/modal.js"></script>
+        <!-- sweet alert modal.js intialize js -->
+        <!-- modalEffects js nifty modal window effects -->
+        <script type="text/javascript" src="../../vendor/assets/js/modalEffects.js"></script>
+        <script type="text/javascript" src="../../vendor/assets/js/classie.js"></script>
         <!-- i18next.min.js -->
         <script type="text/javascript" src="../../vendor/bower_components/i18next/i18next.min.js"></script>
         <script type="text/javascript" src="../../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
@@ -393,5 +396,112 @@
                 });
             });
         </script>
+
+        <?php if ($this->session->flashdata('message')) { ?>
+             <?php if ($this->session->flashdata('message') == "Record Not Found") { ?>
+                 <script type="text/javascript">
+                   // new PNotify({
+                   //          title: 'ERROR !',
+                   //          text:  '<?= $this->session->flashdata('message')?>',
+                   //          icon: 'icofont icofont-info-circle',
+                   //          type: 'error'
+                   //      });
+                   swal({
+                        title: "ERROR !",
+                        text: '<?= $this->session->flashdata('message')?>',
+                        timer: 1800,
+                        showConfirmButton: false,
+                        allowOutsideClick: true,
+                        type: 'error'
+                    });
+                </script>
+            <?php }else{ ?>
+                <script type="text/javascript">
+                    setTimeout(function () {
+                        swal({
+                            title: "Success",
+                            text: '<?= $this->session->flashdata('message')?>',
+                            timer: 1800,
+                            showConfirmButton: false,
+                            allowOutsideClick: true,
+                            type: 'success'
+                        });
+                        }, 500);
+                </script>
+            <?php } ?>
+        <?php } ?>
+
+         <script type="text/javascript">
+            $('body').on('click', '.approve-btn', function(event){
+                 event.preventDefault();
+            var url = $(this).attr('href');
+            swal({
+                title: "Are you sure?",
+                text: "Application will be approved",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, approve !",
+                cancelButtonText: "Cancel",
+                closeOnConfirm: false,
+                closeOnCancel: true,
+                allowOutsideClick: true  
+              },
+
+              function(isConfirm) {
+              if (isConfirm) {
+                 $.ajax({
+                     url: url,
+                     error: function() {
+                        alert('Something is wrong');
+                     },
+                     success: function(data) {
+                          swal("Approved!", "Application has been approve.", "success");
+
+                     }
+                  });
+                } 
+                 $('#mytable').DataTable().ajax.reload();
+              });
+
+            })
+        </script>
+
+        <script type="text/javascript">
+            $('body').on('click', '.reject-btn', function(event){
+                 event.preventDefault();
+            var url = $(this).attr('href');
+            swal({
+                title: "Are you sure?",
+                text: "Application will be reject",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, reject !",
+                cancelButtonText: "Cancel",
+                closeOnConfirm: false,
+                closeOnCancel: true,
+                allowOutsideClick: true  
+              },
+
+              function(isConfirm) {
+              if (isConfirm) {
+                 $.ajax({
+                     url: url,
+                     error: function() {
+                        alert('Something is wrong');
+                     },
+                     success: function(data) {
+                          swal("Rejected!", "Application has been reject.", "success");
+
+                     }
+                  });
+                } 
+                 $('#mytable').DataTable().ajax.reload();
+              });
+
+            })
+        </script>
+
     </body>
 </html>

@@ -18,7 +18,7 @@
     <meta name="author" content="Phoenixcoded">
     <!-- Favicon icon -->
     
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../vendor/assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <!-- Required Fremwork -->
@@ -108,7 +108,7 @@
     <script type="text/javascript" src="../vendor/bower_components/i18next/i18next.min.js"></script>
     <script type="text/javascript" src="../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
     <script type="text/javascript" src="../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
-    <script type="text/javascript" src="../bower_components/jquery-i18next/jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
     <!-- Custom js -->
     <script type="text/javascript" src="../vendor/assets/js/script.js"></script>
 </body>

@@ -9,6 +9,7 @@ class User extends CI_Controller
     {
         parent::__construct();
         $this->load->model('User_model');
+        $this->load->model('User_detail_model');
         $this->load->library('form_validation');        
 	    $this->load->library('datatables');
     }
@@ -26,6 +27,7 @@ class User extends CI_Controller
     public function read($id) 
     {
         $row = $this->User_model->get_by_id($id);
+        $row2 = $this->User_detail_model->get_by_id($id);
         if ($row) {
             $data = array(
     		'user_id' => $row->user_id,
@@ -33,6 +35,10 @@ class User extends CI_Controller
     		'usr_password' => $row->usr_password,
     		'usr_role' => $row->usr_role,
     		'usr_status' => $row->usr_status,
+            'detail_fullname' => $row2->detail_fullname,
+            'detail_phone' => $row2->detail_phone,
+            'detail_email' => $row2->detail_email,
+            'detail_address' => $row2->detail_address,
 	    );
             $this->load->view('user/user_read', $data);
         } else {
@@ -46,11 +52,11 @@ class User extends CI_Controller
         $data = array(
             'button' => 'Create',
             'action' => site_url('user/create_action'),
-	    'user_id' => set_value('user_id'),
-	    'usr_username' => set_value('usr_username'),
-	    'usr_password' => set_value('usr_password'),
-	    'usr_role' => set_value('usr_role'),
-	    'usr_status' => set_value('usr_status'),
+    	    'user_id' => set_value('user_id'),
+    	    'usr_username' => set_value('usr_username'),
+    	    'usr_password' => set_value('usr_password'),
+    	    'usr_role' => set_value('usr_role'),
+    	    'usr_status' => set_value('usr_status'),
 	);
         $this->load->view('user/user_create_form', $data);
     }
@@ -63,10 +69,10 @@ class User extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'usr_username' => $this->input->post('usr_username',TRUE),
-		'usr_password' => $this->input->post('usr_password',TRUE),
-		'usr_role' => $this->input->post('usr_role',TRUE),
-		'usr_status' => $this->input->post('usr_status',TRUE),
+    		'usr_username' => $this->input->post('usr_username',TRUE),
+    		'usr_password' => $this->input->post('usr_password',TRUE),
+    		'usr_role' => $this->input->post('usr_role',TRUE),
+    		'usr_status' => $this->input->post('usr_status',TRUE),
 	    );
 
             $this->User_model->insert($data);
@@ -78,16 +84,24 @@ class User extends CI_Controller
     public function update($id) 
     {
         $row = $this->User_model->get_by_id($id);
+        $row2 = $this->User_detail_model->get_by_id($id);
 
         if ($row) {
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('user/update_action'),
-		'user_id' => set_value('user_id', $row->user_id),
-		'usr_username' => set_value('usr_username', $row->usr_username),
-		'usr_password' => set_value('usr_password', $row->usr_password),
-		'usr_role' => set_value('usr_role', $row->usr_role),
-		'usr_status' => set_value('usr_status', $row->usr_status),
+        		'user_id' => set_value('user_id', $row->user_id),
+        		// 'usr_username' => set_value('usr_username', $row->usr_username),
+        		// 'usr_password' => set_value('usr_password', $row->usr_password),
+                // 'usr_role' => set_value('usr_role', $row->usr_role),
+                'usr_username' => $row->usr_username,
+                'usr_password' => $row->usr_password,
+                'usr_role' => $row->usr_role,
+        		'usr_status' => set_value('usr_status', $row->usr_status),
+                'detail_fullname' => $row2->detail_fullname,
+                'detail_phone' => $row2->detail_phone,
+                'detail_email' => $row2->detail_email,
+                'detail_address' => $row2->detail_address,
 	    );
             $this->load->view('user/user_form', $data);
         } else {
@@ -104,10 +118,10 @@ class User extends CI_Controller
             $this->update($this->input->post('user_id', TRUE));
         } else {
             $data = array(
-		'usr_username' => $this->input->post('usr_username',TRUE),
-		'usr_password' => $this->input->post('usr_password',TRUE),
-		'usr_role' => $this->input->post('usr_role',TRUE),
-		'usr_status' => $this->input->post('usr_status',TRUE),
+    		'usr_username' => $this->input->post('usr_username',TRUE),
+    		'usr_password' => $this->input->post('usr_password',TRUE),
+    		'usr_role' => $this->input->post('usr_role',TRUE),
+    		'usr_status' => $this->input->post('usr_status',TRUE),
 	    );
 
             $this->User_model->update($this->input->post('user_id', TRUE), $data);
@@ -163,10 +177,10 @@ class User extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "Usr Username");
-	xlsWriteLabel($tablehead, $kolomhead++, "Usr Password");
-	xlsWriteLabel($tablehead, $kolomhead++, "Usr Role");
-	xlsWriteLabel($tablehead, $kolomhead++, "Usr Status");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Usr Username");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Usr Password");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Usr Role");
+    	xlsWriteLabel($tablehead, $kolomhead++, "Usr Status");
 
 	foreach ($this->User_model->get_all() as $data) {
             $kolombody = 0;

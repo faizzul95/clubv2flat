@@ -29,6 +29,11 @@
     <link rel="stylesheet" type="text/css" href="../vendor/assets/css/style.css">
     <!-- color .css -->
     <link rel="stylesheet" type="text/css" href="../vendor/assets/css/color/color-1.css" id="color"/>
+
+    <!--SVG Icons Animated-->
+    <link rel="stylesheet" type="text/css" href="../vendor/assets/icon/SVG-animated/svg-weather.css">
+    <!-- Calender css -->
+    <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/widget/calender/pignose.calendar.min.css">
 </head>
 
 <body class="fix-menu">
@@ -161,7 +166,12 @@
                                 </li>
                                 <li><a href="application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
                                 </li>
-                                <li><a href="application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a></li>
+                                <li><a href="application" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a>
+                                 <!-- <label class="badge badge-primary">5</label> -->
+                              <label class="badge badge-info menu-caption"><?php 
+                                            $query = $this->db->query('SELECT * FROM user WHERE usr_role ="member"');
+                                            echo $query->num_rows(); 
+                                        ?></label></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -175,13 +185,13 @@
                                 <li><a href="activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item single-item">
+                        <!-- <li class="nav-item single-item">
                             <a href="widget.html">
                                 <i class="ti-view-grid"></i>
                                 <span data-i18n="nav.widget.main"> Widget</span>
                                 <label class="label label-danger menu-caption">100+</label>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-title" data-i18n="nav.category.navigation">
                             <i class="ti-line-dashed"></i>
                             <span>GENERATOR</span>
@@ -221,14 +231,14 @@
                     <div class="col-md-6 col-xl-3">
                         <div class="card client-blocks dark-primary-border">
                             <div class="card-block">
-                                <h5>Application</h5>
+                                <h5>New Application</h5>
                                 <ul>
                                     <li>
                                         <i class="icofont icofont-document-folder"></i>
                                     </li>
                                     <li class="text-right text-success">
                                         <?php 
-                                            $query = $this->db->query('SELECT * FROM application');
+                                            $query = $this->db->query('SELECT * FROM application WHERE  application_status ="pending"');
                                             echo $query->num_rows(); 
                                         ?>
                                     </li>
@@ -248,7 +258,7 @@
                                     </li>
                                     <li class="text-right text-warning">
                                         <?php 
-                                            $query = $this->db->query('SELECT * FROM user');
+                                            $query = $this->db->query('SELECT * FROM user WHERE usr_role ="member"');
                                             echo $query->num_rows(); 
                                         ?>
                                     </li>
@@ -268,7 +278,7 @@
                                     </li>
                                     <li class="text-right text-success">
                                         <?php 
-                                            $query = $this->db->query('SELECT * FROM activity WHERE     act_category = "guest"');
+                                            $query = $this->db->query('SELECT * FROM activity WHERE act_category = "guest"');
                                             echo $query->num_rows(); 
                                         ?>
                                     </li>
@@ -288,7 +298,7 @@
                                     </li>
                                     <li class="text-right text-primary">
                                         <?php 
-                                            $query = $this->db->query('SELECT * FROM activity WHERE     act_category = "member"');
+                                            $query = $this->db->query('SELECT * FROM activity WHERE act_category = "member"');
                                             echo $query->num_rows(); 
                                         ?>
                                     </li>
@@ -297,20 +307,50 @@
                         </div>
                     </div>
                     <!-- Open Project card end -->
-                    <!-- Morris chart start -->
+                    <!-- Calender card start -->
                     <div class="col-md-12 col-xl-8">
-                        <div class="card">
-                            <div class="card-header">
-                                <button class="btn btn-primary btn-sm">Week</button>
-                                <button class="btn btn-primary btn-sm">Month</button>
-                                <button class="btn btn-primary btn-sm">Year</button>
-                            </div>
-                            <div class="card-block">
-                                <div id="morris-extra-area" style="height:470px;"></div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card borderless-card">
+                                    <div class="row">
+                                        <div class="col-sm-5 weather-card-1  text-center">
+                                            <div class="mob-bg-calender bg-facebook">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h4>Sunday</h4>
+                                                        <h1 class="weather-temp">23</h1>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <svg version="1.1" id="cloudDrizzle" class="climacon climacon_cloudDrizzle" viewBox="15 15 70 70">
+                                                            <g class="climacon_iconWrap climacon_iconWrap-cloudDrizzle">
+                                                                <g class="climacon_wrapperComponent climacon_wrapperComponent-drizzle">
+                                                                    <path class="climacon_component climacon_component-stroke climacon_component-stroke_drizzle climacon_component-stroke_drizzle-left" d="M42.001,53.644c1.104,0,2,0.896,2,2v3.998c0,1.105-0.896,2-2,2c-1.105,0-2.001-0.895-2.001-2v-3.998C40,54.538,40.896,53.644,42.001,53.644z" />
+                                                                    <path class="climacon_component climacon_component-stroke climacon_component-stroke_drizzle climacon_component-stroke_drizzle-middle" d="M49.999,53.644c1.104,0,2,0.896,2,2v4c0,1.104-0.896,2-2,2s-1.998-0.896-1.998-2v-4C48.001,54.54,48.896,53.644,49.999,53.644z" />
+                                                                    <path class="climacon_component climacon_component-stroke climacon_component-stroke_drizzle climacon_component-stroke_drizzle-right" d="M57.999,53.644c1.104,0,2,0.896,2,2v3.998c0,1.105-0.896,2-2,2c-1.105,0-2-0.895-2-2v-3.998C55.999,54.538,56.894,53.644,57.999,53.644z" />
+                                                                </g>
+                                                                <g class="climacon_wrapperComponent climacon_wrapperComponent-cloud">
+                                                                    <path class="climacon_component climacon_component-stroke climacon_component-stroke_cloud" d="M63.999,64.944v-4.381c2.387-1.386,3.998-3.961,3.998-6.92c0-4.418-3.58-8-7.998-8c-1.603,0-3.084,0.481-4.334,1.291c-1.232-5.316-5.973-9.29-11.664-9.29c-6.628,0-11.999,5.372-11.999,12c0,3.549,1.55,6.729,3.998,8.926v4.914c-4.776-2.769-7.998-7.922-7.998-13.84c0-8.836,7.162-15.999,15.999-15.999c6.004,0,11.229,3.312,13.965,8.203c0.664-0.113,1.336-0.205,2.033-0.205c6.627,0,11.998,5.373,11.998,12C71.997,58.864,68.655,63.296,63.999,64.944z" />
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                        <span class="weather-temp">8°</span>
+                                                        <h5>New York , NY , USA</h5>
+                                                        <span class="d-block">6:00 AM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-7 p-l-0">
+                                            <div class="weather-calender">
+                                                <div class="widget-calender"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Morris chart end -->
+                    <!-- Calender card end -->
                 </div>
             </div>
         </div>
@@ -371,6 +411,9 @@
     <script type="text/javascript" src="../vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
     <!-- classie js -->
     <script type="text/javascript" src="../vendor/bower_components/classie/classie.js"></script>
+    <!-- Calender js -->
+    <script type="text/javascript" src="../vendor/bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="../vendor/assets/pages/widget/calender/pignose.calendar.min.js"></script>
     <!-- Morris Chart js -->
     <script src="../vendor/bower_components/raphael/raphael.min.js"></script>
     <script src="../vendor/bower_components/morris.js/morris.js"></script>
@@ -383,7 +426,16 @@
     <script type="text/javascript" src="../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
     <script type="text/javascript" src="../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
     <script type="text/javascript" src="../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
+    <!-- sweet alert js -->
+    <script type="text/javascript" src="../vendor/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../vendor/assets/js/modal.js"></script>
+    <!-- sweet alert modal.js intialize js -->
+    <!-- modalEffects js nifty modal window effects -->
+    <script type="text/javascript" src="assets/js/modalEffects.js"></script>
+    <script type="text/javascript" src="assets/js/classie.js"></script>
     <!-- Custom js -->
+
+    <!-- <script type="text/javascript" src="../vendor/assets/pages/widget/custom-widget.js"></script> -->
     <script type="text/javascript" src="../vendor/assets/pages/dashboard/project-dashboard.js"></script>
     <script type="text/javascript" src="../vendor/assets/js/script.js"></script>
 </body>

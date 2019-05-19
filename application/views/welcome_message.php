@@ -59,11 +59,23 @@
         </nav><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
 
-      <?php if ($this->session->userdata('msg_alert')) { ?>
+       <?php if ($this->session->userdata('msg_alert_success')) { ?>
           <script type="text/javascript">
-               alert(<?php $this->session->userdata('msg_alert'); ?>);
+               alert('Congratulation ! your application have been approve');
            </script>
-        <?php } ?>
+      <?php } elseif ($this->session->userdata('msg_alert_reject')) { ?>
+          <script type="text/javascript">
+               alert('Your application has been rejected by admin');
+           </script>
+      <?php } elseif ($this->session->userdata('msg_alert_notfound')) { ?>
+           <script type="text/javascript">
+               alert('Application ID not found');
+           </script>
+      <?php } elseif ($this->session->userdata('msg_alert_pending')) { ?>
+           <script type="text/javascript">
+               alert('Your application still in process.');
+           </script>
+      <?php } ?>
 
     <div class="main" id="main"><!-- Main Section-->
       <div class="hero-section app-hero">
@@ -188,56 +200,70 @@
     </div>
   </div>
 
-      <!-- Counter Section -->
-    	<div class="counter-section">
-    		<div class="container">
-    			<div class="row text-center">
-    			<div class="col-sm-3 col-xs-6">
-    				<div class="counter-up">
-    					<div class="counter-icon">
-    						<i class="ion-android-download"></i>
-    					</div>
-              <h3><span class="counter">15</span></h3>
-    					<div class="counter-text">
-    						<h4>Public Activity</h4>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-sm-3 col-xs-6">
-    				<div class="counter-up">
-    					<div class="counter-icon">
-    						<i class="ion-cube"></i>
-    					</div>
-              <h3><span class="counter">125</span></h3>
-    					<div class="counter-text">
-    						<h4>Member Activity</h4>
-    					</div>
-    				</div>
-    			</div>
+     <!-- Counter Section -->
+      <div class="counter-section">
+        <div class="container">
+          <div class="row text-center">
           <div class="col-sm-3 col-xs-6">
-    				<div class="counter-up">
-    					<div class="counter-icon">
-    						<i class="ion-ios-people"></i>
-    					</div>
-              <h3><span class="counter">500</span>+</h3>
-    					<div class="counter-text">
-    						<h4>Members</h4>
-    					</div>
-    				</div>
-    			</div>
+            <div class="counter-up">
+              <div class="counter-icon">
+                <i class="ion-android-download"></i>
+              </div>
+              <h3><span class="counter">
+                 <?php 
+                    $query = $this->db->query('SELECT * FROM activity WHERE act_category = "guest"');
+                    echo $query->num_rows(); 
+                ?>
+              </span></h3>
+              <div class="counter-text">
+                <h4>Public Activity</h4>
+              </div>
+            </div>
+          </div>
           <div class="col-sm-3 col-xs-6">
-    				<div class="counter-up">
-    					<div class="counter-icon">
-    						<i class="ion-ios-paper"></i>
-    					</div>
+            <div class="counter-up">
+              <div class="counter-icon">
+                <i class="ion-cube"></i>
+              </div>
+              <h3><span class="counter">
+                <?php 
+                    $query = $this->db->query('SELECT * FROM activity WHERE act_category = "member"');
+                    echo $query->num_rows(); 
+                ?></span></h3>
+              <div class="counter-text">
+                <h4>Member Activity</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-6">
+            <div class="counter-up">
+              <div class="counter-icon">
+                <i class="ion-ios-people"></i>
+              </div>
+              <h3><span class="counter">
+                <?php 
+                    $query = $this->db->query('SELECT * FROM user WHERE usr_role = "member"');
+                    echo $query->num_rows(); 
+                ?>
+              </span></h3>
+              <div class="counter-text">
+                <h4>Members</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-6">
+            <div class="counter-up">
+              <div class="counter-icon">
+                <i class="ion-ios-paper"></i>
+              </div>
               <h3><span class="counter">80</span>+</h3>
-    					<div class="counter-text">
-    						<h4>Achievement</h4>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-     	</div>
+              <div class="counter-text">
+                <h4>Achievement</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Counter Section Ends -->
 

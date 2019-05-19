@@ -45,6 +45,15 @@
     <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/data-table/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css">
+
+     <!-- notify js Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/dist/pnotify.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/dist/pnotify.brighttheme.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/dist/pnotify.buttons.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/dist/pnotify.history.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/dist/pnotify.mobile.css">
+    <link rel="stylesheet" type="text/css" href="../assets/pages/pnotify/notify.css">
+
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="../vendor/assets/css/style.css">
 </head>
@@ -343,6 +352,17 @@
         <script type="text/javascript" src="../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
         <script type="text/javascript" src="../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
         <script type="text/javascript" src="../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
+            <!-- pnotify js -->
+        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.js"></script>
+        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.desktop.js"></script>
+        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.buttons.js"></script>
+        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.confirm.js"></script>
+        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.callbacks.js"></script>
+        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.animate.js"></script>
+        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.history.js"></script>
+        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.mobile.js"></script>
+        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.nonblock.js"></script>
+        <script type="text/javascript" src="../vendor/assets/pages/pnotify/notify.js"></script>
         <!-- Custom js -->
         <script src="../vendor/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js"></script>
         <script type="text/javascript" src="../vendor/assets/js/script.js"></script>
@@ -371,12 +391,10 @@
                     ajax: {"url": "user/json", "type": "POST"},
                     columns: [
                         {
-                            "data": "user_id",
+                            "data": "app_id",
                             "orderable": false
                         }
                         // ,{"data": "usr_username"},{"data": "usr_password"},{"data": "usr_role"},{"data": "usr_status"},
-                        
-                        // user_id,usr_username,usr_password,usr_role,usr_status
 
                         ,{"data": "detail_fullname"},{"data": "detail_phone"},{"data": "detail_address"},{"data": "usr_status"},
                         {
