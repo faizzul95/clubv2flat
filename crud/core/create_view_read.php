@@ -1,6 +1,17 @@
 <?php 
 
-$string = "<!DOCTYPE html>
+$string = "<?php
+    \$dashboard = false;
+    \$profile = false;
+    \$application = false;
+    \$activity = false;
+    \$user = false;
+    \$contactus = false;
+
+    $".$table_name." = true;
+ ?>
+
+<!DOCTYPE html>
 <html lang=\"en\">
 
 <head> 
@@ -37,164 +48,191 @@ $string = "<!DOCTYPE html>
         </div>
     </div>
     <!-- Pre-loader end -->
-
-      <!-- Menu header start -->
-        <nav class=\"navbar header-navbar\">
-            <div class=\"navbar-wrapper\">
-                <div class=\"navbar-logo\">
-                    <a class=\"mobile-menu\" id=\"mobile-collapse\" href=\"#!\">
-                        <i class=\"ti-menu\"></i>
-                    </a>
-                    <a class=\"mobile-search morphsearch-search\" href=\"#\">
-                        <i class=\"ti-search\"></i>
-                    </a>
-                    <a href=\"index\">
-                        <img class=\"img-fluid\" src=\"../../../vendor/assets/images/logo.png\" alt=\"Theme-Logo\" />
-                    </a>
-                    <a class=\"mobile-options\">
-                        <i class=\"ti-more\"></i>
-                    </a>
-                </div>
-                <div class=\"navbar-container container-fluid\">
-                    <div>
-                        <ul class=\"nav-left\">
-                            <li>
-                                <a id=\"collapse-menu\" href=\"#\">
-                                    <i class=\"ti-menu\"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a class=\"main-search morphsearch-search\" href=\"#\">
-                                    <!-- themify icon -->
-                                    <i class=\"ti-search\"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=\"#!\" onclick=\"javascript:toggleFullScreen()\">
-                                    <i class=\"ti-fullscreen\"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class=\"nav-right\">
-                            <li class=\"user-profile header-notification\">
-                                <a href=\"#!\">
-                                    <img src=\"../../../vendor/assets/images/user.png\" alt=\"User-Profile-Image\">
-                                    <span>Fahmy Izwan</span>
-                                    <i class=\"ti-angle-down\"></i>
-                                </a>
-                                <ul class=\"show-notification profile-notification\">
-                                    <li>
-                                        <a href=\"profile\">
-                                            <i class=\"ti-user\"></i> Profile
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"auth-lock-screen.html\">
-                                            <i class=\"ti-lock\"></i> Lock Screen
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href=\"#!\">
-                                            <i class=\"ti-layout-sidebar-left\"></i> Logout
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- search -->
-                        <div id=\"morphsearch\" class=\"morphsearch\">
-                            <form class=\"morphsearch-form\">
-                                <input class=\"morphsearch-input\" type=\"search\" placeholder=\"Search...\" />
-                                <button class=\"morphsearch-submit\" type=\"submit\">Search</button>
-                            </form>
-                            <!-- /morphsearch-content -->
-                            <span class=\"morphsearch-close\"><i class=\"icofont icofont-search-alt-1\"></i></span>
-                        </div>
-                        <!-- search end -->
-                    </div>
-                </div>
+    <!-- Menu header start -->
+    <nav class=\"navbar header-navbar\">
+        <div class=\"navbar-wrapper\">
+            <div class=\"navbar-logo\">
+                <a class=\"mobile-menu\" id=\"mobile-collapse\" href=\"#!\">
+                    <i class=\"ti-menu\"></i>
+                </a>
+                <a class=\"mobile-search morphsearch-search\" href=\"#\">
+                    <i class=\"ti-search\"></i>
+                </a>
+                <a href=\"dashboard\">
+                    <img class=\"img-fluid\" src=\"../../../vendor/assets/images/logo.png\" alt=\"Theme-Logo\" />
+                </a>
+                <a class=\"mobile-options\">
+                    <i class=\"ti-more\"></i>
+                </a>
             </div>
-        </nav>
-        <!-- Menu header end -->
-
-             <!-- Menu aside start -->
-            <div class=\"main-menu\">
-                <div class=\"main-menu-header\">
-                    <img class=\"img-40\" src=\"../../../vendor/assets/images/user.png\" alt=\"User-Profile-Image\">
-                    <div class=\"user-details\">
-                        <span>Fahmy Izwan</span>
-                        <span id=\"more-details\">Programmer<i class=\"ti-angle-down\"></i></span>
-                    </div>
-                </div>
-                <div class=\"main-menu-content\">
-                    <ul class=\"main-navigation\">
-                        <li class=\"more-details\">
-                            <a href=\"profile\"><i class=\"ti-user\"></i>View Profile</a>
-                            <a href=\"#!\"><i class=\"ti-settings\"></i>Settings</a>
-                            <a href=\"#!\"><i class=\"ti-layout-sidebar-left\"></i>Logout</a>
+            <div class=\"navbar-container container-fluid\">
+                <div>
+                    <ul class=\"nav-left\">
+                        <li>
+                            <a id=\"collapse-menu\" href=\"#\">
+                                <i class=\"ti-menu\"></i>
+                            </a>
                         </li>
-
-                        <li class=\"nav-title\" data-i18n=\"nav.category.navigation\">
-                            <i class=\"ti-line-dashed\"></i>
-                            <span>Navigation</span>
+                        <li>
+                            <a class=\"main-search morphsearch-search\" href=\"#\">
+                                <!-- themify icon -->
+                                <i class=\"ti-search\"></i>
+                            </a>
                         </li>
-                            <li class=\"nav-item single-item\">
-                                <a href=\"dashboard\">
-                                    <i class=\"icofont icofont-home\"></i>
-                                    <span data-i18n=\"nav.dash.main\">Dashboard</span>
-                                </a>
-                            </li>
-                            <li class=\"nav-item single-item\">
-                                <a href=\"profile\">
-                                    <i class=\"icofont icofont-ui-user\"></i>
-                                    <span data-i18n=\"nav.dash.main\">Profile</span>
-                                </a>
-                            </li>
-                            <li class=\"nav-item\">
-                                <a href=\"#!\">
-                                    <i class=\"ti-layout-cta-right\"></i>
-                                    <span data-i18n=\"nav.navigate.main\">Membership</span>
-                                </a>
-                                <ul class=\"tree-1\">
-                                    <li><a href=\"application/newlist\" data-i18n=\"nav.navigate.navbar\">List of New Application</a>
-                                    </li>
-                                    <li><a href=\"application/disapprove\" data-i18n=\"nav.navigate.navbar\">List of Disapprove Application</a>
-                                    </li>
-                                    <li><a href=\"application\" data-i18n=\"nav.navigate.navbar-inverse\">List of Club Member</a></li>
-                                </ul>
-                            </li>
-                            <li class=\"nav-item\">
-                                <a href=\"#!\">
-                                    <i class=\"ti-layout-cta-right\"></i>
-                                    <span data-i18n=\"nav.navigate.main\">Activity</span>
-                                </a>
-                                <ul class=\"tree-1\">
-                                    <li><a href=\"activity/create\" data-i18n=\"nav.navigate.navbar\">Add New Activity</a>
-                                    </li>
-                                    <li><a href=\"activity\" data-i18n=\"nav.navigate.navbar-inverse\">List of Activity</a></li>
-                                </ul>
-                            </li>
-                            <li class=\"nav-item single-item\">
-                                <a href=\"widget.html\">
-                                    <i class=\"ti-view-grid\"></i>
-                                    <span data-i18n=\"nav.widget.main\"> Widget</span>
-                                    <label class=\"label label-danger menu-caption\">100+</label>
-                                </a>
-                            </li>
-                            <li class=\"nav-title\" data-i18n=\"nav.category.navigation\">
-                                <i class=\"ti-line-dashed\"></i>
-                                <span>GENERATOR</span>
-                            </li>
-                            <li class=\"nav-item single-item\">
-                                <a href=\"../../../crud/index.php\">
-                                    <i class=\"ti-cloud-up\"></i>
-                                    <span data-i18n=\"nav.file-upload.main\">CRUD GENERATOR</span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href=\"#!\" onclick=\"javascript:toggleFullScreen()\">
+                                <i class=\"ti-fullscreen\"></i>
+                            </a>
+                        </li>
                     </ul>
+                    <ul class=\"nav-right\">
+                        <li class=\"user-profile header-notification\">
+                            <a href=\"#!\">
+                                <img src=\"../../../vendor/assets/images/user.png\" alt=\"User-Profile-Image\">
+                                <span><?php echo \$this->session->userdata('userfname'); ?></span>
+                                <i class=\"ti-angle-down\"></i>
+                            </a>
+                            <ul class=\"show-notification profile-notification\">
+                                <li>
+                                    <a href=\"profile\">
+                                        <i class=\"ti-user\"></i> Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=\"auth-lock-screen.html\">
+                                        <i class=\"ti-lock\"></i> Lock Screen
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=\"auth/logout\">
+                                        <i class=\"ti-layout-sidebar-left\"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- search -->
+                    <div id=\"morphsearch\" class=\"morphsearch\">
+                        <form class=\"morphsearch-form\">
+                            <input class=\"morphsearch-input\" type=\"search\" placeholder=\"Search...\" />
+                            <button class=\"morphsearch-submit\" type=\"submit\">Search</button>
+                        </form>
+                        <!-- /morphsearch-content -->
+                        <span class=\"morphsearch-close\"><i class=\"icofont icofont-search-alt-1\"></i></span>
+                    </div>
+                    <!-- search end -->
                 </div>
             </div>
-            <!-- Menu aside end -->
+        </div>
+    </nav>
+    <!-- Menu header end -->
+
+    <!-- Menu aside start -->
+    <div class=\"main-menu\">
+        <div class=\"main-menu-header\">
+            <img class=\"img-40\" src=\"../../../vendor/assets/images/user.png\" alt=\"User-Profile-Image\">
+            <div class=\"user-details\">
+                <span id=\"more-details\"><?php echo \$this->session->userdata('userfname');; ?><i class=\"ti-angle-down\"></i></span>
+            </div>
+        </div>
+        <div class=\"main-menu-content\">
+            <ul class=\"main-navigation\">
+                <li class=\"more-details\">
+                    <a href=\"profile\"><i class=\"ti-user\"></i>View Profile</a>
+                    <a href=\"#!\"><i class=\"ti-settings\"></i>Settings</a>
+                    <a href=\"auth/logout\"><i class=\"ti-layout-sidebar-left\"></i>Logout</a>
+                </li>
+
+                <li class=\"nav-title\" data-i18n=\"nav.category.navigation\">
+                    <i class=\"ti-line-dashed\"></i>
+                    <span>Navigation</span>
+                </li>
+                    <li <?php if(\$dashboard) { ?> class=\"nav-item single-item has-class\" <?php }else{ ?> class=\"nav-item single-item\"<?php } ?> >
+                        <a href=\"../../dashboard\">
+                            <i class=\"icofont icofont-home\"></i>
+                            <span data-i18n=\"nav.dash.main\">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class=\"nav-item single-item\">
+                        <a href=\"../../profile\">
+                            <i class=\"icofont icofont-ui-user\"></i>
+                            <span data-i18n=\"nav.dash.main\">Profile</span>
+                        </a>
+                    </li>
+                    <?php if(\$this->session->userdata('level')==='admin'):?>
+                    <li <?php if(\$application) { ?> class=\"nav-item has-class\" <?php }else{ ?> class=\"nav-item\"<?php } ?> >
+                        <a href=\"#!\">
+                            <i class=\"ti-layout-cta-right\"></i>
+                            <span data-i18n=\"nav.navigate.main\">Membership</span>
+                        </a>
+                        <ul class=\"tree-1\">
+                            <li><a href=\"../../application/newlist\" data-i18n=\"nav.navigate.navbar\">List of New Application</a>
+                            <label class=\"badge badge-info menu-caption\"><?php 
+                                    \$query = \$this->db->query('SELECT * FROM application WHERE application_status =\"pending\"');
+                                    echo \$query->num_rows(); 
+                                ?>
+                            </label>
+                            </li>
+                            <li><a href=\"../../application/disapprove\" data-i18n=\"nav.navigate.navbar\">List of Disapprove Application</a>
+                            <label class=\"badge badge-info menu-caption\"><?php 
+                                    \$query = \$this->db->query('SELECT * FROM application WHERE application_status =\"reject\"');
+                                    echo \$query->num_rows(); 
+                                ?>
+                            </label>
+                            </li>
+                            <li <?php if(\$application) { ?> class=\"has-class\" <?php } ?> ><a href=\"user\" data-i18n=\"nav.navigate.navbar-inverse\">List of Club Member</a>
+                             <label class=\"badge badge-info menu-caption\"><?php 
+                                    \$query = \$this->db->query('SELECT * FROM user WHERE usr_role =\"member\"');
+                                    echo \$query->num_rows(); 
+                                ?>
+                              </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li <?php if(\$activity) { ?> class=\"nav-item has-class\" <?php }else{ ?> class=\"nav-item\"<?php } ?>>
+                        <a href=\"#!\">
+                            <i class=\"ti-layout-cta-right\"></i>
+                            <span data-i18n=\"nav.navigate.main\">Activity</span>
+                        </a>
+                        <ul class=\"tree-1\">
+                            <li><a href=\"../../activity/create\" data-i18n=\"nav.navigate.navbar\">Add New Activity</a>
+                            </li>
+                            <li <?php if(\$activity) { ?> class=\"has-class\" <?php } ?>>
+                            <a href=\"../../activity\" data-i18n=\"nav.navigate.navbar-inverse\">List of Activity</a>
+                                <label class=\"badge badge-info menu-caption\"><?php 
+                                        \$query = \$this->db->query('SELECT * FROM activity');
+                                        echo \$query->num_rows(); 
+                                    ?>
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li <?php if(\$contactus) { ?> class=\"nav-item single-item has-class\" <?php }else{ ?> class=\"nav-item single-item\"<?php } ?>>
+                        <a href=\"../../contactus\">
+                            <i class=\"ti-view-grid\"></i>
+                            <span data-i18n=\"nav.widget.main\"> Contact Us</span>
+                            <label class=\"badge badge-info menu-caption\"><?php 
+                                    \$query = \$this->db->query('SELECT * FROM contactus');
+                                    echo \$query->num_rows(); 
+                                ?>
+                            </label>
+                        </a>
+                    </li>
+                    <li class=\"nav-title\" data-i18n=\"nav.category.navigation\">
+                        <i class=\"ti-line-dashed\"></i>
+                        <span>GENERATOR</span>
+                    </li>
+                    <li class=\"nav-item single-item\">
+                        <a href=\"../../../crud/index.php\">
+                            <i class=\"ti-cloud-up\"></i>
+                            <span data-i18n=\"nav.file-upload.main\">CRUD GENERATOR</span>
+                        </a>
+                    </li>
+                    <?php endif;?>
+            </ul>
+        </div>
+    </div>
+    <!-- Menu aside end -->
 
 
             <!-- Main-body start -->

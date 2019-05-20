@@ -8,6 +8,7 @@ Class Auth extends CI_Controller{
         $this->load->model('User_model');
         $this->load->model('User_detail_model');
         $this->load->model('Application_model');
+        $this->load->library('session');
     }
     
     public function index(){
@@ -16,7 +17,7 @@ Class Auth extends CI_Controller{
 
         //restrict users to go back to login if session has been set
         if($this->session->userdata('userid')){
-            redirect('dasboard');
+            redirect('dashboard');
         }
         else{
              $this->load->view('auth/login');
@@ -49,9 +50,16 @@ Class Auth extends CI_Controller{
             $level = $data['usr_role'];
             $status = $data['usr_status'];
 
+            $detailUser = $this->User_detail_model->get_session_data($id);
+            $row  = $detailUser->row_array();
+            $fname = $row['detail_fullname'];
+            $email = $row['detail_email'];
+
             if (password_verify($enteredPassword, $current_password)) { 
                     if ($status == "active") {
                         $sesdata = array(
+                        'userfname'  => $fname,
+                        'useremail'  => $email,
                         'userid'  => $id,
                         'username'=> $name,
                         'level'=> $level,

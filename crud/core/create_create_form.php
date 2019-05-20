@@ -1,6 +1,15 @@
 <?php 
 
-$string = " 
+$string = "<?php
+        \$dashboard = false;
+        \$profile = false;
+        \$application = false;
+        \$activity = false;
+        \$user = false;
+        \$contactus = false;
+
+        $".$table_name." = true;
+     ?>
     <!DOCTYPE html>
     <html lang=\"en\">
 
@@ -96,7 +105,7 @@ $string = "
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=\"#!\">
+                                        <a href=\"../auth/logout\">
                                             <i class=\"ti-layout-sidebar-left\"></i> Logout
                                         </a>
                                     </li>
@@ -133,14 +142,14 @@ $string = "
                         <li class=\"more-details\">
                             <a href=\"profile\"><i class=\"ti-user\"></i>View Profile</a>
                             <a href=\"#!\"><i class=\"ti-settings\"></i>Settings</a>
-                            <a href=\"#!\"><i class=\"ti-layout-sidebar-left\"></i>Logout</a>
+                            <a href=\"../auth/logout\"><i class=\"ti-layout-sidebar-left\"></i>Logout</a>
                         </li>
 
                         <li class=\"nav-title\" data-i18n=\"nav.category.navigation\">
                             <i class=\"ti-line-dashed\"></i>
                             <span>Navigation</span>
                         </li>
-                            <li class=\"nav-item single-item\">
+                            <li <?php if(\$dashboard) { ?> class=\"nav-item single-item has-class\" <?php }else{ ?> class=\"nav-item single-item\"<?php } ?> >
                                 <a href=\"../dashboard\">
                                     <i class=\"icofont icofont-home\"></i>
                                     <span data-i18n=\"nav.dash.main\">Dashboard</span>
@@ -152,35 +161,66 @@ $string = "
                                     <span data-i18n=\"nav.dash.main\">Profile</span>
                                 </a>
                             </li>
-                             <li class=\"nav-item\">
+                            <?php if(\$this->session->userdata('level')==='admin'):?>
+                             <li <?php if(\$application) { ?> class=\"nav-item has-class\" <?php }else{ ?> class=\"nav-item\"<?php } ?> >
                                 <a href=\"#!\">
                                     <i class=\"ti-layout-cta-right\"></i>
                                     <span data-i18n=\"nav.navigate.main\">Membership</span>
                                 </a>
                                 <ul class=\"tree-1\">
-                                    <li><a href=\"../application/newlist\" data-i18n=\"nav.navigate.navbar\">List of New Application</a>
+                                    <li>
+                                    <a href=\"../application/newlist\" data-i18n=\"nav.navigate.navbar\">List of New Application</a>
+                                    <label class=\"badge badge-info menu-caption\"><?php 
+                                            \$query = \$this->db->query('SELECT * FROM application WHERE application_status =\"pending\"');
+                                            echo \$query->num_rows(); 
+                                        ?>
+                                    </label>
                                     </li>
                                     <li><a href=\"../application/disapprove\" data-i18n=\"nav.navigate.navbar\">List of Disapprove Application</a>
+                                     <label class=\"badge badge-info menu-caption\"><?php 
+                                            \$query = \$this->db->query('SELECT * FROM application WHERE application_status =\"reject\"');
+                                            echo \$query->num_rows(); 
+                                        ?>
+                                    </label>
                                     </li>
-                                    <li><a href=\"../application\" data-i18n=\"nav.navigate.navbar-inverse\">List of Club Member</a></li>
+                                    <li><a href=\"../application\" data-i18n=\"nav.navigate.navbar-inverse\">List of Club Member</a>
+                                    <label class=\"badge badge-info menu-caption\"><?php 
+                                            \$query = \$this->db->query('SELECT * FROM application');
+                                            echo \$query->num_rows(); 
+                                        ?>
+                                    </label>
+                                    </li>
                                 </ul>
                             </li>
-                            <li class=\"nav-item\">
+                            <li <?php if(\$activity) { ?> class=\"nav-item has-class\" <?php }else{ ?> class=\"nav-item\"<?php } ?> >
                                 <a href=\"#!\">
                                     <i class=\"ti-layout-cta-right\"></i>
                                     <span data-i18n=\"nav.navigate.main\">Activity</span>
                                 </a>
                                 <ul class=\"tree-1\">
-                                    <li><a href=\"../activity/create\" data-i18n=\"nav.navigate.navbar\">Add New Activity</a>
+                                    <li <?php if(\$activity) { ?> class=\"has-class\" <?php } ?>>
+                                    <a href=\"../activity/create\" data-i18n=\"nav.navigate.navbar\">Add New Activity</a>
                                     </li>
-                                    <li><a href=\"../activity\" data-i18n=\"nav.navigate.navbar-inverse\">List of Activity</a></li>
+                                    <li>
+                                     <li>
+                                        <a href=\"../activity\" data-i18n=\"nav.navigate.navbar-inverse\">List of Activity</a>
+                                            <label class=\"badge badge-info menu-caption\"><?php 
+                                                    \$query = \$this->db->query('SELECT * FROM activity');
+                                                    echo \$query->num_rows(); 
+                                                ?>
+                                            </label>
+                                    </li>
                                 </ul>
                             </li>
                             <li class=\"nav-item single-item\">
-                                <a href=\"widget.html\">
+                                <a href=\"../contactus\">
                                     <i class=\"ti-view-grid\"></i>
-                                    <span data-i18n=\"nav.widget.main\"> Widget</span>
-                                    <label class=\"label label-danger menu-caption\">100+</label>
+                                    <span data-i18n=\"nav.widget.main\"> Contact Us</span>
+                                    <label class=\"badge badge-info menu-caption\"><?php 
+                                            \$query = \$this->db->query('SELECT * FROM contactus');
+                                            echo \$query->num_rows(); 
+                                        ?>
+                                    </label>
                                 </a>
                             </li>
                             <li class=\"nav-title\" data-i18n=\"nav.category.navigation\">
@@ -193,6 +233,7 @@ $string = "
                                     <span data-i18n=\"nav.file-upload.main\">CRUD GENERATOR</span>
                                 </a>
                             </li>
+                            <?php endif;?>
                     </ul>
                 </div>
             </div>
@@ -235,7 +276,7 @@ $string = "
                                             {
                                             $string .= "\n\t    <div class=\"form-group\">
                                                     <label for=\"".$row["column_name"]."\">".label($row["column_name"])." <?php echo form_error('".$row["column_name"]."') ?></label>
-                                                    <textarea class=\"form-control\" rows=\"3\" name=\"".$row["column_name"]."\" id=\"".$row["column_name"]."\" placeholder=\"".label($row["column_name"])."\"><?php echo $".$row["column_name"]."; ?></textarea>
+                                                    <textarea class=\"form-control\" rows=\"5\" name=\"".$row["column_name"]."\" id=\"".$row["column_name"]."\" placeholder=\"".label($row["column_name"])."\"><?php echo $".$row["column_name"]."; ?></textarea>
                                                 </div>";
                                             }else if ($row["data_type"] == 'date')
                                             {

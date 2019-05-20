@@ -52,7 +52,10 @@ class Application_model extends CI_Model
         $this->datatables->join('user_detail', 'application.user_id = user_detail.user_id');
         $this->datatables->where('application.application_status', 'reject');
 
-        $this->datatables->add_column('action', anchor(site_url('application/reapprove/$1'),'<i class="icofont icofont-ui-check" aria-hidden="true"></i> Approve', array('class' => 'btn btn-info btn-sm'))." | ".anchor(site_url('application/delete/$1'),'<i class="icofont icofont-ui-close" aria-hidden="true"></i> Delete', array('class' => 'btn btn-danger btn-sm'),'onclick="javascript: return confirm(\'Are You Sure ?\')"'), 'app_id');
+        $this->datatables->add_column('action', 
+            anchor(site_url('application/reapprove/$1'),'<i class="icofont icofont-ui-check" aria-hidden="true"></i> Approve', array('class' => 'btn btn-info btn-sm approve-btn'))
+            ." | ".
+            anchor(site_url('application/delete/$1'),'<i class="icofont icofont-ui-close" aria-hidden="true"></i> Delete', array('class' => 'btn btn-danger btn-sm reject-btn')), 'app_id');
         return $this->datatables->generate();
     }
 

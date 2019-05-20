@@ -38,6 +38,14 @@ class User_detail_model extends CI_Model
         $this->db->where($this->id, $id);
         return $this->db->get($this->table)->row();
     }
+
+    // get data by id for session
+    function get_session_data($id)
+    {
+        $this->db->where($this->id, $id);
+        $result = $this->db->get($this->table,1);
+        return $result;
+    }
     
     // get total rows
     function total_rows($q = NULL) {
