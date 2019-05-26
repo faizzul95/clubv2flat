@@ -9,6 +9,7 @@
     \$contactus = false;
 
     $".$table_name." = true;
+    defined('BASEPATH') OR exit('No direct script access allowed');
  ?>
 <!DOCTYPE html>
 <html lang=\"en\">
@@ -293,7 +294,7 @@
                                     $string .= "
                             </div>
                             <div class=\"card-block\">
-                                <div class=\"dt-responsive table-responsive\">
+                                <div class=\"table-responsive\">
                                      <div class=\"dt-responsive table-responsive\">
                                         <table id=\"mytable\" class=\"table table-striped table-bordered nowrap\">
 
@@ -403,6 +404,7 @@ $string .= "\n\t
                     oLanguage: {
                         sProcessing: \"loading...\"
                     },
+                    responsive: true,
                     processing: true,
                     serverSide: true,
                     ajax: {\"url\": \"".$c_url."/json\", \"type\": \"POST\"},
@@ -424,6 +426,18 @@ $string .= "\n\t
                         var length = info.iLength;
                         var index = page * length + (iDisplayIndex + 1);
                         $('td:eq(0)', row).html(index);
+                    }
+                });
+                var newcs = $('#new-cons').DataTable();
+
+                new $.fn.dataTable.Responsive(newcs);
+
+                $('#show-hide-mytable').DataTable({
+                    responsive: {
+                        details: {
+                            display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                            type: ''
+                        }
                     }
                 });
             });

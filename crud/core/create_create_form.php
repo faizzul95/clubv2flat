@@ -183,12 +183,12 @@ $string = "<?php
                                         ?>
                                     </label>
                                     </li>
-                                    <li><a href=\"../application\" data-i18n=\"nav.navigate.navbar-inverse\">List of Club Member</a>
-                                    <label class=\"badge badge-info menu-caption\"><?php 
-                                            \$query = \$this->db->query('SELECT * FROM application');
+                                    <li><a href=\"../user\" data-i18n=\"nav.navigate.navbar-inverse\">List of Club Member</a>
+                                     <label class=\"badge badge-info menu-caption\"><?php 
+                                            \$query = \$this->db->query('SELECT * FROM user WHERE usr_role =\"member\"');
                                             echo \$query->num_rows(); 
                                         ?>
-                                    </label>
+                                      </label>
                                     </li>
                                 </ul>
                             </li>
@@ -274,28 +274,51 @@ $string = "<?php
                                         foreach ($non_pk as $row) {
                                             if ($row["data_type"] == 'text')
                                             {
-                                            $string .= "\n\t    <div class=\"form-group\">
+                                            $string .= "\n\t\t\t\t\t\t\t\t\t\t\t     <div class=\"form-group\">
                                                     <label for=\"".$row["column_name"]."\">".label($row["column_name"])." <?php echo form_error('".$row["column_name"]."') ?></label>
-                                                    <textarea class=\"form-control\" rows=\"5\" name=\"".$row["column_name"]."\" id=\"".$row["column_name"]."\" placeholder=\"".label($row["column_name"])."\"><?php echo $".$row["column_name"]."; ?></textarea>
+                                                    <textarea  <?php if (form_error('".$row["column_name"]."')) { echo 'class=\"form-control form-control-danger\"'; } else { echo 'class=\"form-control\"'; }  ?> rows=\"5\" name=\"".$row["column_name"]."\" id=\"".$row["column_name"]."\" placeholder=\"".label($row["column_name"])."\"><?php echo $".$row["column_name"]."; ?></textarea>
                                                 </div>";
                                             }else if ($row["data_type"] == 'date')
                                             {
-                                            $string .= "\n\t    <div class=\"form-group\">
+                                            $string .= "\n\t\t\t\t\t\t\t\t\t\t\t      <div class=\"form-group\">
                                                     <label for=\"".$row["data_type"]."\">".label($row["column_name"])." <?php echo form_error('".$row["column_name"]."') ?></label>
-                                                    <input type=\"date\" class=\"form-control\" name=\"".$row["column_name"]."\" id=\"".$row["column_name"]."\" placeholder=\"".label($row["column_name"])."\" value=\"<?php echo $".$row["column_name"]."; ?>\" />
+                                                    <input type=\"date\"  <?php if (form_error('".$row["column_name"]."')) { echo 'class=\"form-control form-control-danger\"'; } else { echo 'class=\"form-control\"'; }  ?> name=\"".$row["column_name"]."\" id=\"".$row["column_name"]."\" placeholder=\"".label($row["column_name"])."\" value=\"<?php echo $".$row["column_name"]."; ?>\" />
+                                                    </div>";
+                                            }else if ($row["data_type"] == 'time')
+                                            {
+                                            $string .= "\n\t\t\t\t\t\t\t\t\t\t\t      <div class=\"form-group\">
+                                                    <label for=\"".$row["data_type"]."\">".label($row["column_name"])." <?php echo form_error('".$row["column_name"]."') ?></label>
+                                                    <input type=\"time\"  <?php if (form_error('".$row["column_name"]."')) { echo 'class=\"form-control form-control-danger\"'; } else { echo 'class=\"form-control\"'; }  ?> name=\"".$row["column_name"]."\" id=\"".$row["column_name"]."\" placeholder=\"".label($row["column_name"])."\" value=\"<?php echo $".$row["column_name"]."; ?>\" />
+                                                    </div>";
+                                            }else if ($row["data_type"] == 'int')
+                                            {
+                                            $string .= "\n\t\t\t\t\t\t\t\t\t\t\t      <div class=\"form-group\">
+                                                    <label for=\"".$row["data_type"]."\">".label($row["column_name"])." <?php echo form_error('".$row["column_name"]."') ?></label>
+                                                    <input type=\"number\"  <?php if (form_error('".$row["column_name"]."')) { echo 'class=\"form-control form-control-danger\"'; } else { echo 'class=\"form-control\"'; }  ?> name=\"".$row["column_name"]."\" id=\"".$row["column_name"]."\" min=\"0\" placeholder=\"".label($row["column_name"])."\" value=\"<?php echo $".$row["column_name"]."; ?>\" />
+                                                    </div>";
+                                            }else if ($row["data_type"] == 'enum')
+                                            {
+                                            $string .= "\n\t\t\t\t\t\t\t\t\t\t\t    <div class=\"form-group\">
+                                                    <label for=\"".$row["data_type"]."\">".label($row["column_name"])." <?php echo form_error('".$row["column_name"]."') ?></label>
+                                                   
+                                                    <?php 
+                                                        \$id = 'id=\"".$row["column_name"]."\" class=\"form-control\"';
+                                                        echo form_dropdown(\"".$row["column_name"]."\", \$this->db->enum_select(\"".$table_name."\",\"".$row["column_name"]."\"),'',\$id); 
+                                                    ?>
+
                                                     </div>";
                                             }else
                                             {
-                                            $string .= "\n\t    <div class=\"form-group\">
+                                            $string .= "\n\t\t\t\t\t\t\t\t\t\t\t      <div class=\"form-group\">
                                                     <label for=\"".$row["data_type"]."\">".label($row["column_name"])." <?php echo form_error('".$row["column_name"]."') ?></label>
-                                                    <input type=\"text\" class=\"form-control\" name=\"".$row["column_name"]."\" id=\"".$row["column_name"]."\" placeholder=\"".label($row["column_name"])."\" value=\"<?php echo $".$row["column_name"]."; ?>\" />
+                                                    <input type=\"text\" <?php if (form_error('".$row["column_name"]."')) { echo 'class=\"form-control form-control-danger\"'; } else { echo 'class=\"form-control\"'; }  ?> name=\"".$row["column_name"]."\" id=\"".$row["column_name"]."\" autocomplete=\"off\" placeholder=\"".label($row["column_name"])."\" value=\"<?php echo $".$row["column_name"]."; ?>\" />
                                                 </div>";
                                             }
                                         }
-                                        $string .= "\n\t    <input type=\"hidden\" name=\"".$pk."\" value=\"<?php echo $".$pk."; ?>\" /> ";
-                                        $string .= "\n\t    <button type=\"submit\" class=\"btn btn-info\"><?php echo \$button ?></button> ";
-                                        $string .= "\n\t    <a href=\"<?php echo site_url('".$c_url."') ?>\" class=\"btn btn-danger\">Cancel</a>";
-                                        $string .= "\n\t</form>
+                                        $string .= "\n\t\t\t\t\t\t\t\t\t\t\t     <input type=\"hidden\" name=\"".$pk."\" value=\"<?php echo $".$pk."; ?>\" /> ";
+                                        $string .= "\n\t\t\t\t\t\t\t\t\t\t\t     <button type=\"submit\" class=\"btn btn-info\"><?php echo \$button ?></button> ";
+                                        $string .= "\n\t\t\t\t\t\t\t\t\t\t\t     <a href=\"<?php echo site_url('".$c_url."') ?>\" class=\"btn btn-danger\">Cancel</a>";
+                                        $string .= "\n\t\t\t\t\t\t\t\t\t\t\t </form>
 
     
                                     </div>

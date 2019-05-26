@@ -49,9 +49,10 @@
                             <?php
                                 if($this->session->flashdata('msg')){
                                     ?>
-                                    <div class="alert alert-danger text-center" style="margin-top:20px;">
-                                        <?php echo $this->session->flashdata('msg'); ?>
-                                    </div>
+                                    <div class="alert alert-danger text-center alert-dismissible" style="margin-top:25px;">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong><?php echo $this->session->flashdata('msg'); ?></strong> 
+                                      </div>
                                     <?php
                                 }
                             ?>

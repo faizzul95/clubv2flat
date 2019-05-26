@@ -45,6 +45,8 @@
     <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/data-table/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/data-table/extensions/responsive/css/responsive.dataTables.css">
+
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="../vendor/assets/css/style.css">
 </head>
@@ -264,10 +266,9 @@
                             		<?php echo anchor(site_url('application/word'), '<i class="icofont icofont-download-alt"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
                             </div>
                             <div class="card-block">
-                                <div class="dt-responsive table-responsive">
+                                <div class="table-responsive">
                                      <div class="dt-responsive table-responsive">
                                         <table id="mytable" class="table table-striped table-bordered nowrap">
-
                                         <thead>
                                             <tr>
                                                 <th>No</th>
@@ -336,6 +337,7 @@
         <script type="text/javascript" src="../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
         <script type="text/javascript" src="../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
         <!-- Custom js -->
+        <script src="../vendor/assets/pages/data-table/extensions/responsive/js/responsive-custom.js"></script>
         <script src="../vendor/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js"></script>
         <script type="text/javascript" src="../vendor/assets/js/script.js"></script>
 

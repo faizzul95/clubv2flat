@@ -13,13 +13,6 @@
 
 <head>
     <title>CMS | List Of User</title>
-    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -47,14 +40,13 @@
     <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/data-table/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css">
+    <!-- sweet alert framework -->
+    <link rel="stylesheet" type="text/css" href="../vendor/bower_components/sweetalert/dist/sweetalert.css">
 
      <!-- notify js Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/dist/pnotify.css">
-    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/dist/pnotify.brighttheme.css">
-    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/dist/pnotify.buttons.css">
-    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/dist/pnotify.history.css">
-    <link rel="stylesheet" type="text/css" href="../bower_components/pnotify/dist/pnotify.mobile.css">
-    <link rel="stylesheet" type="text/css" href="../assets/pages/pnotify/notify.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/bower_components/pnotify/dist/pnotify.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/bower_components/pnotify/dist/pnotify.mobile.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/pnotify/notify.css">
 
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="../vendor/assets/css/style.css">
@@ -381,17 +373,17 @@
         <script type="text/javascript" src="../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
         <script type="text/javascript" src="../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
         <script type="text/javascript" src="../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
-            <!-- pnotify js -->
+         <!-- pnotify js -->
         <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.js"></script>
         <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.desktop.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.buttons.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.confirm.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.callbacks.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.animate.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.history.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.mobile.js"></script>
-        <script type="text/javascript" src="../vendor/bower_components/pnotify/dist/pnotify.nonblock.js"></script>
         <script type="text/javascript" src="../vendor/assets/pages/pnotify/notify.js"></script>
+        <!-- sweet alert js -->
+        <script type="text/javascript" src="../vendor/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+        <script type="text/javascript" src="../vendor/assets/js/modal.js"></script>
+        <!-- sweet alert modal.js intialize js -->
+        <!-- modalEffects js nifty modal window effects -->
+        <script type="text/javascript" src="../vendor/assets/js/modalEffects.js"></script>
+        <script type="text/javascript" src="../vendor/assets/js/classie.js"></script>
         <!-- Custom js -->
         <script src="../vendor/assets/pages/data-table/extensions/buttons/js/extension-btns-custom.js"></script>
         <script type="text/javascript" src="../vendor/assets/js/script.js"></script>
@@ -442,6 +434,42 @@
                     }
                 });
             });
+        </script>
+
+           <script type="text/javascript">
+            $('body').on('click', '.delete-btn', function(event){
+                 event.preventDefault();
+            var url = $(this).attr('href');
+            swal({
+                title: "Are you sure?",
+                text: "Member will be deleted",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, delete !",
+                cancelButtonText: "Cancel",
+                closeOnConfirm: false,
+                closeOnCancel: true,
+                allowOutsideClick: true  
+              },
+
+              function(isConfirm) {
+              if (isConfirm) {
+                 $.ajax({
+                     url: url,
+                     error: function() {
+                        alert('Something is wrong');
+                     },
+                     success: function(data) {
+                          swal("Deleted!", "Member has been deleted.", "success");
+
+                     }
+                  });
+                } 
+                 $('#mytable').DataTable().ajax.reload();
+              });
+
+            })
         </script>
     </body>
 </html>

@@ -124,9 +124,19 @@ class User extends CI_Controller
     		'usr_status' => $this->input->post('usr_status',TRUE),
 	    );
 
+             // user detail
+            $userdetail = array(
+                'detail_fullname' => $this->input->post('detail_fullname',TRUE),
+                'detail_phone' => $this->input->post('detail_phone',TRUE),
+                'detail_email' => $this->input->post('detail_email',TRUE),
+                'detail_address' => $this->input->post('detail_address',TRUE)
+              );
+
+            $this->User_detail_model->update($this->input->post('user_id', TRUE), $userdetail);
             $this->User_model->update($this->input->post('user_id', TRUE), $data);
+
             $this->session->set_flashdata('message', 'Update Record Success');
-            redirect(site_url('user'));
+            // redirect(site_url('user'));
         }
     }
     

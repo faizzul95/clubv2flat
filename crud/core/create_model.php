@@ -35,7 +35,7 @@ $string .="\n\n    // datatables
         \$this->datatables->add_column('action', 
                 anchor(site_url('".$c_url."/read/$1'),'<i class=\"fa fa-eye\" aria-hidden=\"true\"></i> View', array('class' => 'btn btn-info btn-sm')).
                 \" | \"
-                .anchor(site_url('".$c_url."/update/$1'),'<i class=\"fa fa-eye\" aria-hidden=\"true\"></i> Update', array('class' => 'btn btn-success btn-sm')).
+                .anchor(site_url('".$c_url."/update/$1'),'<i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> Update', array('class' => 'btn btn-success btn-sm')).
                 \" | \"
                 .anchor(site_url('".$c_url."/delete/$1'),'<i class=\"icofont icofont-ui-delete\" aria-hidden=\"true\"></i> Delete', array('class' => 'btn btn-danger btn-sm delete-btn')), '$pk');
         return \$this->datatables->generate();

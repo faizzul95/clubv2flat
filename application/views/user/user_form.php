@@ -227,7 +227,7 @@
                                 <!-- Basic Form Inputs card start -->
                                 <div class="card">
                                     <div class="card-block">
-                                    <form action="<?php echo $action; ?>" method="post">
+                                    <form action="User/update_action" method="post">
 
                                         <h3 class="text-center txt-primary">Personnal Information</h3>
                                             <hr>
@@ -235,28 +235,28 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Full Name</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_fullname; ?>" disabled>
+                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_fullname; ?>">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Phone Number</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_phone; ?>" disabled>
+                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_phone; ?>">
                                             </div>
                                         </div>
 
                                          <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_email; ?>" disabled>
+                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_email; ?>">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Address</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_address; ?>" disabled>
+                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $detail_address; ?>">
                                             </div>
                                         </div>
 
@@ -278,31 +278,32 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Username</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_username; ?>" disabled>
+                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_username; ?>">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Role</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_role; ?>" disabled>
+                                                <input type="text" class="form-control" placeholder="Disabled text" value="<?php echo $usr_role; ?>">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Status <?php echo form_error('usr_status') ?></label>
                                             <div class="col-sm-10">
                                                 <!-- <input type="text" class="form-control" name="usr_status" id="usr_status" value="<?php //echo $usr_status; ?>"> -->
-                                                <select name="usr_status" id="usr_status" class="form-control">
-                                                    <option value="">Please Select Status</option>
-                                                    <option value="active">Active</option>
-                                                    <option value="inactive">Inactive</option>
-                                                </select>
+
+                                            <?php 
+                                                $id = 'id="usr_status" class="form-control"';
+                                                echo form_dropdown("usr_status", $this->db->enum_select("user","usr_status"),'',$id); 
+                                                ?>
+
                                             </div>
                                         </div>
-	    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" /> 
-	    <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('user') ?>" class="btn btn-danger">Cancel</a>
-	</form>
+                                	    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" /> 
+                                	    <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
+                                	    <a href="<?php echo site_url('user') ?>" class="btn btn-danger">Cancel</a>
+                                	</form>
 
     
                                     </div>

@@ -40,6 +40,11 @@
     <link rel="stylesheet" type="text/css" href="../../vendor/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/data-table/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="../../vendor/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/data-table/extensions/responsive/css/responsive.dataTables.css">
+
+
     <link rel="stylesheet" type="text/css" href="../../vendor/assets/pages/data-table/extensions/buttons/css/buttons.dataTables.min.css">
      <!-- sweet alert framework -->
     <link rel="stylesheet" type="text/css" href="../../vendor/bower_components/sweetalert/dist/sweetalert.css">
@@ -279,7 +284,7 @@
                                     <?php echo anchor(site_url('application/word'), '<i class="icofont icofont-download-alt"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
                             </div>
                             <div class="card-block">
-                                <div class="dt-responsive table-responsive">
+                                <div class="table-responsive">
                                      <div class="dt-responsive table-responsive">
                                         <table id="mytable" class="table table-striped table-bordered nowrap">
                                         <thead>
@@ -383,20 +388,11 @@
                     oLanguage: {
                         sProcessing: "loading..."
                     },
+                    responsive: true,
                     processing: true,
                     serverSide: true,
                     ajax: {"url": "../application/newapp", "type": "POST"},
-                    // columns: [
-                    //     {
-                    //         "data": "app_id",
-                    //         "orderable": false
-                    //     },{"data": "application_id"},{"data": "user_id"},{"data": "application_date"},
-                    //     {
-                    //         "data" : "action",
-                    //         "orderable": false,
-                    //         "className" : "text-center"
-                    //     }
-                    // ],
+   
                     columns: [
                         {
                             "data": "app_id",
@@ -416,8 +412,25 @@
                         var index = page * length + (iDisplayIndex + 1);
                         $('td:eq(0)', row).html(index);
                     }
+
+                });
+
+                var newcs = $('#new-cons').DataTable();
+
+                new $.fn.dataTable.Responsive(newcs);
+
+                $('#show-hide-mytable').DataTable({
+                    responsive: {
+                        details: {
+                            display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                            type: ''
+                        }
+                    }
                 });
             });
+
+
+
         </script>
 
          <script type="text/javascript">
