@@ -101,7 +101,7 @@ $crud = true;
                             </a>
                             <ul class="show-notification profile-notification">
                                 <li>
-                                    <a href="../index.php/profile">
+                                    <a href="../profile">
                                         <i class="ti-user"></i> Profile
                                     </a>
                                 </li>
@@ -111,7 +111,7 @@ $crud = true;
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="../index.php/auth/logout">
+                                    <a href="../auth/logout">
                                         <i class="ti-layout-sidebar-left"></i> Logout
                                     </a>
                                 </li>
@@ -145,9 +145,9 @@ $crud = true;
         <div class="main-menu-content">
             <ul class="main-navigation">
                 <li class="more-details">
-                    <a href="../index.php/profile"><i class="ti-user"></i>View Profile</a>
+                    <a href="../profile"><i class="ti-user"></i>View Profile</a>
                     <a href="#!"><i class="ti-settings"></i>Settings</a>
-                    <a href="../index.php/auth/logout"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                    <a href="../auth/logout"><i class="ti-layout-sidebar-left"></i>Logout</a>
                 </li>
 
                 <li class="nav-title" data-i18n="nav.category.navigation">
@@ -155,13 +155,13 @@ $crud = true;
                     <span>Navigation</span>
                 </li>
                     <li class="nav-item single-item" >
-                        <a href="../index.php/dashboard">
+                        <a href="../dashboard">
                             <i class="icofont icofont-home"></i>
                             <span data-i18n="nav.dash.main">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item single-item" >
-                                <a href="../index.php/profile">
+                                <a href="../profile">
                                     <i class="icofont icofont-ui-user"></i>
                                     <span data-i18n="nav.dash.main">Profile</span>
                                 </a>
@@ -172,11 +172,11 @@ $crud = true;
                             <span data-i18n="nav.navigate.main">Membership</span>
                         </a>
                         <ul class="tree-1">
-                            <li><a href="../index.php/application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
+                            <li><a href="../application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
                             </li>
-                            <li><a href="../index.php/application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
+                            <li><a href="../application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
                             </li>
-                            <li><a href="../index.php/user" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a>
+                            <li><a href="../user" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a>
                             </li>
                         </ul>
                     </li>
@@ -186,15 +186,15 @@ $crud = true;
                             <span data-i18n="nav.navigate.main">Activity</span>
                         </a>
                         <ul class="tree-1">
-                            <li><a href="../index.php/activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
+                            <li><a href="../activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
                             </li>
                             <li <?php if($activity) { ?> class="has-class" <?php } ?>>
-                            <a href="../index.php/activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a>
+                            <a href="../activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item single-item">
-                        <a href="../index.php/contactus">
+                        <a href="../contactus">
                             <i class="ti-view-grid"></i>
                             <span data-i18n="nav.widget.main"> Contact Us</span>
                         </a>
@@ -204,7 +204,7 @@ $crud = true;
                         <span>GENERATOR</span>
                     </li>
                     <li class="nav-item single-item">
-                        <a href="../crud/index.php">
+                        <a href="../crud/">
                             <i class="ti-cloud-up"></i>
                             <span data-i18n="nav.file-upload.main">CRUD GENERATOR</span>
                         </a>
@@ -249,7 +249,7 @@ $crud = true;
                                             <form action="index.php" method="POST">
 
                                                 <div class="form-group">
-                                                    <label>Select Table - <a href="<?php echo $_SERVER['PHP_SELF'] ?>">Refresh</a></label>
+                                                    <label>Select Table - <a class="btn btn-info" href="<?php echo $_SERVER['PHP_SELF'] ?>">Refresh</a></label>
                                                     <select id="table_name" name="table_name" class="form-control" onchange="setname()">
                                                         <option value="">Please Select</option>
                                                         <?php

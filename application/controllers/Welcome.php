@@ -8,10 +8,4 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
-	public function homepage()
-	{
-		$this->load->view('landingpage/index');
-	}
-
-
 }

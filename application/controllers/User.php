@@ -16,7 +16,8 @@ class User extends CI_Controller
 
     public function index()
     {
-        $this->load->view('user/user_list');
+        check_login();
+        $this->template->load('template','user/user_list');
     } 
     
     public function json() {
@@ -40,7 +41,7 @@ class User extends CI_Controller
             'detail_email' => $row2->detail_email,
             'detail_address' => $row2->detail_address,
 	    );
-            $this->load->view('user/user_read', $data);
+            $this->template->load('template','user/user_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('user'));
@@ -58,7 +59,7 @@ class User extends CI_Controller
     	    'usr_role' => set_value('usr_role'),
     	    'usr_status' => set_value('usr_status'),
 	);
-        $this->load->view('user/user_create_form', $data);
+        $this->template->load('template','user/user_create_form', $data);
     }
     
     public function create_action() 
@@ -103,7 +104,7 @@ class User extends CI_Controller
                 'detail_email' => $row2->detail_email,
                 'detail_address' => $row2->detail_address,
 	    );
-            $this->load->view('user/user_form', $data);
+            $this->template->load('template','user/user_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('user'));

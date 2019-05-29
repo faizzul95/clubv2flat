@@ -147,14 +147,14 @@ Class Auth extends CI_Controller{
           );
         $this->Application_model->insert($application);
 
-         echo $this->session->set_flashdata('msg','Register success,<br> Please remember your application ID : <font color="blue"><b>'.$application_id.'</b></font>');
+        echo $this->session->set_flashdata('msg','Register success,<br> Please remember your application ID : <font color="blue"><b>'.$application_id.'</b></font>');
                 redirect('auth/register');       
     }
 
     function logout(){
         //load session library
         $this->load->library('session');
-
+        $this->session->unset_userdata($sesdata);
         $this->session->sess_destroy();
         redirect('auth');
     }

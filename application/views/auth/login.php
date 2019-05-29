@@ -18,19 +18,17 @@
     <meta name="author" content="Phoenixcoded">
     <!-- Favicon icon -->
     
-    <link rel="icon" href="../vendor/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?= base_url(); ?>/vendor/assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/icon/icofont/css/icofont.css">
     <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/css/style.css">
-    <!-- color .css -->
-    <link rel="stylesheet" type="text/css" href="../vendor/assets/css/color/color-1.css" id="color"/>
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/css/style.css">
 </head>
 
 <body class="fix-menu">
@@ -43,14 +41,16 @@
                     <div class="login-card card-block auth-body">
 
                         <div class="text-center">
-                            <img src="../vendor/assets/images/auth/logo.png" alt="logo.png">
+                            <a href="<?= base_url(); ?>welcome">
+                                <img src="<?= base_url(); ?>/vendor/assets/images/auth/logo.png" alt="logo.png">
+                            </a>
                         </div>
 
                             <?php
                                 if($this->session->flashdata('msg')){
                                     ?>
-                                    <div class="alert alert-danger text-center alert-dismissible" style="margin-top:25px;">
-                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <div class="alert alert-danger text-center" style="margin-top:25px;">
+                                        <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
                                         <strong><?php echo $this->session->flashdata('msg'); ?></strong> 
                                       </div>
                                     <?php
@@ -96,22 +96,22 @@
         <!-- end of container-fluid -->
     </section>
     <!-- Required Jquery -->
-    <script type="text/javascript" src="../vendor/bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="../vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../vendor/bower_components/tether/dist/js/tether.min.js"></script>
-    <script type="text/javascript" src="../vendor//bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/tether/dist/js/tether.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor//bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="../vendor/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
     <!-- modernizr js -->
-    <script type="text/javascript" src="../vendor/bower_components/modernizr/modernizr.js"></script>
-    <script type="text/javascript" src="../vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
     <!-- i18next.min.js -->
-    <script type="text/javascript" src="../vendor/bower_components/i18next/i18next.min.js"></script>
-    <script type="text/javascript" src="../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
-    <script type="text/javascript" src="../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
-    <script type="text/javascript" src="../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/i18next/i18next.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
     <!-- Custom js -->
-    <script type="text/javascript" src="../vendor/assets/js/script.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/js/script.js"></script>
 </body>
 
 </html>

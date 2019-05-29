@@ -8,25 +8,27 @@
     <meta name="description" content="Landing page template for creative dashboard">
     <meta name="keywords" content="Landing page template">
 	<!-- Favicon icon -->
-	<link rel="icon" href="vendor/landingpage/assets/logos/favicon.ico" type="image/png" sizes="16x16">
+	<link rel="icon" href="<?= base_url(); ?>/vendor/landingpage/assets/logos/favicon.ico" type="image/png" sizes="16x16">
 	<!-- Bootstrap -->
-    <link href="vendor/landingpage/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="<?= base_url(); ?>/vendor/landingpage/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,700,600" rel="stylesheet" type="text/css">
 	<!-- Animate CSS -->
     <link rel="stylesheet" href="vendor/landingpage/assets/css/animate.css">
 	<!-- Owl Carousel -->
-    <link rel="stylesheet" href="vendor/landingpage/assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="vendor/landingpage/assets/css/owl.theme.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/vendor/landingpage/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/vendor/landingpage/assets/css/owl.theme.css">
 	<!-- Magnific Popup -->
-    <link rel="stylesheet" href="vendor/landingpage/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/vendor/landingpage/assets/css/magnific-popup.css">
 	<!-- Full Page Animation -->
-    <link rel="stylesheet" href="vendor/landingpage/assets/css/animsition.min.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/vendor/landingpage/assets/css/animsition.min.css">
 	<!-- Ionic Icons -->
-    <link rel="stylesheet" href="vendor/landingpage/assets/css/ionicons.min.css"> 
+    <link rel="stylesheet" href="<?= base_url(); ?>/vendor/landingpage/assets/css/ionicons.min.css"> 
+    <!-- sweet alert framework -->
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/bower_components/sweetalert/dist/sweetalert.css">
 	<!-- Main Style css -->
-    <link href="vendor/landingpage/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="<?= base_url(); ?>/vendor/landingpage/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
   </head>
   <body>
     <div class="wrapper animsition" data-animsition-in-class="fade-in"
@@ -44,7 +46,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-              <a class="navbar-brand page-scroll" href="#main"><img src="vendor/landingpage/assets/logos/logo.png" alt="Flat Able Logo" /></a>
+              <a class="navbar-brand page-scroll" href="#main"><img src="<?= base_url(); ?>/vendor/landingpage/assets/logos/logo.png" alt="Flat Able Logo" /></a>
               </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -52,7 +54,7 @@
                     <li><a class="page-scroll" href="#main">Home</a></li>
                     <li><a class="page-scroll" href="#services">About</a></li>
                     <li><a class="page-scroll" href="#features">Activity</a></li>
-                    <li><a class="page-scroll" href="index.php/auth">Login</a></li>
+                    <li><a class="page-scroll" href="auth">Login</a></li>
                 </ul>
             </div>
           </div>
@@ -86,7 +88,7 @@
                 <p class="wow fadeInUp" data-wow-delay="0.2s">
                   Already register with us ? <br class="hidden-xs"> Check your application here.
                 </p>
-                  <?php  echo  form_open('application/checkApp'); ?>
+                  <?php  echo  form_open('index.php/application/checkApp'); ?>
                     <div class ='subscribe-form'>
                     <input class="mail" type="text" name="checkApp" placeholder="Enter Application ID" required autocomplete="off">
                     <input class="submit-button" type="submit" value="Check Application Now">
@@ -116,7 +118,7 @@
           <div class="services">
             <div class="col-sm-4 wow fadeInUp" data-wow-delay="0.2s">
               <div class="services-icon">
-                <img src="vendor/landingpage/assets/logos/icon1.png" height="60" width="60" alt="Service" />
+                <img src="<?= base_url(); ?>/vendor/landingpage/assets/logos/icon1.png" height="60" width="60" alt="Service" />
               </div>
               <div class="services-description">
                 <h1>Mega feature rich</h1>
@@ -127,7 +129,7 @@
             </div>
             <div class="col-sm-4 wow fadeInUp" data-wow-delay="0.3s">
               <div class="services-icon">
-                <img class="icon-2" src="vendor/landingpage/assets/logos/icon2.png" height="60" width="60" alt="Service" />
+                <img class="icon-2" src="<?= base_url(); ?>/vendor/landingpage/assets/logos/icon2.png" height="60" width="60" alt="Service" />
               </div>
               <div class="services-description">
                 <h1>Fast and Robust</h1>
@@ -138,7 +140,7 @@
             </div>
             <div class="col-sm-4 wow fadeInUp" data-wow-delay="0.4s">
               <div class="services-icon">
-                <img class="icon-3" src="vendor/landingpage/assets/logos/icon3.png" height="60" width="60" alt="Service" />
+                <img class="icon-3" src="<?= base_url(); ?>/vendor/landingpage/assets/logos/icon3.png" height="60" width="60" alt="Service" />
               </div>
               <div class="services-description">
                 <h1>FLAT UI-Interface</h1>
@@ -157,7 +159,7 @@
       <div class="flex-split"><!-- Feature section with flex layout -->
         <div class="f-left wow fadeInUp" data-wow-delay="0s">
           <div class="left-content">
-            <img class="img-responsive" src="vendor/landingpage/assets/images/feature_1.png" alt="" />
+            <img class="img-responsive" src="<?= base_url(); ?>/vendor/landingpage/assets/images/feature_1.png" alt="" />
           </div>
         </div>
         <div class="f-right wow fadeInUp" data-wow-delay="0.2s">
@@ -193,7 +195,7 @@
         </div>
         <div class="f-left">
           <div class="left-content wow fadeInUp" data-wow-delay="0.3s">
-            <img class="img-responsive" src="vendor/landingpage/assets/images/feature_2.png" alt="" />
+            <img class="img-responsive" src="<?= base_url(); ?>/vendor/landingpage/assets/images/feature_2.png" alt="" />
           </div>
         </div>
       </div>
@@ -271,7 +273,7 @@
   <div class="footer">
     <div class="container">
         <div class="col-md-12 text-center">
-          <img src="vendor/landingpage/assets/logos/logo.png" alt="Flat Able Logo" />
+          <img src="<?= base_url(); ?>/vendor/landingpage/assets/logos/logo.png" alt="Flat Able Logo" />
         <div class="footer-text">
           <p>
             Copyright © 2019 Club Management System.
@@ -286,19 +288,65 @@
     <a id="back-top" class="back-to-top page-scroll" href="#main">
     <i class="ion-ios-arrow-thin-up"></i>
     </a>
-
   <!-- Scroll To Top Ends-->
-
-
     </div><!-- Main Section -->
   </div><!-- Wrapper-->
 
 <!-- Jquery and Js Plugins -->
-  <script type="text/javascript" src="vendor/landingpage/assets/js/jquery-2.1.1.js"></script>
-  <script type="text/javascript" src="vendor/landingpage/assets/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="vendor/landingpage/assets/js/plugins.js"></script>
-  <script type="text/javascript" src="vendor/landingpage/assets/js/menu.js"></script>
-  <script type="text/javascript" src="vendor/landingpage/assets/js/custom.js"></script>
-  <script type="text/javascript" src="vendor/landingpage/assets/js/script.js"></script>
+  <script type="text/javascript" src="<?= base_url(); ?>/vendor/landingpage/assets/js/jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="<?= base_url(); ?>/vendor/landingpage/assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="<?= base_url(); ?>/vendor/landingpage/assets/js/plugins.js"></script>
+  <script type="text/javascript" src="<?= base_url(); ?>/vendor/landingpage/assets/js/menu.js"></script>
+  <script type="text/javascript" src="<?= base_url(); ?>/vendor/landingpage/assets/js/custom.js"></script>
+  <script type="text/javascript" src="<?= base_url(); ?>/vendor/landingpage/assets/js/script.js"></script>
+   <!-- sweet alert modal.js intialize js -->
+   <!-- sweet alert js -->
+  <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+  <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/js/modal.js"></script>
+  <!-- modalEffects js nifty modal window effects -->
+  <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/js/modalEffects.js"></script>
+  <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/js/classie.js"></script>
+
+   <?php if ($this->session->flashdata('message')) { ?>
+             <?php if ($this->session->flashdata('message') == "Your application have been approve.") { ?>
+                 <script type="text/javascript">
+                   swal({
+                        title: "Congratulation !",
+                        text: '<?= $this->session->flashdata('message')?>',
+                        timer: 4000,
+                        showConfirmButton: true,
+                        allowOutsideClick: true,
+                        type: 'success'
+                    });
+                </script>
+            <?php }else if($this->session->flashdata('message') == "Your application has been rejected by admin.") { ?>
+                <script type="text/javascript">
+                    setTimeout(function () {
+                        swal({
+                            title: "We are sorry",
+                            text: '<?= $this->session->flashdata('message')?>\n Please Contact Administrator.',
+                            timer: 6000,
+                            showConfirmButton: true,
+                            allowOutsideClick: true,
+                            type: 'error'
+                        });
+                        }, 250);
+                </script>
+            <?php }else{ ?>
+               <script type="text/javascript">
+                    setTimeout(function () {
+                        swal({
+                            title: "information",
+                            text: '<?= $this->session->flashdata('message')?>',
+                            timer: 4000,
+                            showConfirmButton: true,
+                            allowOutsideClick: true,
+                            type: 'info'
+                        });
+                        }, 250);
+                </script>
+            <?php } ?>
+        <?php } ?>
+
   </body>
 </html>

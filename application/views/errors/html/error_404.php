@@ -1,5 +1,13 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
+
+    $CI =& get_instance();
+    if( ! isset($CI))
+    {
+        $CI = new CI_Controller();
+    }
+    $CI->load->helper('url');
+
 ?>
 
 <!DOCTYPE html>
@@ -14,8 +22,8 @@
 		<meta name="author" content="Phoenixcoded">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="../vendor/errors/img/favicon.ico">
-		<link rel="stylesheet" type="text/css" href="../vendor/errors/css/style.css" />
+        <link rel="shortcut icon" href="<?php echo base_url('vendor/errors/img/favicon.ico')?>">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('vendor/errors/css/style.css')?>" />
 	</head>
 
 	<body class="flat">
@@ -75,11 +83,11 @@
             <li><a href="dashboard">Back to dashboard</a></li>
         </ul>
     </footer>
-        <script src=".../vendor/errors/js/jquery.min.js"></script>
-        <script src="../vendor/errors/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url('vendor/errors/js/jquery.min.js')?>"></script>
+        <script src="<?php echo base_url('vendor/errors/js/bootstrap.min.js')?>"></script>
 
         <!-- Particles plugin -->
-        <script src="../vendor/errors/js/particles.js"></script>
+        <script src="<?php echo base_url('vendor/errors/js/particles.js')?>"></script>
 
     </body>
 

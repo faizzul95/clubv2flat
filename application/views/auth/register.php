@@ -11,19 +11,19 @@
     <meta name="author" content="Phoenixcoded">
     <!-- Favicon icon -->
     
-    <link rel="icon" href="../../vendor/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?= base_url(); ?>/vendor/assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/icon/icofont/css/icofont.css">
     <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/css/style.css">
     <!-- color .css -->
-    <link rel="stylesheet" type="text/css" href="../../vendor/assets/css/color/color-1.css" id="color"/>
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/css/color/color-1.css" id="color"/>
 </head>
 
 <body class="fix-menu dark-layout">
@@ -35,7 +35,9 @@
                     <!-- Authentication card start -->
                     <div class="login-card card-block auth-body">
                             <div class="text-center">
-                                <img src="../../vendor/assets/images/auth/logo.png" alt="logo.png">
+                              <a href="<?= base_url(); ?>welcome">
+                                <img src="<?= base_url(); ?>/vendor/assets/images/auth/logo.png" alt="logo.png">
+                              </a>
                             </div>
 
                             <?php
@@ -50,12 +52,6 @@
                         <div class="md-float-material">
                             <?php  echo  form_open('auth/register_application'); ?>
                             <div class="auth-box">
-                               <!--  <div class="row m-b-20">
-                                    <div class="col-md-12">
-                                        <h3 class="text-center txt-primary">Sign up</h3>
-                                    </div>
-                                </div>
-                                <hr/> -->
 
                                 <h3 class="text-center txt-primary">Personnal Information</h3>
 
@@ -71,13 +67,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="detail_phone" placeholder="Your Phone Number" autocomplete="off" required>
+                                            <input type="text" class="form-control" name="detail_phone" placeholder="Your Phone Number" autocomplete="off" minlength="10" maxlength="11" required>
                                             <span class="md-line"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                          <div class="input-group">
-                                            <input type="email" class="form-control" name="detail_email" placeholder="Your Email Address" required>
+                                            <input type="email" class="form-control" autocomplete="off" name="detail_email" placeholder="Your Email Address" required>
                                             <span class="md-line"></span>
                                         </div>
                                     </div>
@@ -99,7 +95,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="password" minlength="8" autocomplete="off" class="form-control" placeholder="Enter Password" required>
+                                            <input type="password" name="password" minlength="8" autocomplete="off" class="form-control" placeholder="Enter Password" required>
                                             <span class="md-line"></span>
                                         </div>
                                     </div>
@@ -131,22 +127,22 @@
     </section>
    
     <!-- Required Jquery -->
-    <script type="text/javascript" src="../../vendor/bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/tether/dist/js/tether.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/tether/dist/js/tether.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="../../vendor/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
     <!-- modernizr js -->
-    <script type="text/javascript" src="../../vendor/bower_components/modernizr/modernizr.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
     <!-- i18next.min.js -->
-    <script type="text/javascript" src="../../vendor/bower_components/i18next/i18next.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
-    <script type="text/javascript" src="../../vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/i18next/i18next.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/jquery-i18next/jquery-i18next.min.js"></script>
     <!-- Custom js -->
-    <script type="text/javascript" src="../../vendor/assets/js/script.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/js/script.js"></script>
 </body>
 
 </html>

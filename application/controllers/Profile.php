@@ -11,6 +11,8 @@ class Profile extends CI_Controller {
     
 	public function index()
 	{
+        check_login();
+
 		$userID = $this->session->userdata('userid');
 		$row = $this->User_detail_model->get_by_id($userID);
         if ($row) {
@@ -22,8 +24,8 @@ class Profile extends CI_Controller {
     		'detail_address' => $row->detail_address,
     		'user_id' => $row->user_id,
 	    );
-          $this->load->view('user_profile', $data);
-		// $this->load->view('user_profile');
+          // $this->load->view('user_profile', $data);
+          $this->template->load('template','user_profile', $data);
 	}
 }
 

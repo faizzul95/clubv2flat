@@ -10,22 +10,24 @@ class Application extends CI_Controller
         parent::__construct();
         $this->load->model('Application_model');
         $this->load->library('form_validation');        
-	$this->load->library('datatables');
+        $this->load->library('datatables');
     }
 
     public function index()
     {
-        $this->load->view('application/application_list');
+        check_login();
+        $this->template->load('template','application/application_list');
     } 
 
     public function newlist()
     {
-        $this->load->view('application/application_newlist');
+        // $this->load->view('application/application_newlist');
+        $this->template->load('template','application/application_newlist');
     } 
 
     public function disapprove()
     {
-        $this->load->view('application/application_rejectlist');
+        $this->template->load('template','application/application_rejectlist');
     } 
     
     public function json() {
@@ -57,7 +59,7 @@ class Application extends CI_Controller
     		'application_evaluate_date' => $row->application_evaluate_date,
     		'application_status' => $row->application_status,
 	    );
-            $this->load->view('application/application_read', $data);
+            $this->template->load('template','application/application_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('application'));
@@ -76,7 +78,7 @@ class Application extends CI_Controller
 	    'application_evaluate_date' => set_value('application_evaluate_date'),
 	    'application_status' => set_value('application_status'),
 	);
-        $this->load->view('application/application_create_form', $data);
+        $this->template->load('template','application/application_create_form', $data);
     }
     
     public function create_action() 
@@ -115,7 +117,7 @@ class Application extends CI_Controller
 		'application_evaluate_date' => set_value('application_evaluate_date', $row->application_evaluate_date),
 		'application_status' => set_value('application_status', $row->application_status),
 	    );
-            $this->load->view('application/application_form', $data);
+            $this->template->load('template','application/application_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('application'));
@@ -224,18 +226,18 @@ class Application extends CI_Controller
             $user_id  = $data['user_id'];
 
             if ($application_status == "approve") {
-                $this->session->set_flashdata('msg_alert_success', 'Congratulation ! your application have been approve.');
-                redirect(site_url('welcome/homepage'));
+                $this->session->set_flashdata('message', 'Your application have been approve.');
+                redirect(site_url('welcome'));
             }elseif ($application_status == "reject") {
-                $this->session->set_flashdata('msg_alert_reject', 'Your application has been rejected by admin.');
-                redirect(site_url('welcome/homepage'));
+                $this->session->set_flashdata('message', 'Your application has been rejected by admin.');
+                redirect(site_url('welcome'));
             }elseif ($application_status == "pending") {
-                $this->session->set_flashdata('msg_alert_pending', 'Your application still in process.');
-                redirect(site_url('welcome/homepage'));
+                $this->session->set_flashdata('message', 'Your application still in process.');
+                redirect(site_url('welcome'));
             }
         }else{
             $this->session->set_flashdata('msg_alert_notfound','Application ID not found');
-            redirect(site_url('welcome/homepage'));
+            redirect(site_url('welcome'));
         }
     }
 
