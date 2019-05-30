@@ -8,4 +8,6 @@ Template : Flat Able v1.0.1
 
 CRUD Generator : Harviacode v1.4
 
-Assignment 2 (ICT600)
+Group Project @ Assignment 2 (ICT600)
+
+Semester 5 (March - Sept 2019)
