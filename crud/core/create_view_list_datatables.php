@@ -32,15 +32,15 @@
 <!-- Basic Button table start -->
             <div class=\"card\">
                 <div class=\"card-header\">
-                        <?php echo anchor(site_url('".$c_url."/create'), '<i class=\"icofont icofont-ui-add\"></i> Create', 'class=\"btn btn-info\"'); ?>";
+                        <?php echo anchor(site_url('".$c_url."/create'), '<i class=\"fa fa-wpforms\"></i> Add Data', 'class=\"btn btn-info\"'); ?>";
                         if ($export_excel == '1') {
-                            $string .= "\n\t\t<?php echo anchor(site_url('".$c_url."/excel'), '<i class=\"icofont icofont-download-alt\"></i> Export as Excel', 'class=\"btn btn-success btn-square\"'); ?>";
+                            $string .= "\n\t\t<?php echo anchor(site_url('".$c_url."/excel'), '<i class=\"fa fa-file-excel-o\"></i> Export as Excel', 'class=\"btn btn-success btn-square\"'); ?>";
                         }
                         if ($export_word == '1') {
-                            $string .= "\n\t\t<?php echo anchor(site_url('".$c_url."/word'), '<i class=\"icofont icofont-download-alt\"></i> Export as Word', 'class=\"btn btn-inverse btn-square\"'); ?>";
+                            $string .= "\n\t\t<?php echo anchor(site_url('".$c_url."/word'), '<i class=\"fa fa-file-word-o\"></i> Export as Word', 'class=\"btn btn-inverse btn-square\"'); ?>";
                         }
                         if ($export_pdf == '1') {
-                            $string .= "\n\t\t<?php echo anchor(site_url('".$c_url."/pdf'), '<i class=\"icofont icofont-download-alt\"></i> Export as PDF', 'class=\"btn btn-inverse btn-square\"'); ?>";
+                            $string .= "\n\t\t<?php echo anchor(site_url('".$c_url."/pdf'), '<i class=\"fa fa-file-pdf-o\"></i> Export as PDF', 'class=\"btn btn-inverse btn-square\"'); ?>";
                         }
                         $string .= "
                 </div>

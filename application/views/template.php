@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- <title>CMS | List Of Contactus</title> -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -35,7 +34,7 @@
      <!-- notify js Fremwork -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/bower_components/pnotify/dist/pnotify.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/bower_components/pnotify/dist/pnotify.brighttheme.css">
-    <link rel="stylesheet" type="text/css" href="../assets/pages/pnotify/notify.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/pages/pnotify/notify.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/css/style.css">
     <!--SVG Icons Animated-->
@@ -158,13 +157,15 @@
                             <span data-i18n="nav.dash.main">Dashboard</span>
                         </a>
                     </li>
+                    <?php if($this->session->userdata('level')==='admin' || $this->session->userdata('level')==='member'):?>
                     <li class="nav-item single-item <?= $this->uri->segment(1) == 'profile' ? 'has-class' : ''?> ">
                         <a href="<?= base_url(); ?>profile">
                             <i class="icofont icofont-ui-user"></i>
                             <span data-i18n="nav.dash.main">Profile</span>
                         </a>
                     </li>
-                    <?php if($this->session->userdata('level')==='admin'):?>
+                    <?php endif;?>
+                    <?php if($this->session->userdata('level')==='admin' || $this->session->userdata('level')==='superadmin'):?>
                     <li class="nav-item <?= $this->uri->segment(1) == 'application' || $this->uri->segment(1) == 'user'? 'has-class' : ''?>" >
                         <a href="#!">
                             <i class="ti-layout-cta-right"></i>
@@ -223,6 +224,8 @@
                             </label>
                         </a>
                     </li>
+                    <?php endif;?>
+                    <?php if($this->session->userdata('level')==='superadmin'):?>
                     <li class="nav-title" data-i18n="nav.category.navigation">
                         <i class="ti-line-dashed"></i>
                         <span>GENERATOR</span>

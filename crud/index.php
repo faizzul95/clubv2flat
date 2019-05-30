@@ -203,7 +203,7 @@ $crud = true;
                         <i class="ti-line-dashed"></i>
                         <span>GENERATOR</span>
                     </li>
-                    <li class="nav-item single-item">
+                    <li class="nav-item single-item has-class">
                         <a href="../crud/">
                             <i class="ti-cloud-up"></i>
                             <span data-i18n="nav.file-upload.main">CRUD GENERATOR</span>
@@ -270,7 +270,7 @@ $crud = true;
                                                         <div class="col-md-7">
                                                             <div class="radio" style="margin-bottom: 0px; margin-top: 0px">
                                                                 <label>
-                                                                    <input type="radio" name="jenis_tabel" value="datatables" <?php echo $jenis_tabel == 'datatables' ? 'checked' : ''; ?>>
+                                                                    <input type="radio" name="jenis_tabel" value="datatables" <?php echo $jenis_tabel == 'datatables' ? 'checked' : 'checked'; ?>>
                                                                     Serverside Datatables
                                                                 </label>
                                                             </div>

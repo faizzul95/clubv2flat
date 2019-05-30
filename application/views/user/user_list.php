@@ -31,8 +31,8 @@
                 <div class="card">
                     <div class="card-header">
                             <?php //echo anchor(site_url('user/create'), '<i class="icofont icofont-ui-add"></i> Create', 'class="btn btn-info"'); ?>
-                    		<?php echo anchor(site_url('user/excel'), '<i class="icofont icofont-download-alt"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
-                    		<?php echo anchor(site_url('user/word'), '<i class="icofont icofont-download-alt"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
+                    		<?php echo anchor(site_url('user/excel'), '<i class="fa fa-file-excel-o"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
+                    		<?php echo anchor(site_url('user/word'), '<i class="fa fa-file-word-o"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
                     </div>
                     <div class="card-block">
                         <div class="table-responsive">

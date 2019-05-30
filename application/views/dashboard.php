@@ -48,7 +48,7 @@
                                     </li>
                                     <li class="text-right text-warning">
                                         <?php 
-                                            $query = $this->db->query('SELECT * FROM user WHERE usr_role ="member"');
+                                            $query = $this->db->query('SELECT * FROM user WHERE usr_role ="member" && usr_status = "active"');
                                             echo $query->num_rows(); 
                                         ?>
                                     </li>
@@ -167,8 +167,8 @@
     <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/js/modal.js"></script>
     <!-- sweet alert modal.js intialize js -->
     <!-- modalEffects js nifty modal window effects -->
-    <script type="text/javascript" src="assets/js/modalEffects.js"></script>
-    <script type="text/javascript" src="assets/js/classie.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/js/modalEffects.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/js/classie.js"></script>
     <!-- Custom js -->
 
     <!-- <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/pages/widget/custom-widget.js"></script> -->

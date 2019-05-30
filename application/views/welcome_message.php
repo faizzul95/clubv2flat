@@ -15,7 +15,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,700,600" rel="stylesheet" type="text/css">
 	<!-- Animate CSS -->
-    <link rel="stylesheet" href="vendor/landingpage/assets/css/animate.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/vendor/landingpage/assets/css/animate.css">
 	<!-- Owl Carousel -->
     <link rel="stylesheet" href="<?= base_url(); ?>/vendor/landingpage/assets/css/owl.carousel.css">
     <link rel="stylesheet" href="<?= base_url(); ?>/vendor/landingpage/assets/css/owl.theme.css">
@@ -60,24 +60,6 @@
           </div>
         </nav><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
-
-       <?php if ($this->session->userdata('msg_alert_success')) { ?>
-          <script type="text/javascript">
-               alert('Congratulation ! your application have been approve');
-           </script>
-      <?php } elseif ($this->session->userdata('msg_alert_reject')) { ?>
-          <script type="text/javascript">
-               alert('Your application has been rejected by admin');
-           </script>
-      <?php } elseif ($this->session->userdata('msg_alert_notfound')) { ?>
-           <script type="text/javascript">
-               alert('Application ID not found');
-           </script>
-      <?php } elseif ($this->session->userdata('msg_alert_pending')) { ?>
-           <script type="text/javascript">
-               alert('Your application still in process.');
-           </script>
-      <?php } ?>
 
     <div class="main" id="main"><!-- Main Section-->
       <div class="hero-section app-hero">
@@ -244,7 +226,7 @@
               </div>
               <h3><span class="counter">
                 <?php 
-                    $query = $this->db->query('SELECT * FROM user WHERE usr_role = "member"');
+                    $query = $this->db->query('SELECT * FROM user WHERE usr_role = "member" && usr_status = "active"');
                     echo $query->num_rows(); 
                 ?>
               </span></h3>
@@ -298,7 +280,7 @@
   <script type="text/javascript" src="<?= base_url(); ?>/vendor/landingpage/assets/js/plugins.js"></script>
   <script type="text/javascript" src="<?= base_url(); ?>/vendor/landingpage/assets/js/menu.js"></script>
   <script type="text/javascript" src="<?= base_url(); ?>/vendor/landingpage/assets/js/custom.js"></script>
-  <script type="text/javascript" src="<?= base_url(); ?>/vendor/landingpage/assets/js/script.js"></script>
+  <script type="text/javascript" src="../../../../../vendor/landingpage/assets/js/script.js"></script>
    <!-- sweet alert modal.js intialize js -->
    <!-- sweet alert js -->
   <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/sweetalert/dist/sweetalert.min.js"></script>
@@ -332,12 +314,25 @@
                         });
                         }, 250);
                 </script>
+             <?php }else if($this->session->flashdata('message') == "Your application still in process.") { ?>
+                <script type="text/javascript">
+                    setTimeout(function () {
+                        swal({
+                            title: "We are sorry",
+                            text: '<?= $this->session->flashdata('message')?>\n Please Contact Administrator.',
+                            timer: 6000,
+                            showConfirmButton: true,
+                            allowOutsideClick: true,
+                            type: 'info'
+                        });
+                        }, 250);
+                </script>
             <?php }else{ ?>
                <script type="text/javascript">
                     setTimeout(function () {
                         swal({
-                            title: "information",
-                            text: '<?= $this->session->flashdata('message')?>',
+                            title: "<?= $this->session->flashdata('message')?>",
+                            text: 'Please register first',
                             timer: 4000,
                             showConfirmButton: true,
                             allowOutsideClick: true,

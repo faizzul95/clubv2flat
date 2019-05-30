@@ -236,7 +236,7 @@ class Application extends CI_Controller
                 redirect(site_url('welcome'));
             }
         }else{
-            $this->session->set_flashdata('msg_alert_notfound','Application ID not found');
+            $this->session->set_flashdata('message','Application ID not found');
             redirect(site_url('welcome'));
         }
     }
