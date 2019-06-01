@@ -80,7 +80,7 @@
         </div>
     <footer class="light">
         <ul>
-            <li><a href="dashboard">Back to dashboard</a></li>
+            <li><a href="<?= base_url(); ?>dashboard">Back to dashboard</a></li>
         </ul>
     </footer>
         <script src="<?php echo base_url('vendor/errors/js/jquery.min.js')?>"></script>

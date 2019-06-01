@@ -246,14 +246,14 @@
                     <li class="nav-item single-item <?= $this->uri->segment(1) == 'menu' ? 'has-class' : ''?>">
                         <a href="<?= base_url(); ?>menu">
                             <i class="icofont icofont-settings-alt"></i>
-                            <span data-i18n="nav.file-upload.main">Menu</span>
+                            <span data-i18n="nav.file-upload.main">Menu Management</span>
                         </a>
                     </li>
                      </li>
                     <li class="nav-item single-item <?= $this->uri->segment(1) == 'user_level' ? 'has-class' : ''?>">
                         <a href="<?= base_url(); ?>user_level">
                             <i class="icofont icofont-settings-alt"></i>
-                            <span data-i18n="nav.file-upload.main">User Access</span>
+                            <span data-i18n="nav.file-upload.main">Menu User Access</span>
                         </a>
                     </li>
                     <li class="nav-title" data-i18n="nav.category.navigation">
