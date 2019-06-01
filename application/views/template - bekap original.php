@@ -108,7 +108,7 @@
                                     </a>
                                 </li> -->
                                 <li>
-                                    <a href="<?= base_url(); ?>auth/logout">
+                                    <a href="auth/logout">
                                         <i class="icofont icofont-logout"></i> Logout
                                     </a>
                                 </li>
@@ -144,129 +144,99 @@
                 <li class="more-details">
                     <a href="profile"><i class="icofont icofont-ui-user"></i>View Profile</a>
                     <a href="#!"><i class="icofont icofont-settings"></i>Settings</a>
-                    <a href="<?= base_url(); ?>auth/logout"><i class="icofont icofont-logout"></i>Logout</a>
+                    <a href="auth/logout"><i class="icofont icofont-logout"></i>Logout</a>
                 </li>
 
                 <li class="nav-title" data-i18n="nav.category.navigation">
                     <i class="fa fa-caret-right"></i>
-                    <span>Main Menu</span>
+                    <span>Navigation</span>
                 </li>
-
-                <?php
-                    // chek settingan tampilan menu
-                    $setting = 'ya';
-                    if($setting=='ya'){
-                        // cari level user
-                        $id_user_level = $this->session->userdata('level');
-                        $sql_menu = "SELECT * 
-                        FROM menu 
-                        WHERE menu_id in(SELECT menu_id FROM menu_access WHERE id_user_level='$id_user_level') AND is_main_menu=0 AND is_active='y'";
-                    }else{
-                        $sql_menu = "SELECT * FROM menu WHERE is_active='y' AND is_main_menu=0'";
-                    }
-
-                    $main_menu = $this->db->query($sql_menu)->result();
-                    
-                    foreach ($main_menu as $menu){
-                        // check is have sub menu
-                        $this->db->where('is_main_menu',$menu->menu_id);
-                        $this->db->where('is_active','y');
-                        $submenu = $this->db->get('menu');
-                        if($submenu->num_rows()>0){
-                            // display sub menu
-
-                            $query = $this->db->query('SELECT * FROM user');
-                            $no = $query->num_rows();
-
-                            $currentPage = $this->uri->segment(1);
-                            if ($currentPage == $menu->menu_url) {
-                                  echo "<li class='nav-item has-class'>
-                                    <a href='#'>
-                                        <i class='$menu->menu_icon'></i>
-                                        <span data-i18n='nav.navigate.main'>$menu->menu_title</span>
-                                    </a>
-                                    <ul class='tree-1'>";
-                                    foreach ($submenu->result() as $sub){
-                                        $currentsubPage = $this->uri->segment(2);
-                                        $subID =explode("/",$sub->menu_url,2);
-                                        error_reporting(0);
-                                        if ($currentsubPage == $subID[1]) {
-                                        echo "<li class='has-class'><a href='".base_url()."$sub->menu_url' data-i18n='nav.navigate.navbar'>$sub->menu_title</a>
-                                             <label class='badge badge-info menu-caption'>
-                                                 $no
-                                             </label>
-                                        </li>";
-                                        }else{
-                                             echo "<li><a href='".base_url()."$sub->menu_url' data-i18n='nav.navigate.navbar'>$sub->menu_title</a>
-                                             <label class='badge badge-info menu-caption'>
-                                                 $no
-                                             </label>
-                                        </li>";
-                                        }
-                                    }
-                                    echo" </ul>
-                                 </li>";
-
-                            }else{
-                                echo "<li class='nav-item'>
-                                    <a href='#'>
-                                        <i class='$menu->menu_icon'></i>
-                                        <span data-i18n='nav.navigate.main'>$menu->menu_title</span>
-                                    </a>
-                                    <ul class='tree-1'>";
-                                    foreach ($submenu->result() as $sub){
-                                        echo "<li ><a href='".base_url()."$sub->menu_url' data-i18n='nav.navigate.navbar'>$sub->menu_title</a>
-                                             <label class='badge badge-info menu-caption'>
-                                                 $no
-                                             </label>
-                                        </li>";
-                                    }
-                                echo" </ul>
-                                </li>";
-                            }
-
-                        }else{
-                            // display main menu
-                            $currentPage = $this->uri->segment(1);
-                            if ($currentPage == $menu->menu_url) {
-                                 echo '<li class="nav-item single-item has-class">';
-                            }else{
-                                 echo '<li class="nav-item single-item">';
-                            }
-                            echo anchor($menu->menu_url,"<i class='$menu->menu_icon'></i>".strtoupper($menu->menu_title));
-                            echo "</li>";
-                        }
-                    }
-                ?>
+                    <li class="nav-item single-item <?= $this->uri->segment(1) == 'dashboard' ? 'has-class' : ''?>" >
+                        <a href="<?= base_url(); ?>dashboard">
+                            <i class="icofont icofont-home"></i>
+                            <span data-i18n="nav.dash.main">Dashboard</span>
+                        </a>
+                    </li>
+                    <?php if($this->session->userdata('level')==='admin' || $this->session->userdata('level')==='member'):?>
+                    <li class="nav-item single-item <?= $this->uri->segment(1) == 'profile' ? 'has-class' : ''?> ">
+                        <a href="<?= base_url(); ?>profile">
+                            <i class="icofont icofont-ui-user"></i>
+                            <span data-i18n="nav.dash.main">Profile</span>
+                        </a>
+                    </li>
+                    <?php endif;?>
+                    <?php if($this->session->userdata('level')==='admin' || $this->session->userdata('level')==='superadmin'):?>
+                    <li class="nav-item <?= $this->uri->segment(1) == 'application' || $this->uri->segment(1) == 'user'? 'has-class' : ''?>" >
+                        <a href="#!">
+                            <i class="icofont icofont-law-document"></i>
+                            <span data-i18n="nav.navigate.main">Membership</span>
+                        </a>
+                        <ul class="tree-1">
+                            <li <?= $this->uri->segment(2) == 'newlist' ? 'class="has-class"' : ''?> ><a href="<?= base_url(); ?>application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
+                            <label class="badge badge-info menu-caption"><?php 
+                                    $query = $this->db->query('SELECT * FROM application WHERE application_status ="pending"');
+                                    echo $query->num_rows(); 
+                                ?>
+                            </label>
+                            </li>
+                            <li <?= $this->uri->segment(2) == 'disapprove' ? 'class="has-class"' : ''?> ><a href="<?= base_url(); ?>application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
+                            <label class="badge badge-info menu-caption"><?php 
+                                    $query = $this->db->query('SELECT * FROM application WHERE application_status ="reject"');
+                                    echo $query->num_rows(); 
+                                ?>
+                            </label>
+                            </li>
+                            <li <?= $this->uri->segment(1) == 'user' ? 'class="has-class"' : ''?> ><a href="<?= base_url(); ?>user" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a>
+                             <label class="badge badge-info menu-caption"><?php 
+                                    $query = $this->db->query('SELECT * FROM user WHERE usr_role ="member" && usr_status = "active"');
+                                    echo $query->num_rows(); 
+                                ?>
+                              </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item <?= $this->uri->segment(1) == 'activity' ? 'has-class' : ''?>">
+                        <a href="#!">
+                            <i class="icofont icofont-law-document"></i>
+                            <span data-i18n="nav.navigate.main">Activity</span>
+                        </a>
+                        <ul class="tree-1">
+                            <li <?= $this->uri->segment(2) == 'create' ? 'class="has-class"' : ''?>><a href="<?= base_url(); ?>activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
+                            </li>
+                            <li <?= $this->uri->segment(1) == 'activity' && $this->uri->segment(2) == '' ? 'class="has-class"' : ''?>>
+                            <a href="<?= base_url(); ?>activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a>
+                                <label class="badge badge-info menu-caption"><?php 
+                                        $query = $this->db->query('SELECT * FROM activity');
+                                        echo $query->num_rows(); 
+                                    ?>
+                                </label>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item single-item <?= $this->uri->segment(1) == 'contactus' ? 'has-class' : ''?>">
+                        <a href="<?= base_url(); ?>contactus">
+                            <i class="icofont icofont-ui-call"></i>
+                            <span data-i18n="nav.widget.main"> Contact Us</span>
+                            <label class="badge badge-info menu-caption"><?php 
+                                    $query = $this->db->query('SELECT * FROM contactus');
+                                    echo $query->num_rows(); 
+                                ?>
+                            </label>
+                        </a>
+                    </li>
+                    <?php endif;?>
                     <?php if($this->session->userdata('level')==='superadmin'):?>
                     <li class="nav-title" data-i18n="nav.category.navigation">
-                        <i class="fa fa-caret-right"></i>
-                        <span>User Access Control</span>
-                    </li>
-                    <li class="nav-item single-item <?= $this->uri->segment(1) == 'menu' ? 'has-class' : ''?>">
-                        <a href="<?= base_url(); ?>menu">
-                            <i class="icofont icofont-settings-alt"></i>
-                            <span data-i18n="nav.file-upload.main">Menu</span>
-                        </a>
-                    </li>
-                     </li>
-                    <li class="nav-item single-item <?= $this->uri->segment(1) == 'user_level' ? 'has-class' : ''?>">
-                        <a href="<?= base_url(); ?>user_level">
-                            <i class="icofont icofont-settings-alt"></i>
-                            <span data-i18n="nav.file-upload.main">User Access</span>
-                        </a>
-                    </li>
-                    <li class="nav-title" data-i18n="nav.category.navigation">
-                        <i class="fa fa-caret-right"></i>
+                        <i class="ti-line-dashed"></i>
                         <span>GENERATOR</span>
                     </li>
                     <li class="nav-item single-item">
                         <a href="<?= base_url(); ?>crud">
                             <i class="ti-cloud-up"></i>
-                            <span data-i18n="nav.file-upload.main">C.R.U.D Generator</span>
+                            <span data-i18n="nav.file-upload.main">CRUD GENERATOR</span>
                         </a>
                     </li>
-                    <?php endif;?> -->
+                    <?php endif;?>
             </ul>
         </div>
     </div>

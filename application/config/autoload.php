@@ -91,7 +91,7 @@ $autoload['drivers'] = array();
 */
 // $autoload['helper'] = array('url');
 // $autoload['helper'] = array('url','form','racode');
-$autoload['helper'] = array('url','form','security','file','logincheck');
+$autoload['helper'] = array('url','form','security','file','logincheck','custom');
 
 /*
 | -------------------------------------------------------------------
