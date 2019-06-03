@@ -3,13 +3,7 @@ error_reporting(0);
 require_once 'core/harviacode.php';
 require_once 'core/helper.php';
 require_once 'core/process.php';
-$dashboard = false;
-$application = false;
-$activity = false;
-$user = false;
-$contactus = false;
 
-$profile = false;
 $crud = true;
 ?>
 
@@ -18,7 +12,7 @@ $crud = true;
 <html lang="en">
 
 <head>
-    <title>Codeigniter CRUD Generator</title>
+    <title>CMS | Codeigniter CRUD Generator</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -42,6 +36,8 @@ $crud = true;
     <link rel="stylesheet" type="text/css" href="../vendor/assets/pages/menu-search/css/component.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="../vendor/assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="../vendor/assets/icon/font-awesome/css/font-awesome.min.css">
     <!-- color .css -->
     <link rel="stylesheet" type="text/css" href="../vendor/assets/css/color/color-1.css" id="color"/>
 </head>
@@ -60,16 +56,16 @@ $crud = true;
         <div class="navbar-wrapper">
             <div class="navbar-logo">
                 <a class="mobile-menu" id="mobile-collapse" href="#!">
-                    <i class="ti-menu"></i>
+                    <i class="icofont icofont-navigation-menu"></i>
                 </a>
                 <a class="mobile-search morphsearch-search" href="#">
-                    <i class="ti-search"></i>
+                    <i class="icofont icofont-search"></i>
                 </a>
                 <a href="dashboard">
                     <img class="img-fluid" src="../vendor/assets/images/logo.png" alt="Theme-Logo" />
                 </a>
                 <a class="mobile-options">
-                    <i class="ti-more"></i>
+                    <i class="fa fa-ellipsis-h"></i>
                 </a>
             </div>
             <div class="navbar-container container-fluid">
@@ -77,18 +73,18 @@ $crud = true;
                     <ul class="nav-left">
                         <li>
                             <a id="collapse-menu" href="#">
-                                <i class="ti-menu"></i>
+                                <i class="icofont icofont-navigation-menu"></i>
                             </a>
                         </li>
                         <li>
                             <a class="main-search morphsearch-search" href="#">
                                 <!-- themify icon -->
-                                <i class="ti-search"></i>
+                                <i class="icofont icofont-search"></i>
                             </a>
                         </li>
                         <li>
                             <a href="#!" onclick="javascript:toggleFullScreen()">
-                                <i class="ti-fullscreen"></i>
+                                <i class="fa fa-arrows-alt"></i>
                             </a>
                         </li>
                     </ul>
@@ -96,23 +92,23 @@ $crud = true;
                         <li class="user-profile header-notification">
                             <a href="#!">
                                 <img src="../vendor/assets/images/user.png" alt="User-Profile-Image">
-                                <span>CRUD</span>
-                                <i class="ti-angle-down"></i>
+                                <span>Super Admin</span>
+                                <i class="fa fa-chevron-down"></i>
                             </a>
-                            <ul class="show-notification profile-notification">
+                             <ul class="show-notification profile-notification">
                                 <li>
                                     <a href="../profile">
-                                        <i class="ti-user"></i> Profile
+                                        <i class="icofont icofont-ui-user"></i> Profile
                                     </a>
                                 </li>
-                                <li>
+                               <!--  <li>
                                     <a href="auth-lock-screen.html">
                                         <i class="ti-lock"></i> Lock Screen
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="../auth/logout">
-                                        <i class="ti-layout-sidebar-left"></i> Logout
+                                </li> -->
+                               <li>
+                                    <a href="" data-toggle="modal" data-target="#myModal">
+                                        <i class="icofont icofont-logout"></i> Logout
                                     </a>
                                 </li>
                             </ul>
@@ -139,74 +135,54 @@ $crud = true;
         <div class="main-menu-header">
             <img class="img-40" src="../vendor/assets/images/user.png" alt="User-Profile-Image">
             <div class="user-details">
-                <span id="more-details">CRUD<i class="ti-angle-down"></i></span>
+                <span id="more-details">Super Admin<i class="fa fa-chevron-down"></i></span>
             </div>
         </div>
         <div class="main-menu-content">
             <ul class="main-navigation">
-                <li class="more-details">
-                    <a href="../profile"><i class="ti-user"></i>View Profile</a>
-                    <a href="#!"><i class="ti-settings"></i>Settings</a>
-                    <a href="../auth/logout"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                 <li class="more-details">
+                    <a href="../profile"><i class="icofont icofont-ui-user"></i>View Profile</a>
+                    <a href="#!"><i class="icofont icofont-settings"></i>Settings</a>
+                    <a href="" data-toggle="modal" data-target="#myModal"><i class="icofont icofont-logout"></i>Logout</a>
                 </li>
 
                 <li class="nav-title" data-i18n="nav.category.navigation">
-                    <i class="ti-line-dashed"></i>
-                    <span>Navigation</span>
+                    <i class="fa fa-caret-right"></i>
+                    <span>Main Menu</span>
                 </li>
                     <li class="nav-item single-item" >
                         <a href="../dashboard">
-                            <i class="icofont icofont-home"></i>
+                            <i class="icofont icofont-dashboard-web"></i>
                             <span data-i18n="nav.dash.main">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item single-item" >
-                                <a href="../profile">
-                                    <i class="icofont icofont-ui-user"></i>
-                                    <span data-i18n="nav.dash.main">Profile</span>
-                                </a>
-                    </li>
-                    <li class="nav-item" >
-                        <a href="#!">
-                            <i class="ti-layout-cta-right"></i>
-                            <span data-i18n="nav.navigate.main">Membership</span>
-                        </a>
-                        <ul class="tree-1">
-                            <li><a href="../application/newlist" data-i18n="nav.navigate.navbar">List of New Application</a>
-                            </li>
-                            <li><a href="../application/disapprove" data-i18n="nav.navigate.navbar">List of Disapprove Application</a>
-                            </li>
-                            <li><a href="../user" data-i18n="nav.navigate.navbar-inverse">List of Club Member</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#!">
-                            <i class="ti-layout-cta-right"></i>
-                            <span data-i18n="nav.navigate.main">Activity</span>
-                        </a>
-                        <ul class="tree-1">
-                            <li><a href="../activity/create" data-i18n="nav.navigate.navbar">Add New Activity</a>
-                            </li>
-                            <li <?php if($activity) { ?> class="has-class" <?php } ?>>
-                            <a href="../activity" data-i18n="nav.navigate.navbar-inverse">List of Activity</a>
-                            </li>
-                        </ul>
+                    <li class="nav-title" data-i18n="nav.category.navigation">
+                        <i class="fa fa-caret-right"></i>
+                        <span>User Access Control</span>
                     </li>
                     <li class="nav-item single-item">
-                        <a href="../contactus">
-                            <i class="ti-view-grid"></i>
-                            <span data-i18n="nav.widget.main"> Contact Us</span>
+                        <a href="../menu">
+                            <i class="icofont icofont-settings-alt"></i>
+                            <span data-i18n="nav.file-upload.main">Menu Management</span>
                         </a>
                     </li>
-                    <li class="nav-title" data-i18n="nav.category.navigation">
-                        <i class="ti-line-dashed"></i>
+                     </li>
+                    <li class="nav-item single-item">
+                        <a href="../user_level">
+                            <i class="icofont icofont-settings-alt"></i>
+                            <span data-i18n="nav.file-upload.main">Menu User Access</span>
+                        </a>
+                    </li>
+
+
+                     <li class="nav-title" data-i18n="nav.category.navigation">
+                        <i class="fa fa-caret-right"></i>
                         <span>GENERATOR</span>
                     </li>
                     <li class="nav-item single-item has-class">
-                        <a href="../crud/">
-                            <i class="ti-cloud-up"></i>
-                            <span data-i18n="nav.file-upload.main">CRUD GENERATOR</span>
+                        <a href="../crud">
+                            <i class="icofont icofont-settings-alt"></i>
+                            <span data-i18n="nav.file-upload.main">C.R.U.D Generator</span>
                         </a>
                     </li>
             </ul>
@@ -373,3 +349,23 @@ $crud = true;
 </body>
 
 </html>
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Are your sure ?</h4>
+        </div>
+        <div class="modal-body">
+          <h6>This will end this session</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-info" data-dismiss="modal">Logout</button> -->
+          <a href="../auth/logout" type="button" class="btn btn-info">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

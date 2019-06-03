@@ -187,7 +187,6 @@ Class Auth extends CI_Controller{
     function logout(){
         //load session library
         $this->load->library('session');
-        $this->session->unset_userdata($sesdata);
         $this->session->sess_destroy();
         redirect('auth');
     }

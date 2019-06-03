@@ -227,32 +227,30 @@
                                 <div class="card">
                                     <div class="card-block">
                                     <form action="<?php echo $action; ?>" method="post">
-	    <div class="form-group">
-                                                    <label for="varchar">Application Id <?php echo form_error('application_id') ?></label>
-                                                    <input type="text" class="form-control" name="application_id" id="application_id" placeholder="Application Id" value="<?php echo $application_id; ?>" />
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="int">User Id <?php echo form_error('user_id') ?></label>
-                                                    <input type="text" class="form-control" name="user_id" id="user_id" placeholder="User Id" value="<?php echo $user_id; ?>" />
-                                                </div>
-	    <div class="form-group">
-                                                    <label for="date">Application Date <?php echo form_error('application_date') ?></label>
-                                                    <input type="date" class="form-control" name="application_date" id="application_date" placeholder="Application Date" value="<?php echo $application_date; ?>" />
-                                                    </div>
-	    <div class="form-group">
-                                                    <label for="date">Application Evaluate Date <?php echo form_error('application_evaluate_date') ?></label>
-                                                    <input type="date" class="form-control" name="application_evaluate_date" id="application_evaluate_date" placeholder="Application Evaluate Date" value="<?php echo $application_evaluate_date; ?>" />
-                                                    </div>
-	    <div class="form-group">
-                                                    <label for="enum">Application Status <?php echo form_error('application_status') ?></label>
-                                                    <input type="text" class="form-control" name="application_status" id="application_status" placeholder="Application Status" value="<?php echo $application_status; ?>" />
-                                                </div>
-	    <input type="hidden" name="app_id" value="<?php echo $app_id; ?>" /> 
-	    <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('application') ?>" class="btn btn-danger">Cancel</a>
-	</form>
-
-    
+                                        <div class="form-group">
+                                            <label for="varchar">Application Id <?php echo form_error('application_id') ?></label>
+                                            <input type="text" class="form-control" name="application_id" id="application_id" placeholder="Application Id" value="<?php echo $application_id; ?>" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="int">User Id <?php echo form_error('user_id') ?></label>
+                                            <input type="text" class="form-control" name="user_id" id="user_id" placeholder="User Id" value="<?php echo $user_id; ?>" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="date">Application Date <?php echo form_error('application_date') ?></label>
+                                            <input type="date" class="form-control" name="application_date" id="application_date" placeholder="Application Date" value="<?php echo $application_date; ?>" />
+                                            </div>
+                                        <div class="form-group">
+                                            <label for="date">Application Evaluate Date <?php echo form_error('application_evaluate_date') ?></label>
+                                            <input type="date" class="form-control" name="application_evaluate_date" id="application_evaluate_date" placeholder="Application Evaluate Date" value="<?php echo $application_evaluate_date; ?>" />
+                                            </div>
+                                        <div class="form-group">
+                                            <label for="enum">Application Status <?php echo form_error('application_status') ?></label>
+                                            <input type="text" class="form-control" name="application_status" id="application_status" placeholder="Application Status" value="<?php echo $application_status; ?>" />
+                                        </div>
+                                	    <input type="hidden" name="app_id" value="<?php echo $app_id; ?>" /> 
+                                	    <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
+                                	    <a href="<?php echo site_url('application') ?>" class="btn btn-danger">Cancel</a>
+                                	</form>
                                     </div>
                                 </div>
                                 <!-- Basic Form Inputs card end -->

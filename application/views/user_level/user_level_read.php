@@ -30,12 +30,13 @@
                         
                         <div class="form-group row">
                             <div class="col-sm-12">
-
+                                <div style="overflow-x:auto;">
                                 <table class="table table-bordered table-striped" id="mytable">
                                         <thead>
                                             <tr>
                                                 <th width="30px">No</th>
                                                 <th>Module Name</th>
+                                                <th>Sub Menu to Module</th>
                                                 <th width="100px">Give Access</th>
                                             </tr>
                                             <?php
@@ -45,6 +46,13 @@
                                                 echo "<tr>
                                                 <td>$no</td>
                                                 <td>$m->menu_title</td>
+                                                <td>";
+                                                $this->db->where('is_main_menu',$m->menu_id);
+                                                $submenu = $this->db->get('menu');
+                                                if ($submenu->num_rows()>0) {
+                                                    echo "<center><input type = 'submit' class='btn btn-info view_data' value='view Sub Module' id='".$m->menu_id."'></center>";
+                                                }
+                                                echo "</td>
                                                 <td align='center'><input type='checkbox' ". check_access($level, $m->menu_id)." onClick='give_access($m->menu_id)'></td>
                                                 </tr>";
                                                 $no++;
@@ -52,7 +60,8 @@
                                             ?>
                                         </thead>
 
-                                    </table>
+                                </table>
+                                </div>
                             </div>
                         </div>
 <a href="<?php echo site_url('user_level') ?>" class="btn btn-info btn-square pull-left"><i class="icofont icofont-arrow-left"></i> Back</a>
@@ -113,4 +122,53 @@
             }
         });
     }    
+</script>
+
+<!-- view Modal -->
+<div class="modal fade" id="modalMenu" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" style="margin-top: -20px;">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Sub Module</h4>
+      </div>
+      <div class="modal-body">
+        <!-- Place to print the fetched phone -->
+        <div id="submenu"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+    // Start jQuery function after page is loaded
+    $(document).ready(function(){
+         $('body').on('click', '.view_data', function(event){
+            event.preventDefault();
+            // Get the id of selected phone and assign it in a variable called phoneData
+            var subModule = $(this).attr('id');
+            // Start AJAX function
+            $.ajax({
+                // Path for controller function which fetches selected phone data
+                url: "<?php echo base_url() ?>menu/get_sub_menu",
+                // Method of getting data
+                method: "POST",
+                // Data is sent to the server
+                data: {subModule:subModule},
+                // Callback function that is executed after data is successfully sent and recieved
+                success: function(data){
+                    // Print the fetched data of the selected phone in the section called #phone_result 
+                    // within the Bootstrap modal
+                    $('#submenu').html(data);
+                    // Display the Bootstrap modal
+                    $('#modalMenu').modal('show');
+                }
+
+            });
+            // End AJAX function
+        });
+    });     
 </script>

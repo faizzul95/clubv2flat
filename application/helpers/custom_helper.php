@@ -10,7 +10,6 @@ function check_access($id_user_level,$menu_id){
     }else
         $id_user_level = "member";
 
-
     $ci = get_instance();
     $ci->db->where('id_user_level',$id_user_level);
     $ci->db->where('menu_id',$menu_id);

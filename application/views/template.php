@@ -66,7 +66,8 @@
                     <img class="img-fluid" src="<?= base_url(); ?>/vendor/assets/images/logo.png" alt="Theme-Logo" />
                 </a>
                 <a class="mobile-options">
-                    <i class="fa fa-arrows-alt"></i>
+                    <!-- <i class="fa fa-arrows-alt"></i> -->
+                    <i class="fa fa-ellipsis-h"></i>
                 </a>
             </div>
             <div class="navbar-container container-fluid">
@@ -97,18 +98,20 @@
                                 <i class="fa fa-chevron-down"></i>
                             </a>
                             <ul class="show-notification profile-notification">
+                                <?php if($this->session->userdata('level')!='superadmin'):?>
                                 <li>
-                                    <a href="profile">
+                                    <a href="<?= base_url(); ?>profile">
                                         <i class="icofont icofont-ui-user"></i> Profile
                                     </a>
                                 </li>
-                               <!--  <li>
-                                    <a href="auth-lock-screen.html">
-                                        <i class="ti-lock"></i> Lock Screen
-                                    </a>
-                                </li> -->
+                                <?php endif;?>
                                 <li>
-                                    <a href="<?= base_url(); ?>auth/logout">
+                                    <a href="#!">
+                                        <i class="icofont icofont-settings"></i>Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" data-toggle="modal" data-target="#myModal">
                                         <i class="icofont icofont-logout"></i> Logout
                                     </a>
                                 </li>
@@ -136,15 +139,19 @@
         <div class="main-menu-header">
             <img class="img-40" src="<?= base_url(); ?>/vendor/assets/images/user.png" alt="User-Profile-Image">
             <div class="user-details">
-                <span id="more-details"><?php echo $this->session->userdata('userfname');; ?><i class="fa fa-chevron-down"></i></span>
+                <span id="more-details"><?php echo $this->session->userdata('userfname');; ?>
+                <i class="fa fa-chevron-down"></i>
+            </span>
             </div>
         </div>
         <div class="main-menu-content">
             <ul class="main-navigation">
                 <li class="more-details">
-                    <a href="profile"><i class="icofont icofont-ui-user"></i>View Profile</a>
+                    <?php if($this->session->userdata('level')!='superadmin'):?>
+                    <a href="<?= base_url(); ?>profile"><i class="icofont icofont-ui-user"></i>View Profile</a>
+                    <?php endif;?>
                     <a href="#!"><i class="icofont icofont-settings"></i>Settings</a>
-                    <a href="<?= base_url(); ?>auth/logout"><i class="icofont icofont-logout"></i>Logout</a>
+                    <a href="" data-toggle="modal" data-target="#myModal"><i class="icofont icofont-logout"></i>Logout</a>
                 </li>
 
                 <li class="nav-title" data-i18n="nav.category.navigation">
@@ -154,8 +161,8 @@
 
                 <?php
                     // chek settingan tampilan menu
-                    $setting = 'ya';
-                    if($setting=='ya'){
+                    $setting = 'yes';
+                    if($setting=='yes'){
                         // cari level user
                         $id_user_level = $this->session->userdata('level');
                         $sql_menu = "SELECT * 
@@ -262,11 +269,11 @@
                     </li>
                     <li class="nav-item single-item">
                         <a href="<?= base_url(); ?>crud">
-                            <i class="ti-cloud-up"></i>
+                            <i class="icofont icofont-settings-alt"></i>
                             <span data-i18n="nav.file-upload.main">C.R.U.D Generator</span>
                         </a>
                     </li>
-                    <?php endif;?> -->
+                    <?php endif;?>
             </ul>
         </div>
     </div>
@@ -284,3 +291,25 @@
 
     </body>
 </html>
+
+
+ <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Are your sure ?</h4>
+        </div>
+        <div class="modal-body">
+          <h6>This will end this session</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-info" data-dismiss="modal">Logout</button> -->
+          <a href="<?= base_url(); ?>auth/logout" type="button" class="btn btn-info">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

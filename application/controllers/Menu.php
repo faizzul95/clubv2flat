@@ -11,6 +11,7 @@ class Menu extends CI_Controller
         $this->load->model('Menu_model');
         $this->load->library('form_validation');        
 		$this->load->library('datatables');
+        $this->load->model('User_level_model');
     }
 
     public function index()
@@ -147,5 +148,13 @@ class Menu extends CI_Controller
 
 	$this->form_validation->set_rules('menu_id', 'menu_id', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+    }
+
+    public function get_sub_menu()
+    {
+
+        $subModule = $this->input->post('subModule');
+        $this->Menu_model->get_sub_module($subModule);
+          
     }
 }

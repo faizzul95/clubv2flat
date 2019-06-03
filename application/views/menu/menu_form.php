@@ -28,32 +28,33 @@
             <div class="card">
                 <div class="card-block">
                 <form action="<?php echo $action; ?>" method="post">
-	    <div class="form-group">
-                                <label for="varchar">Menu Title <?php echo form_error('menu_title') ?></label>
-                                <input type="text" class="form-control" name="menu_title" id="menu_title" placeholder="Menu Title" value="<?php echo $menu_title; ?>" />
-                            </div>
-	    <div class="form-group">
-                                <label for="varchar">Menu Url <?php echo form_error('menu_url') ?></label>
-                                <input type="text" class="form-control" name="menu_url" id="menu_url" placeholder="Menu Url" value="<?php echo $menu_url; ?>" />
-                            </div>
-	    <div class="form-group">
-                                <label for="varchar">Menu Icon <?php echo form_error('menu_icon') ?></label>
-                                <input type="text" class="form-control" name="menu_icon" id="menu_icon" placeholder="Menu Icon" value="<?php echo $menu_icon; ?>" />
-                            </div>
-	    <div class="form-group">
-                                <label for="int">Is Main Menu <?php echo form_error('is_main_menu') ?></label>
-                                <input type="text" class="form-control" name="is_main_menu" id="is_main_menu" placeholder="Is Main Menu" value="<?php echo $is_main_menu; ?>" />
-                            </div>
-	    <div class="form-group">
-                                <label for="enum">Is Active <?php echo form_error('is_active') ?></label>
-                                <input type="text" class="form-control" name="is_active" id="is_active" placeholder="Is Active" value="<?php echo $is_active; ?>" />
-                            </div>
-	    <input type="hidden" name="menu_id" value="<?php echo $menu_id; ?>" /> 
-	    <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('menu') ?>" class="btn btn-danger">Cancel</a>
-	</form>
-
-
+                   <div class="form-group">
+                        <label for="varchar">Menu Title <?php echo form_error('menu_title') ?></label>
+                        <input type="text" class="form-control" name="menu_title" id="menu_title" placeholder="Menu Title" value="<?php echo $menu_title; ?>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="varchar">Menu Url <?php echo form_error('menu_url') ?></label>
+                        <input type="text" class="form-control" name="menu_url" id="menu_url" placeholder="Menu Url" value="<?php echo $menu_url; ?>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="varchar">Menu Icon <?php echo form_error('menu_icon') ?></label>
+                        <input type="text" class="form-control" name="menu_icon" id="menu_icon" placeholder="Menu Icon" value="<?php echo $menu_icon; ?>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="int">Is Main Menu <?php echo form_error('is_main_menu') ?></label>
+                        <input type="text" class="form-control" name="is_main_menu" id="is_main_menu" placeholder="Is Main Menu" value="<?php echo $is_main_menu; ?>" />
+                    </div>
+                    <div class="form-group">
+                        <label for="enum">Is Active<?php echo form_error('is_active') ?></label>
+                        <?php 
+                            $id = 'id="is_active" class="form-control"';
+                            echo form_dropdown("is_active", $this->db->enum_select("menu","is_active"),'',$id); 
+                        ?>
+                    </div>
+            	    <input type="hidden" name="menu_id" value="<?php echo $menu_id; ?>" /> 
+            	    <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
+            	    <a href="<?php echo site_url('menu') ?>" class="btn btn-danger">Cancel</a>
+            	</form>
                 </div>
             </div>
             <!-- Basic Form Inputs card end -->
