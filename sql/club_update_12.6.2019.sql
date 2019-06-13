@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 01, 2019 at 01:04 AM
+-- Generation Time: Jun 13, 2019 at 06:16 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.3.1
 
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `application` (
   `application_status` enum('pending','approve','reject','') NOT NULL,
   PRIMARY KEY (`app_id`),
   KEY `user_application` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `application`
@@ -74,7 +74,8 @@ CREATE TABLE IF NOT EXISTS `application` (
 
 INSERT INTO `application` (`app_id`, `application_id`, `user_id`, `application_date`, `application_evaluate_date`, `application_status`) VALUES
 (1, 'CM000001', 1, '2019-05-29', '2019-05-30', 'approve'),
-(2, 'CM000002', 2, '2019-05-29', '2019-05-30', 'approve');
+(2, 'CM000002', 2, '2019-05-29', '2019-05-30', 'approve'),
+(3, 'CM000003', 3, '2019-06-12', NULL, 'pending');
 
 -- --------------------------------------------------------
 
@@ -173,7 +174,14 @@ CREATE TABLE IF NOT EXISTS `menu_access` (
   `menu_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `menu_id` (`menu_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `menu_access`
+--
+
+INSERT INTO `menu_access` (`id`, `id_user_level`, `menu_id`) VALUES
+(1, 'superadmin', 1);
 
 -- --------------------------------------------------------
 
@@ -190,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `usr_status` enum('active','inactive','pending','') DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   KEY `user_to_user_level` (`usr_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -198,7 +206,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`user_id`, `usr_username`, `usr_password`, `usr_role`, `usr_status`) VALUES
 (1, 'admin', '$2y$10$Ec0VOQuG4RB7vXdNqV2Oa.SEmf7HovNhejKtM0ANNq5dfjMPXaw9O', 'admin', 'active'),
-(2, 'user', '$2y$10$Wwadgms6hMStteTOXcA6jewZJDF.FOu2lKZ0SeVx9MY9y5qYnXqfm', 'member', 'active');
+(2, 'user', '$2y$10$Wwadgms6hMStteTOXcA6jewZJDF.FOu2lKZ0SeVx9MY9y5qYnXqfm', 'member', 'active'),
+(3, 'test', '$2y$10$.Fpn3Jto0u15OmNVji1Sk.zfj3t5BveDlPUaV/HhqflndaoImSRRK', 'member', 'pending');
 
 -- --------------------------------------------------------
 
@@ -233,15 +242,16 @@ CREATE TABLE IF NOT EXISTS `user_detail` (
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`detail_id`),
   KEY `user_detail` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_detail`
 --
 
 INSERT INTO `user_detail` (`detail_id`, `detail_fullname`, `detail_phone`, `detail_email`, `detail_address`, `user_id`) VALUES
-(1, 'Administrator', '0189031045', 'fahmy_izwan@gmail.com', 'PT20320K, Taman Permint Perdana Fasa 3, Kg Batin\r\nSeberang Takir, 21300 Kuala Terengganu, Terengganu', 1),
-(2, 'User One', '11111111111', 'user@gmail.com', 'User One Addtess', 2);
+(1, 'Admin', '000000000', 'admin@gmail.com', 'Admin', 1),
+(2, 'User One', '11111111111', 'user@gmail.com', 'User One Addtess', 2),
+(3, 'syamin', '1234523456', 'syamim@gmail', 'test', 3);
 
 -- --------------------------------------------------------
 

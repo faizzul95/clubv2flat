@@ -42,9 +42,8 @@
                                     <th>No</th>
                         		    <th>Menu Title</th>
                         		    <th>Menu Url</th>
-                        		    <th>Menu Icon</th>
-                        		    <th>Is Main Menu</th>
-                        		    <th>Is Active</th>
+                                    <th>Active Status</th>
+                                    <th>Sub Menu</th>
                         		    <th>Action</th>
                                 </tr>
                             </thead>
@@ -53,9 +52,8 @@
                                     <th>No</th>
             						<th>Menu Title</th>
             						<th>Menu Url</th>
-            						<th>Menu Icon</th>
-            						<th>Is Main Menu</th>
-            						<th>Is Active</th>
+            						<th>Active Status</th>
+                                    <th>Sub Menu</th>
             						<th>Action</th>
                                 </tr>
                             </tfoot>
@@ -146,7 +144,7 @@
                         {
                             "data": "menu_id",
                             "orderable": false
-                        },{"data": "menu_title"},{"data": "menu_url"},{"data": "menu_icon"},{"data": "is_main_menu"},{"data": "is_active"},
+                        },{"data": "menu_title"},{"data": "menu_url"},{"data": "is_active"},{"data": "is_main_menu"},
                         {
                             "data" : "action",
                             "orderable": false,

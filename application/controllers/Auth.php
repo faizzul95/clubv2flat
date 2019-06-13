@@ -106,8 +106,9 @@ Class Auth extends CI_Controller{
                             redirect('auth');
                         }elseif($status == "inactive"){
                             echo $this->session->set_flashdata('msg','Your ID is inactive, Please contact administrator');
+                            redirect('auth');
                         }else{
-                              redirect('auth');
+                             redirect('auth');
                         }
                 }else{
                     echo $this->session->set_flashdata('msg','Wrong Password');

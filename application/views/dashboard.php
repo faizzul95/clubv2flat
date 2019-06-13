@@ -97,40 +97,36 @@
                         </div>
                     </div>
                     <!-- Open Project card end -->
+
+                    <!-- Blur user-card start -->
+                    <div class="col-md-12 col-xl-4 m-b-30">
+                        <div class="widget-main-card blur-user-card">
+                            <img src="<?= base_url(); ?>/vendor/assets/images/user.png" width="35%" alt="">
+                            <h3><?php echo $this->session->userdata('userfname'); ?></h3>
+                            <button class="btn btn-info">Settings</button>
+                            <div class="blur-footer">
+                                <div class="row text-center">
+                                    <div class="col-xs-6 col-sm-6 col-lg-6">
+                                        <h4>15</h4>
+                                        <span>Public Activity</span>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-lg-6">
+                                        <h4>32</h4>
+                                        <span>Member Activity</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blur user-card end -->
+
                     <!-- Calender card start -->
                     <div class="col-md-12 col-xl-8">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card borderless-card">
                                     <div class="row">
-                                        <div class="col-sm-5 weather-card-1  text-center">
-                                            <div class="mob-bg-calender bg-facebook">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <h4>Sunday</h4>
-                                                        <h1 class="weather-temp">23</h1>
-                                                    </div>
-                                                    <div class="col-sm-12">
-                                                        <svg version="1.1" id="cloudDrizzle" class="climacon climacon_cloudDrizzle" viewBox="15 15 70 70">
-                                                            <g class="climacon_iconWrap climacon_iconWrap-cloudDrizzle">
-                                                                <g class="climacon_wrapperComponent climacon_wrapperComponent-drizzle">
-                                                                    <path class="climacon_component climacon_component-stroke climacon_component-stroke_drizzle climacon_component-stroke_drizzle-left" d="M42.001,53.644c1.104,0,2,0.896,2,2v3.998c0,1.105-0.896,2-2,2c-1.105,0-2.001-0.895-2.001-2v-3.998C40,54.538,40.896,53.644,42.001,53.644z" />
-                                                                    <path class="climacon_component climacon_component-stroke climacon_component-stroke_drizzle climacon_component-stroke_drizzle-middle" d="M49.999,53.644c1.104,0,2,0.896,2,2v4c0,1.104-0.896,2-2,2s-1.998-0.896-1.998-2v-4C48.001,54.54,48.896,53.644,49.999,53.644z" />
-                                                                    <path class="climacon_component climacon_component-stroke climacon_component-stroke_drizzle climacon_component-stroke_drizzle-right" d="M57.999,53.644c1.104,0,2,0.896,2,2v3.998c0,1.105-0.896,2-2,2c-1.105,0-2-0.895-2-2v-3.998C55.999,54.538,56.894,53.644,57.999,53.644z" />
-                                                                </g>
-                                                                <g class="climacon_wrapperComponent climacon_wrapperComponent-cloud">
-                                                                    <path class="climacon_component climacon_component-stroke climacon_component-stroke_cloud" d="M63.999,64.944v-4.381c2.387-1.386,3.998-3.961,3.998-6.92c0-4.418-3.58-8-7.998-8c-1.603,0-3.084,0.481-4.334,1.291c-1.232-5.316-5.973-9.29-11.664-9.29c-6.628,0-11.999,5.372-11.999,12c0,3.549,1.55,6.729,3.998,8.926v4.914c-4.776-2.769-7.998-7.922-7.998-13.84c0-8.836,7.162-15.999,15.999-15.999c6.004,0,11.229,3.312,13.965,8.203c0.664-0.113,1.336-0.205,2.033-0.205c6.627,0,11.998,5.373,11.998,12C71.997,58.864,68.655,63.296,63.999,64.944z" />
-                                                                </g>
-                                                            </g>
-                                                        </svg>
-                                                        <span class="weather-temp">8°</span>
-                                                        <h5>New York , NY , USA</h5>
-                                                        <span class="d-block">6:00 AM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-7 p-l-0">
+                                        <div class="col-sm-12 p-l-0">
                                             <div class="weather-calender">
                                                 <div class="widget-calender"></div>
                                             </div>
@@ -141,6 +137,28 @@
                         </div>
                     </div>
                     <!-- Calender card end -->
+
+
+                     <!-- System clock start -->
+                    <!-- <div class="col-sm-12">
+                        <div class="card borderless-card">
+                            <div class="card-block clock-widget">
+                                <div id="current-time"></div> -->
+                                <!-- <h5>Sunday 30th April , 2017</h5> -->
+                                <!-- <h5> -->
+                                    <?php //date_default_timezone_set("Asia/Kuala_Lumpur"); 
+                                        // echo strtoupper(date('l')) . " ";
+                                        // echo date('jS') . " ";
+                                        // echo date('M') . ", ";
+                                        // echo date('Y');
+                                    ?>    
+                                <!-- </h5> -->
+                               <!--  <i class="icofont icofont-ui-alarm basic-alarm"></i>
+                                <i class="icofont icofont-ui-alarm bg-alarm"></i>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- System clock end -->
                 </div>
             </div>
 
@@ -154,6 +172,9 @@
     <!-- modernizr js -->
     <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/modernizr/modernizr.js"></script>
     <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/modernizr/feature-detects/css-scrollbars.js"></script>
+    <!-- Morris Chart js -->
+<!--     <script src="<?= base_url(); ?>/vendor/bower_components/raphael/raphael.min.js"></script>
+    <script src="<?= base_url(); ?>/vendor/bower_components/morris.js/morris.js"></script> -->
     <!-- Calender js -->
     <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/moment/min/moment.min.js"></script>
     <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/pages/widget/calender/pignose.calendar.min.js"></script>
@@ -174,3 +195,9 @@
     <!-- <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/pages/widget/custom-widget.js"></script> -->
     <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/pages/dashboard/project-dashboard.js"></script>
     <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/js/script.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('.widget-calender').pignoseCalendar();
+        });
+    </script>

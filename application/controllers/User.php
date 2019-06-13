@@ -84,31 +84,26 @@ class User extends CI_Controller
 
     public function update($id) 
     {
-        $row = $this->User_model->get_by_id($id);
-        $row2 = $this->User_detail_model->get_by_id($id);
 
-        if ($row) {
-            $data = array(
-                'button' => 'Update',
-                'action' => site_url('user/update_action'),
-        		'user_id' => set_value('user_id', $row->user_id),
-        		// 'usr_username' => set_value('usr_username', $row->usr_username),
-        		// 'usr_password' => set_value('usr_password', $row->usr_password),
-                // 'usr_role' => set_value('usr_role', $row->usr_role),
-                'usr_username' => $row->usr_username,
-                'usr_password' => $row->usr_password,
-                'usr_role' => $row->usr_role,
-        		'usr_status' => set_value('usr_status', $row->usr_status),
-                'detail_fullname' => $row2->detail_fullname,
-                'detail_phone' => $row2->detail_phone,
-                'detail_email' => $row2->detail_email,
-                'detail_address' => $row2->detail_address,
-	    );
-            $this->template->load('template','user/user_form', $data);
-        } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('user'));
+        // $detailUser = $this->User_model->get_by_id($id);
+        // $row  = $detailUser->row();
+        $query = $this->db->query("SELECT * FROM user WHERE user_id = '$id'");
+        $row = $query->row_array();
+        $id = $row['user_id'];
+        $status = $row['usr_status'];
+
+        if($status === 'active')
+        {
+            $this->db->set('usr_status', 'inactive', true);
+        }else{
+            $this->db->set('usr_status', 'active', true);
         }
+
+        $this->db->where('user_id', $id);
+        $this->db->update('user');
+
+        redirect(site_url('user'));
+
     }
     
     public function update_action() 

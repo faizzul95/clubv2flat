@@ -78,25 +78,38 @@ class User_detail extends CI_Controller
         }
     }
 
-    public function update($id) 
+    public function update() 
     {
-        $row = $this->User_detail_model->get_by_id($id);
+        
+        // $userID = $this->session->userdata('userid');
+        // $row = $this->User_detail_model->get_by_id($userID);
 
+        $user_id = $this->input->post('user_id',TRUE);
+        $detail_id = $this->input->post('detail_id',TRUE);
+        $detail_fullname = $this->input->post('detail_fullname',TRUE);
+        $detail_phone = $this->input->post('detail_phone',TRUE);
+        $detail_phone = $this->input->post('detail_phone',TRUE);
+        $detail_address = $this->input->post('detail_address',TRUE);
+
+        $row = $this->User_detail_model->get_by_id($user_id);
         if ($row) {
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('user_detail/update_action'),
-		'detail_id' => set_value('detail_id', $row->detail_id),
-		'detail_fullname' => set_value('detail_fullname', $row->detail_fullname),
-		'detail_phone' => set_value('detail_phone', $row->detail_phone),
-		'detail_email' => set_value('detail_email', $row->detail_email),
-		'detail_address' => set_value('detail_address', $row->detail_address),
-		'user_id' => set_value('user_id', $row->user_id),
+        		'detail_id' => set_value('detail_id', $row->detail_id),
+        		'detail_fullname' => set_value('detail_fullname', $row->detail_fullname),
+        		'detail_phone' => set_value('detail_phone', $row->detail_phone),
+        		'detail_email' => set_value('detail_email', $row->detail_email),
+        		'detail_address' => set_value('detail_address', $row->detail_address),
+        		'user_id' => set_value('user_id', $row->user_id),
 	    );
-            $this->load->view('user_detail/user_detail_form', $data);
+            // $this->load->view('user_detail/user_detail_form', $data);
+
+            $this->template->load('template','user_profile', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('user_detail'));
+            // redirect(site_url('user_detail'));
+            $this->template->load('template','user_profile', $data);
         }
     }
     
@@ -108,16 +121,16 @@ class User_detail extends CI_Controller
             $this->update($this->input->post('detail_id', TRUE));
         } else {
             $data = array(
-		'detail_fullname' => $this->input->post('detail_fullname',TRUE),
-		'detail_phone' => $this->input->post('detail_phone',TRUE),
-		'detail_email' => $this->input->post('detail_email',TRUE),
-		'detail_address' => $this->input->post('detail_address',TRUE),
-		'user_id' => $this->input->post('user_id',TRUE),
+    		'detail_fullname' => $this->input->post('detail_fullname',TRUE),
+    		'detail_phone' => $this->input->post('detail_phone',TRUE),
+    		'detail_email' => $this->input->post('detail_email',TRUE),
+    		'detail_address' => $this->input->post('detail_address',TRUE),
+    		'user_id' => $this->input->post('user_id',TRUE),
 	    );
-
             $this->User_detail_model->update($this->input->post('detail_id', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
-            redirect(site_url('user_detail'));
+            // redirect(site_url('user_detail'));
+            $this->template->load('template','user_profile', $data);
         }
     }
     

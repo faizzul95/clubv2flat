@@ -29,4 +29,29 @@ class Profile extends CI_Controller {
 	}
 }
 
+
+    public function update($id) 
+    {
+
+        // $detailUser = $this->User_model->get_by_id($id);
+        // $row  = $detailUser->row();
+        $query = $this->db->query("SELECT * FROM user_detail WHERE user_id = '$id'");
+        $row = $query->row_array();
+        $id = $row['user_id'];
+        $status = $row['usr_status'];
+
+        if($status === 'active')
+        {
+            $this->db->set('usr_status', 'inactive', true);
+        }else{
+            $this->db->set('usr_status', 'active', true);
+        }
+
+        $this->db->where('user_id', $id);
+        $this->db->update('user');
+
+        redirect(site_url('user'));
+
+    }
+
 }

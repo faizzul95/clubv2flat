@@ -41,6 +41,8 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/icon/SVG-animated/svg-weather.css">
     <!-- Calender css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/pages/widget/calender/pignose.calendar.min.css">
+   
+    
 </head>
   <body class="fix-menu">
 
@@ -182,8 +184,6 @@
                         if($submenu->num_rows()>0){
                             // display sub menu
 
-                            $query = $this->db->query('SELECT * FROM user');
-                            $no = $query->num_rows();
 
                             $currentPage = $this->uri->segment(1);
                             if ($currentPage == $menu->menu_url) {
@@ -199,15 +199,11 @@
                                         error_reporting(0);
                                         if ($currentsubPage == $subID[1]) {
                                         echo "<li class='has-class'><a href='".base_url()."$sub->menu_url' data-i18n='nav.navigate.navbar'>$sub->menu_title</a>
-                                             <label class='badge badge-info menu-caption'>
-                                                 $no
-                                             </label>
+                                        
                                         </li>";
                                         }else{
                                              echo "<li><a href='".base_url()."$sub->menu_url' data-i18n='nav.navigate.navbar'>$sub->menu_title</a>
-                                             <label class='badge badge-info menu-caption'>
-                                                 $no
-                                             </label>
+                                           
                                         </li>";
                                         }
                                     }
@@ -223,9 +219,6 @@
                                     <ul class='tree-1'>";
                                     foreach ($submenu->result() as $sub){
                                         echo "<li ><a href='".base_url()."$sub->menu_url' data-i18n='nav.navigate.navbar'>$sub->menu_title</a>
-                                             <label class='badge badge-info menu-caption'>
-                                                 $no
-                                             </label>
                                         </li>";
                                     }
                                 echo" </ul>
@@ -295,7 +288,7 @@
 
  <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Are your sure ?</h4>

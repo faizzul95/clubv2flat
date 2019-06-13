@@ -31,11 +31,11 @@ class User_model extends CI_Model
         $this->datatables->join('user', 'application.user_id = user.user_id');
         $this->datatables->join('user_detail', 'application.user_id = user_detail.user_id');
 
-        $this->datatables->where('user.usr_status', 'active');
+        // $this->datatables->where('user.usr_status', 'active');
         $this->datatables->where('user.usr_role', 'member');
 
 
-        $this->datatables->add_column('action', anchor(site_url('user/read/$1'),'<i class="fa fa-eye" aria-hidden="true"></i> View', array('class' => 'btn btn-info btn-sm'))." | ".anchor(site_url('user/update/$1'),'<i class="icofont icofont-edit" aria-hidden="true"></i> Update', array('class' => 'btn btn-success btn-sm'))." | ".anchor(site_url('user/delete/$1'),'<i class="icofont icofont-ui-delete" aria-hidden="true"></i> Delete', array('class' => 'btn btn-danger btn-sm delete-btn')), 'app_id');
+        $this->datatables->add_column('action', anchor(site_url('user/read/$1'),'<i class="fa fa-eye" aria-hidden="true"></i> View', array('class' => 'btn btn-info btn-sm'))." | ".anchor(site_url('user/update/$1'),'<i class="icofont icofont-edit" aria-hidden="true"></i> Change Status', array('class' => 'btn btn-success btn-sm'))." | ".anchor(site_url('user/delete/$1'),'<i class="icofont icofont-ui-delete" aria-hidden="true"></i> Delete', array('class' => 'btn btn-danger btn-sm delete-btn')), 'app_id');
         return $this->datatables->generate();
 
 
@@ -101,10 +101,11 @@ class User_model extends CI_Model
     }
 
     // update data
-    function update($id, $data)
+    function update($id)
     {
-        $this->db->where($this->id, $id);
-        $this->db->update($this->table, $data);
+        // set for inactive
+        $this->db->set('usr_status', 'inactive', true);
+        $this->db->update($this->table);
     }
 
     // delete data

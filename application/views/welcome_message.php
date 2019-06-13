@@ -54,6 +54,7 @@
                     <li><a class="page-scroll" href="#main">Home</a></li>
                     <li><a class="page-scroll" href="#services">About</a></li>
                     <li><a class="page-scroll" href="#features">Activity</a></li>
+                    <li><a class="page-scroll" href="auth/register">Register</a></li>
                     <li><a class="page-scroll" href="auth">Login</a></li>
                 </ul>
             </div>
