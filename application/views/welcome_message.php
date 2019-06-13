@@ -67,7 +67,7 @@
         <div class="container">
           <div class="hero-content app-hero-content text-center">
             <div class="col-md-10 col-md-offset-1 nopadding">
-                <h1 class="wow fadeInUp" data-wow-delay="0s">Welcome to Club Management System</h1>
+                <h1 class="wow fadeInUp" data-wow-delay="0s">Welcome to Kelab Kembara</h1>
                 <p class="wow fadeInUp" data-wow-delay="0.2s">
                   Already register with us ? <br class="hidden-xs"> Check your application here.
                 </p>
@@ -99,36 +99,47 @@
         </div>
           <div class="col-md-12 text-center">
           <div class="services">
-            <div class="col-sm-4 wow fadeInUp" data-wow-delay="0.2s">
-              <div class="services-icon">
-                <img src="<?= base_url(); ?>/vendor/landingpage/assets/logos/icon1.png" height="60" width="60" alt="Service" />
+            <div class="col-sm-3 wow fadeInUp" data-wow-delay="0.2s">
+              <div>
+                <img src="<?= base_url(); ?>/assets/image/group_member/MOHD FAHMY IZWAN BIN ZULKHAFRI.png" height="150" width="150" alt="Team Leader" />
               </div>
               <div class="services-description">
-                <h1>Mega feature rich</h1>
+                <h1>MOHD FAHMY IZWAN BIN ZULKHAFRI</h1>
                 <p>
-                  Flat Able is one of unique dashboard template which come with tons of ready to use feature. We continuous working on it to provide latest updates in digital market.
+                 2016758447
                 </p>
               </div>
             </div>
-            <div class="col-sm-4 wow fadeInUp" data-wow-delay="0.3s">
-              <div class="services-icon">
-                <img class="icon-2" src="<?= base_url(); ?>/vendor/landingpage/assets/logos/icon2.png" height="60" width="60" alt="Service" />
+            <div class="col-sm-3 wow fadeInUp" data-wow-delay="0.3s">
+              <div>
+                <img class="icon-2" src="<?= base_url(); ?>/assets/image/group_member/MUHAMMAD SYAMIM BIN SAMSUDIN.png" height="150" width="150"/>
               </div>
               <div class="services-description">
-                <h1>Fast and Robust</h1>
+                <h1>MUHAMMAD SYAMIM BIN SAMSUDIN</h1>
                 <p>
-                  We are contantly working on Flat Able and improve its performance too. Your definitely give higher rating to Flat Able for its performance.
+                2016579163
                 </p>
               </div>
             </div>
-            <div class="col-sm-4 wow fadeInUp" data-wow-delay="0.4s">
-              <div class="services-icon">
-                <img class="icon-3" src="<?= base_url(); ?>/vendor/landingpage/assets/logos/icon3.png" height="60" width="60" alt="Service" />
+            <div class="col-sm-3 wow fadeInUp" data-wow-delay="0.4s">
+              <div>
+                <img class="icon-3" src="<?= base_url(); ?>/assets/image/group_member/AMRULLAH BIN ABDUL RAHMAN.png" height="150" width="150" />
               </div>
               <div class="services-description">
-                <h1>FLAT UI-Interface</h1>
+                <h1>AMRULLAH BIN ABDUL RAHMAN</h1>
                 <p>
-                  Flat able is first ever admin dashboard template which release in Bootstrap 4 framework. Intuitive feature rich design concept and color combination.
+                  2016552759
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-3 wow fadeInUp" data-wow-delay="0.4s">
+              <div>
+                <img class="icon-3" src="<?= base_url(); ?>/assets/image/group_member/NOR FAEZAH BINTI ABDUL RAZAK.png" height="150" width="150" />
+              </div>
+              <div class="services-description">
+                <h1>NOR FAEZAH BINTI ABDUL RAZAK</h1>
+                <p>
+                 2016559597
                 </p>
               </div>
             </div>
@@ -256,7 +267,7 @@
   <div class="footer">
     <div class="container">
         <div class="col-md-12 text-center">
-          <img src="<?= base_url(); ?>/vendor/landingpage/assets/logos/logo.png" alt="Flat Able Logo" />
+          <!-- <img src="<?= base_url(); ?>/vendor/landingpage/assets/logos/logo.png" alt="Flat Able Logo" /> -->
         <div class="footer-text">
           <p>
             Copyright © 2019 Club Management System.

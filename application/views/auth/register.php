@@ -89,7 +89,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="text" name="username" autocomplete="off" class="form-control" placeholder="Enter Username/Email" required>
+                                            <input type="text" name="username" autocomplete="off" class="form-control" placeholder="Enter Username" required>
                                             <span class="md-line"></span>
                                         </div>
                                     </div>

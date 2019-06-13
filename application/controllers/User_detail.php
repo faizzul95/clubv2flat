@@ -113,7 +113,7 @@ class User_detail extends CI_Controller
         }
     }
     
-    public function update_action() 
+    public function update_action($id) 
     {
         $this->_rules();
 
@@ -147,6 +147,30 @@ class User_detail extends CI_Controller
             redirect(site_url('user_detail'));
         }
     }
+
+
+     public function update_profile() {
+
+         if ($this->form_validation->run() == FALSE) {
+            $this->update($this->input->post('detail_id', TRUE));
+        } else {
+            $data = array(
+            'detail_fullname' => $this->input->post('detail_fullname',TRUE),
+            'detail_phone' => $this->input->post('detail_phone',TRUE),
+            'detail_email' => $this->input->post('detail_email',TRUE),
+            'detail_address' => $this->input->post('detail_address',TRUE),
+            'user_id' => $this->input->post('user_id',TRUE),
+        );
+
+            // $this->load->view('Stud_view',$data);
+            $this->User_detail_model->update($this->input->post('detail_id', TRUE), $data);
+            $this->session->set_flashdata('message', 'Update Profile Successfully');
+            // redirect(site_url('user_detail'));
+            $this->template->load('template','user_profile', $data);
+        }
+}
+
+
 
     public function _rules() 
     {

@@ -95,7 +95,7 @@
                     <ul class="nav-right">
                         <li class="user-profile header-notification">
                             <a href="#!">
-                                <img src="<?= base_url(); ?>/vendor/assets/images/user.png" alt="User-Profile-Image">
+                                <img src="<?= base_url(); ?>/assets/image/user_upload/user.png" style="border-radius: 50%;" alt="User-Profile-Image">
                                 <span><?php echo $this->session->userdata('userfname'); ?></span>
                                 <i class="fa fa-chevron-down"></i>
                             </a>
@@ -107,11 +107,11 @@
                                     </a>
                                 </li>
                                 <?php endif;?>
-                                <li>
+                                <!-- <li>
                                     <a href="#!">
                                         <i class="icofont icofont-settings"></i>Settings
                                     </a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a href="" data-toggle="modal" data-target="#myModal">
                                         <i class="icofont icofont-logout"></i> Logout
@@ -139,7 +139,7 @@
     <!-- Menu aside start -->
     <div class="main-menu">
         <div class="main-menu-header">
-            <img class="img-40" src="<?= base_url(); ?>/vendor/assets/images/user.png" alt="User-Profile-Image">
+            <img class="img-40" src="<?= base_url(); ?>/assets/image/user_upload/user.png" style="border-radius: 50%;" alt="User-Profile-Image">
             <div class="user-details">
                 <span id="more-details"><?php echo $this->session->userdata('userfname');; ?>
                 <i class="fa fa-chevron-down"></i>
@@ -152,7 +152,7 @@
                     <?php if($this->session->userdata('level')!='superadmin'):?>
                     <a href="<?= base_url(); ?>profile"><i class="icofont icofont-ui-user"></i>View Profile</a>
                     <?php endif;?>
-                    <a href="#!"><i class="icofont icofont-settings"></i>Settings</a>
+                    <!-- <a href="#!"><i class="icofont icofont-settings"></i>Settings</a> -->
                     <a href="" data-toggle="modal" data-target="#myModal"><i class="icofont icofont-logout"></i>Logout</a>
                 </li>
 
@@ -183,7 +183,6 @@
                         $submenu = $this->db->get('menu');
                         if($submenu->num_rows()>0){
                             // display sub menu
-
 
                             $currentPage = $this->uri->segment(1);
                             if ($currentPage == $menu->menu_url) {

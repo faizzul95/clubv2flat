@@ -32,16 +32,18 @@
                                     <div class="col-md-12">
                                         <div class="media-left">
                                             <a href="#" class="profile-image">
-                                                <img class="user-img img-circle" src="<?= base_url(); ?>/vendor/assets/images/user-profile/user-img.jpg" alt="user-img">
+                                                 <img class="user-img img-circle" src="<?= base_url(); ?>/assets/image/user_upload/user.png" style="border-radius: 50%;" width="20%" alt="user-img">
+                                                 
+                                                <!-- <img class="user-img img-circle" src="<?= base_url(); ?>/vendor/assets/images/user-profile/user-img.jpg" alt="user-img"> -->
                                             </a>
                                         </div>
-                                        <div class="media-body row">
+                                       <!--  <div class="media-body row">
                                             <div class="col-lg-12">
                                                 <div class="user-title">
                                                     <h2><?php echo $detail_fullname; ?></h2>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +115,7 @@
                                                    
                                                     <div class="general-info">
                                                         <!-- <form action="user_detail/update/<?php //echo $detail_id; ?>" method="post"> -->
-                                                        <form action="<?= base_url('user_detail/update_action') ?>" method="POST">
+                                                        <form action="<?= base_url('user_detail/update_profile') ?>" method="POST">
                                                         <div class="row">
                                                             <div class="col-lg-6">
                                                                 <table class="table">
@@ -122,7 +124,7 @@
                                                                             <td>
                                                                                 <div class="input-group">
                                                                                     <span class="input-group-addon"><i class="icofont icofont-user"></i></span>
-                                                                                    <input type="text" class="form-control" placeholder="Full Name" value="<?php echo $detail_fullname; ?>">
+                                                                                    <input type="text" class="form-control" name="detail_fullname"placeholder="Full Name" value="<?php echo $detail_fullname; ?>">
                                                                                 </div>
                                                                             </td>
                                                                         </tr>
@@ -130,7 +132,7 @@
                                                                             <td>
                                                                                 <div class="input-group">
                                                                                     <span class="input-group-addon"><i class="icofont icofont-location-pin"></i></span>
-                                                                                    <textarea rows="5" class="form-control" placeholder="Address" ><?php echo $detail_address; ?></textarea>
+                                                                                    <textarea rows="5" class="form-control" name="detail_address" placeholder="Address" ><?php echo $detail_address; ?></textarea>
                                                                                 </div>
                                                                             </td>
                                                                         </tr>
@@ -145,14 +147,14 @@
                                                                             <td>
                                                                                 <div class="input-group">
                                                                                     <span class="input-group-addon"><i class="icofont icofont-mobile-phone"></i></span>
-                                                                                    <input type="text" class="form-control" placeholder="Mobile Number" value="<?php echo $detail_phone; ?>">
+                                                                                    <input type="text" name="detail_phone" class="form-control" placeholder="Mobile Number" maxlength="12" value="<?php echo $detail_phone; ?>">
                                                                                 </div>
                                                                             </td>
                                                                         </tr>
                                                                             <td>
                                                                                 <div class="input-group">
                                                                                     <span class="input-group-addon"><i class="icofont icofont-email"></i></span>
-                                                                                    <input type="text" class="form-control" placeholder="email" value="<?php echo $detail_email; ?>">
+                                                                                    <input type="email" class="form-control" name="detail_email" placeholder="email" value="<?php echo $detail_email; ?>">
                                                                                 </div>
                                                                             </td>
                                                                         </tr>
@@ -164,8 +166,8 @@
                                                         <!-- end of row -->
                                                         <div class="text-center">
                                                             <!-- <a href="#!" class="btn btn-primary waves-effect waves-light m-r-20">Save</a> -->
-                                                            <input type="text" name="detail_id" value="<?php echo $detail_id; ?>" />
-                                                            <input type="text" name="user_id" value="<?php echo $user_id; ?>" /> 
+                                                            <input type="hidden" name="detail_id" value="<?php echo $detail_id; ?>" />
+                                                            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" /> 
                                                             <button type="submit" class="btn btn-primary waves-effect waves-light m-r-20">Update</button> 
                                                             <a href="#!" id="edit-cancel" class="btn btn-danger waves-effect">Cancel</a>
                                                         </div>
@@ -250,6 +252,13 @@
     <script src="<?= base_url(); ?>/vendor/bower_components/ckeditor/ckeditor.js"></script>
     <!-- echart js -->
     <script src="<?= base_url(); ?>/vendor/assets/pages/chart/echarts/js/echarts-all.js" type="text/javascript"></script>
+    <!-- pnotify js -->
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/pnotify/dist/pnotify.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/pnotify/dist/pnotify.desktop.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/pages/pnotify/notify.js"></script>
+    <!-- sweet alert js -->
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/js/modal.js"></script>
     <!-- i18next.min.js -->
     <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/i18next/i18next.min.js"></script>
     <script type="text/javascript" src="<?= base_url(); ?>/vendor/bower_components/i18next-xhr-backend/i18nextXHRBackend.min.js"></script>
@@ -258,3 +267,16 @@
     <!-- Custom js -->
     <script type="text/javascript" src="<?= base_url(); ?>/vendor/assets/js/script.js"></script>
     <script src="<?= base_url(); ?>/vendor/assets/pages/user-profile.js"></script>
+
+ <?php if ($this->session->flashdata('message') == "Update Profile Successfully") { ?>
+     <script type="text/javascript">
+       swal({
+            title: "Updated",
+            text: '<?= $this->session->flashdata('message')?>',
+            timer: 4000,
+            showConfirmButton: true,
+            allowOutsideClick: true,
+            type: 'success'
+        });
+    </script>
+<?php } ?>

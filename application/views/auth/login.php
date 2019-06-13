@@ -69,7 +69,7 @@
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" name="password" placeholder="Password"  autocomplete="off" required="required">
+                                    <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off" required="required">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="row m-t-30">

@@ -283,8 +283,10 @@ $crud = true;
                                                     <input type="text" id="model" name="model" value="<?php echo isset($_POST['model']) ? $_POST['model'] : '' ?>" class="form-control" placeholder="Controller Name" />
                                                 </div>
                                                 <input type="submit" value="Generate" name="generate" class="btn btn-primary" onclick="javascript: return confirm('This will overwrite the existing files. Continue ?')" />
-                                                <input type="submit" value="Generate All" name="generateall" class="btn btn-danger" onclick="javascript: return confirm('WARNING !! This will generate code for ALL TABLE and overwrite the existing files\
-                                                \nPlease double check before continue. Continue ?')" />
+
+                                                <!-- <input type="submit" value="Generate All" name="generateall" class="btn btn-danger" onclick="javascript: return confirm('WARNING !! This will generate code for ALL TABLE and overwrite the existing files\
+                                                \nPlease double check before continue. Continue ?')" /> -->
+                                                
                                                 <!-- <a href="core/setting.php" class="btn btn-default">Setting</a> -->
                                             </form>
                                             <br>
@@ -352,7 +354,7 @@ $crud = true;
 
 <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Are your sure ?</h4>

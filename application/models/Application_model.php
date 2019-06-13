@@ -37,8 +37,10 @@ class Application_model extends CI_Model
 
         $this->datatables->select('application.*,user_detail.*,app_id');
         $this->datatables->from('application');
+        $this->datatables->join('user', 'application.user_id = user.user_id');
         $this->datatables->join('user_detail', 'application.user_id = user_detail.user_id');
         $this->datatables->where('application.application_status', 'pending');
+        $this->datatables->where('user.usr_role', 'member');
 
         $this->datatables->add_column('action', anchor(site_url('application/approve/$1'),'<i class="icofont icofont-ui-check" aria-hidden="true"></i> Approve', array('class' => 'btn btn-info btn-sm approve-btn'))." | ".anchor(site_url('application/reject/$1'),'<i class="icofont icofont-ui-close" aria-hidden="true"></i> Reject', array('class' => 'btn btn-danger btn-sm reject-btn')), 'app_id');
         return $this->datatables->generate();

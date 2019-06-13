@@ -48,7 +48,7 @@
                                     </li>
                                     <li class="text-right text-warning">
                                         <?php 
-                                            $query = $this->db->query('SELECT * FROM user WHERE usr_role ="member" && usr_status = "active"');
+                                            $query = $this->db->query('SELECT * FROM user WHERE usr_role = "member" && usr_status = "active"');
                                             echo $query->num_rows(); 
                                         ?>
                                     </li>
@@ -101,7 +101,7 @@
                     <!-- Blur user-card start -->
                     <div class="col-md-12 col-xl-4 m-b-30">
                         <div class="widget-main-card blur-user-card">
-                            <img src="<?= base_url(); ?>/vendor/assets/images/user.png" width="35%" alt="">
+                            <img src="<?= base_url(); ?>/assets/image/user_upload/user.png" style="border-radius: 50%;" width="35%" alt="">
                             <h3><?php echo $this->session->userdata('userfname'); ?></h3>
                             <button class="btn btn-info">Settings</button>
                             <div class="blur-footer">
