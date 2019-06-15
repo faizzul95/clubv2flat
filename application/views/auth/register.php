@@ -36,7 +36,7 @@
                     <div class="login-card card-block auth-body">
                             <div class="text-center">
                               <a href="<?= base_url(); ?>welcome">
-                                <img src="<?= base_url(); ?>/vendor/assets/images/auth/logo.png" alt="logo.png">
+                                <img src="<?= base_url(); ?>/vendor/assets/images/auth/kembara1.png" alt="kembara1.png">
                               </a>
                             </div>
 
