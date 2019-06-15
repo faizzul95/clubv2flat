@@ -35,6 +35,7 @@ class User extends CI_Controller
     		'usr_username' => $row->usr_username,
     		'usr_password' => $row->usr_password,
     		'usr_role' => $row->usr_role,
+            'usr_image' => $row->usr_image,
     		'usr_status' => $row->usr_status,
             'detail_fullname' => $row2->detail_fullname,
             'detail_phone' => $row2->detail_phone,
@@ -57,6 +58,7 @@ class User extends CI_Controller
     	    'usr_username' => set_value('usr_username'),
     	    'usr_password' => set_value('usr_password'),
     	    'usr_role' => set_value('usr_role'),
+            'usr_image' => set_value('usr_image'),
     	    'usr_status' => set_value('usr_status'),
 	);
         $this->template->load('template','user/user_create_form', $data);
@@ -73,6 +75,7 @@ class User extends CI_Controller
     		'usr_username' => $this->input->post('usr_username',TRUE),
     		'usr_password' => $this->input->post('usr_password',TRUE),
     		'usr_role' => $this->input->post('usr_role',TRUE),
+            'usr_image' => $this->input->post('usr_image',TRUE),
     		'usr_status' => $this->input->post('usr_status',TRUE),
 	    );
 
@@ -84,9 +87,6 @@ class User extends CI_Controller
 
     public function update($id) 
     {
-
-        // $detailUser = $this->User_model->get_by_id($id);
-        // $row  = $detailUser->row();
         $query = $this->db->query("SELECT * FROM user WHERE user_id = '$id'");
         $row = $query->row_array();
         $id = $row['user_id'];
@@ -117,6 +117,7 @@ class User extends CI_Controller
     		'usr_username' => $this->input->post('usr_username',TRUE),
     		'usr_password' => $this->input->post('usr_password',TRUE),
     		'usr_role' => $this->input->post('usr_role',TRUE),
+            'usr_image' => $this->input->post('usr_image',TRUE),
     		'usr_status' => $this->input->post('usr_status',TRUE),
 	    );
 
@@ -155,6 +156,7 @@ class User extends CI_Controller
 	$this->form_validation->set_rules('usr_username', 'usr username', 'trim|required');
 	$this->form_validation->set_rules('usr_password', 'usr password', 'trim|required');
 	$this->form_validation->set_rules('usr_role', 'usr role', 'trim|required');
+    $this->form_validation->set_rules('usr_image', 'user image', 'trim|required');
 	$this->form_validation->set_rules('usr_status', 'usr status', 'trim|required');
 
 	$this->form_validation->set_rules('user_id', 'user_id', 'trim');

@@ -20,37 +20,20 @@ class User_model extends CI_Model
         // $this->datatables->select('user_id,usr_username,usr_password,usr_role,usr_status');
         // $this->datatables->from('user');
 
-        // join table with user_detail table
-        // $this->datatables->select('user.*,user_detail.*,user_id');
-        // $this->datatables->from('user');
-        // $this->datatables->join('user_detail', 'user.user_id = user_detail.user_id');
-
         // try from application
         $this->datatables->select('user.*,user_detail.*,application.*,app_id');
         $this->datatables->from('application');
         $this->datatables->join('user', 'application.user_id = user.user_id');
         $this->datatables->join('user_detail', 'application.user_id = user_detail.user_id');
-
-        // $this->datatables->where('user.usr_status', 'active');
         $this->datatables->where('user.usr_role', 'member');
-
+        $this->datatables->where('user.usr_status', 'active');
 
         $this->datatables->add_column('action', anchor(site_url('user/read/$1'),'<i class="fa fa-eye" aria-hidden="true"></i> View', array('class' => 'btn btn-info btn-sm'))." | ".anchor(site_url('user/update/$1'),'<i class="icofont icofont-edit" aria-hidden="true"></i> Change Status', array('class' => 'btn btn-success btn-sm'))." | ".anchor(site_url('user/delete/$1'),'<i class="icofont icofont-ui-delete" aria-hidden="true"></i> Delete', array('class' => 'btn btn-danger btn-sm delete-btn')), 'app_id');
         return $this->datatables->generate();
 
-
-        // copy dari application model
-        //  $this->datatables->select('user.*,user_detail.*,application.*,app_id');
-        // $this->datatables->from('application');
-        // $this->datatables->join('user', 'application.user_id = user.user_id');
-        // $this->datatables->join('user_detail', 'application.user_id = user_detail.user_id');
-
-        // //add this line for join
-        // //$this->datatables->join('table2', 'application.field = table2.field');
-        // $this->datatables->add_column('action', anchor(site_url('application/read/$1'),'<i class="fa fa-eye" aria-hidden="true"></i> View', array('class' => 'btn btn-info btn-sm'))." | ".anchor(site_url('application/update/$1'),'<i class="fa fa-eye" aria-hidden="true"></i> Update', array('class' => 'btn btn-success btn-sm'))." | ".anchor(site_url('application/delete/$1'),'<i class="icofont icofont-ui-delete" aria-hidden="true"></i> Delete', array('class' => 'btn btn-danger btn-sm'),'onclick="javasciprt: return confirm(\'Are You Sure ?\')"'), 'app_id');
-        // return $this->datatables->generate();
     }
 
+    
     // get all
     function get_all()
     {
@@ -71,6 +54,7 @@ class User_model extends CI_Model
     	$this->db->or_like('usr_username', $q);
     	$this->db->or_like('usr_password', $q);
     	$this->db->or_like('usr_role', $q);
+        $this->db->or_like('usr_image', $q);
     	$this->db->or_like('usr_status', $q);
     	$this->db->from($this->table);
         return $this->db->count_all_results();
@@ -83,6 +67,7 @@ class User_model extends CI_Model
     	$this->db->or_like('usr_username', $q);
     	$this->db->or_like('usr_password', $q);
     	$this->db->or_like('usr_role', $q);
+        $this->db->or_like('usr_image', $q);
     	$this->db->or_like('usr_status', $q);
     	$this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();

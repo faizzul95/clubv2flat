@@ -22,6 +22,9 @@ class Profile extends CI_Controller {
     		'detail_phone' => $row->detail_phone,
     		'detail_email' => $row->detail_email,
     		'detail_address' => $row->detail_address,
+            'detail_gender' => $row->detail_gender,
+            'detail_birth_date' => $row->detail_birth_date,
+            'detail_marital_status' => $row->detail_marital_status,
     		'user_id' => $row->user_id,
 	    );
           // $this->load->view('user_profile', $data);
