@@ -153,7 +153,7 @@
       <div class="flex-split"><!-- Feature section with flex layout -->
         <div class="f-left wow fadeInUp" data-wow-delay="0s">
           <div class="left-content">
-            <img class="img-responsive" src="<?= base_url(); ?>/vendor/landingpage/assets/images/kayak.png" alt="" />
+            <img class="img-responsive" src="<?= base_url(); ?>/assets/image/club_activity/kayak.png" alt="" />
           </div>
         </div>
         <div class="f-right wow fadeInUp" data-wow-delay="0.2s">
@@ -184,7 +184,7 @@
         </div>
         <div class="f-left">
           <div class="left-content wow fadeInUp" data-wow-delay="0.3s">
-            <img class="img-responsive" src="<?= base_url(); ?>/vendor/landingpage/assets/images/gunung.png" alt="" />
+            <img class="img-responsive" src="<?= base_url(); ?>/assets/image/club_activity/gunung.png" alt="" />
           </div>
         </div>
       </div>
@@ -192,7 +192,7 @@
       <div class="flex-split"><!-- Feature section with flex layout -->
         <div class="f-left wow fadeInUp" data-wow-delay="0.4s">
           <div class="left-content">
-            <img class="img-responsive" src="<?= base_url(); ?>/vendor/landingpage/assets/images/snorkeling.png" alt="" />
+            <img class="img-responsive" src="<?= base_url(); ?>/assets/image/club_activity/snorkeling.png" alt="" />
           </div>
         </div>
         <div class="f-right wow fadeInUp" data-wow-delay="0.2s">
