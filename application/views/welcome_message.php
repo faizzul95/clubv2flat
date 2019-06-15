@@ -46,7 +46,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-              <a class="navbar-brand page-scroll" href="#main"><img src="<?= base_url(); ?>/vendor/landingpage/assets/logos/logo.png" alt="Flat Able Logo" /></a>
+              <a class="navbar-brand page-scroll" href="#main"><img src="<?= base_url(); ?>/assets/image/kembara1.png" alt="Flat Able Logo" /></a>
               </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -91,9 +91,9 @@
         <div class="container">
           <div class="col-md-8 col-md-offset-2 nopadding">
           <div class="services-content">
-            <h1 class="wow fadeInUp" data-wow-delay="0s">We take care our products for more feature rich</h1>
+            <h1 class="wow fadeInUp" data-wow-delay="0s">About Us</h1>
             <p class="wow fadeInUp" data-wow-delay="0.2s">
-              Flat is one of the finest Admin dashboard template in its category. Premium admin dashboard with high end feature rich possibilities.
+              This club exists to provide a platform for those who are passionate about outdoor activities to explore nature. We aim to create awareness about the importance of taking care of mother nature and spark interest among students of UTIM,Perlis in outdoor activities.
             </p>
           </div>
         </div>
@@ -153,46 +153,58 @@
       <div class="flex-split"><!-- Feature section with flex layout -->
         <div class="f-left wow fadeInUp" data-wow-delay="0s">
           <div class="left-content">
-            <img class="img-responsive" src="<?= base_url(); ?>/vendor/landingpage/assets/images/feature_1.png" alt="" />
+            <img class="img-responsive" src="<?= base_url(); ?>/vendor/landingpage/assets/images/kayak.png" alt="" />
           </div>
         </div>
         <div class="f-right wow fadeInUp" data-wow-delay="0.2s">
           <div class="right-content">
-            <h2>High performance and flexible code</h2>
+            <h2>Kayak</h2>
             <p>
-              Flat Able is full flexible solution for your entire project development. You can easily maintain all of its module/components.
+              Kayak is one of the most exciting sports or recreational activities.
+              Activities carried out in juicy areas such as lakes, waterfalls, ponds, rivers, rapids and seas. The most important thing in following a water adventure is safety. To keep up with water activities, safety jackets are important as they are one of the mediums of rescue to individuals.
             </p>
-            <ul>
-              <li><i class="ion-android-checkbox-outline"></i>Neat n clean code structure.</li>
-              <li><i class="ion-android-checkbox-outline"></i>Flexible module structure</li>
-              <li><i class="ion-android-checkbox-outline"></i>Copy / Paste and Ready to use</li>
-            </ul>
-            <button class="btn btn-primary btn-action btn-fill">Learn More</button>
           </div>
         </div>
       </div>
 
       <div class="flex-split"><!-- Feature section with flex layout -->
+
         <div class="f-right">
           <div class="right-content wow fadeInUp" data-wow-delay="0.2s">
-            <h2>Included Software Dependencies</h2>
+            <h2>Mountain Climbing</h2>
             <p>
-				Bower - Grunt - Sass Dependencies for easy project flow management.
+				       Mountain Climbing involve hiking, rock climbing, as well as crossing glaciers. Mountain climbers use the strength of their arms and legs to climb up mountains. Many mountain climbers use ropes and wear special shoes and safety equipment.
             </p>
             <ul>
-              <li><i class="ion-android-checkbox-outline"></i>Grunt - No need to update plugins manually</li>
-              <li><i class="ion-android-checkbox-outline"></i>Grunt - Less work you have to performance</li>
-              <li><i class="ion-android-checkbox-outline"></i>Sass  - Most Powerful CSS extension language</li>
-            </ul>
-            <button class="btn btn-primary btn-action btn-fill">Learn More</button>
+              <p>The place to climb:<p>
+              <li><i class="ion-android-checkbox-outline"></i>Bukit Tabur, Kuala Lumpur</li>
+              <li><i class="ion-android-checkbox-outline"></i>Gunung Kinabali, Sabah</li>
+            </ul>  
           </div>
         </div>
         <div class="f-left">
           <div class="left-content wow fadeInUp" data-wow-delay="0.3s">
-            <img class="img-responsive" src="<?= base_url(); ?>/vendor/landingpage/assets/images/feature_2.png" alt="" />
+            <img class="img-responsive" src="<?= base_url(); ?>/vendor/landingpage/assets/images/gunung.png" alt="" />
           </div>
         </div>
       </div>
+
+      <div class="flex-split"><!-- Feature section with flex layout -->
+        <div class="f-left wow fadeInUp" data-wow-delay="0.4s">
+          <div class="left-content">
+            <img class="img-responsive" src="<?= base_url(); ?>/vendor/landingpage/assets/images/snorkeling.png" alt="" />
+          </div>
+        </div>
+        <div class="f-right wow fadeInUp" data-wow-delay="0.2s">
+          <div class="right-content">
+            <h2>Snorkeling</h2>
+            <p>
+              Practice of swimming on or through a body of water while equipped with a diving mask, a shaped breathing tube called a snorkel, and usually swimfins. In cooler waters, a wetsuit may also be worn. Use of this equipment allows the snorkeler to observe underwater attractions for extended periods with relatively little effort and to breathe while face-down at the surface.
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
