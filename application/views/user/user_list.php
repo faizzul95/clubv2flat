@@ -1,9 +1,9 @@
-<title>CMS | List Of User</title>
+<title>CMS | List Of Club Member</title>
 
     <!-- Page-header start -->
     <div class="page-header">
         <div class="page-header-title">
-            <h4> List Of User</h4>
+            <h4> List Of Club Member</h4>
         </div>
 
         <div class="page-header-breadcrumb">
