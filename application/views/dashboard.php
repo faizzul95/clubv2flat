@@ -103,7 +103,11 @@
                         <div class="widget-main-card blur-user-card">
                             <img src="<?= base_url(); ?>/assets/image/user_upload/<?php echo $this->session->userdata('image'); ?>" style="border-radius: 50%;"  width="150" height="150" alt="">
                             <h3><?php echo $this->session->userdata('userfname'); ?></h3>
-                            <button class="btn btn-info">Settings</button>
+                            
+                            <a href="profile">
+                                <button class="btn btn-info">Settings</button>
+                            </a>
+
                             <div class="blur-footer">
                                 <div class="row text-center">
                                     <div class="col-xs-6 col-sm-6 col-lg-6">

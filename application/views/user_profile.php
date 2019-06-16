@@ -8,7 +8,7 @@
                 <div class="page-header-breadcrumb">
                     <ul class="breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="index.html">
+                            <a href="profile">
                                 <i class="icofont icofont-home"></i>
                             </a>
                         </li>
@@ -51,8 +51,10 @@
                                                 <div class="card">
                                                     <div class="social-profile">
                                                         <img class="img-fluid width-100" src="<?= base_url(); ?>/assets/image/user_upload/<?php echo $this->session->userdata('image'); ?>" alt="">
-                                                        <div class="profile-hvr m-t-15">
-                                                            <a class="]"><i class="icofont icofont-ui-edit p-r-10"></i></a>
+                                                        <div class="profile-hvr m-t-10">
+                                                            <a class="#" data-toggle="modal" data-target="#uploadModal">
+                                                                <i class="icofont icofont-ui-edit p-r-10"></i>
+                                                            </a>
                                                             <i class="icofont icofont-ui-delete deleteimage-btn"></i>
                                                         </div>
                                                     </div>
@@ -62,7 +64,7 @@
                                                 </div>
                                                 <!-- social-profile card end -->
                                                 <!-- Who to follow card start -->
-                                                <div class="card">
+                                              <!--   <div class="card">
                                                     <div class="card-header">
                                                         <h5 class="card-header-text">Who to follow</h5>
                                                     </div>
@@ -78,7 +80,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <!-- Who to follow card end -->
                                             </div>
                                             <!-- Social timeline left end -->
@@ -143,7 +145,7 @@
                                                                     </div>
                                                                     <div id="edit-info" class="row">
                                                                         <div class="col-lg-12 col-md-12">
-                                                                            <form>
+                                                                            <form action="<?= base_url('user_detail/update_profile') ?>" method="POST">
                                                                                 <div class="input-group">
                                                                                     <input type="text" name="detail_fullname"  value="<?php echo $detail_fullname; ?>" class="form-control" placeholder="Full Name">
                                                                                 </div>
@@ -170,18 +172,17 @@
                                                                                     <input id="dropper-default" name="detail_birth_date"  value="<?php echo $detail_birth_date; ?>" class="form-control" type="text" placeholder="Birth Date" />
                                                                                 </div>
                                                                                 <div class="input-group">
-                                                                                    <select id="hello-single" name="detail_marital_status" class="form-control">
-                                                                                        <option value="">---- Marital Status ----</option>
-                                                                                        <option value="Married" <?php if ($detail_marital_status == 'Married' ) echo 'selected' ; ?> >Married</option>
-                                                                                        <option value="Single" <?php if ($detail_marital_status == 'Single' ) echo 'selected' ; ?> >Single</option>
-                                                                                    </select>
+                                                                                    <?php echo form_error('detail_marital_status') ?></label>
+                                                                                    <?php echo form_dropdown('detail_marital_status',array(''=>'- Please Select Gender -','Single'=>'SINGLE','Married'=>'MARRIED'),$detail_marital_status,array('class'=>'form-control'))?>
                                                                                 </div>
                                                                                 <div class="md-group-add-on">
                                                                                     <textarea rows="5" name="detail_address" cols="5" class="form-control" placeholder="Address..."> <?php echo $detail_address; ?></textarea>
                                                                                 </div>
                                                                                 <div class="text-center m-t-20">
-                                                                                    <a href="javascript:;" id="edit-save" class="btn btn-primary waves-effect waves-light m-r-20">Save</a>
-                                                                                    <a href="javascript:;" id="edit-cancel" class="btn btn-danger waves-effect waves-light">Cancel</a>
+                                                                                     <input type="hidden" name="detail_id" value="<?php echo $detail_id; ?>" />
+                                                                                        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" /> 
+                                                                                        <button type="submit" class="btn btn-primary waves-effect waves-light m-r-20">Update</button> 
+                                                                                        <a href="#!" id="edit-cancel" class="btn btn-danger waves-effect">Cancel</a>
                                                                                 </div>
                                                                             </form>
                                                                         </div>
@@ -214,7 +215,7 @@
                                                                     </div>
                                                                     <div id="edit-contact-info" class="row">
                                                                         <div class="col-lg-12 col-md-12">
-                                                                            <form>
+                                                                            <form action="<?= base_url('user_detail/update_profile') ?>" method="POST">
                                                                                 <div class="input-group">
                                                                                     <input type="text" name="detail_phone" maxlength="12" value="<?php echo $detail_phone; ?>" class="form-control" placeholder="Mobile number">
                                                                                 </div>
@@ -222,8 +223,12 @@
                                                                                     <input type="text" name="detail_email"  value="<?php echo $detail_email; ?>" class="form-control" placeholder="Email address">
                                                                                 </div>
                                                                                 <div class="text-center m-t-20">
-                                                                                    <a href="javascript:;" id="contact-save" class="btn btn-primary waves-effect waves-light m-r-20">Save</a>
-                                                                                    <a href="javascript:;" id="contact-cancel" class="btn btn-danger waves-effect waves-light">Cancel</a>
+                                                                                   <input type="hidden" name="detail_id" value="<?php echo $detail_id; ?>" />
+                                                                                        <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" /> 
+                                                                                        <button type="submit" class="btn btn-primary waves-effect waves-light m-r-20">Update</button> 
+                                                                                        <a href="#!" id="edit-cancel" class="btn btn-danger waves-effect">Cancel</a>
+
+                                                                                        <input type="hidden" name="detail_marital_status"  value="<?php echo $detail_marital_status; ?>" class="form-control" placeholder="">
                                                                                 </div>
                                                                             </form>
                                                                         </div>
@@ -334,3 +339,28 @@
 
     })
 </script>
+
+
+<!-- The Modal -->
+<div class="modal" id="uploadModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Change User Profile</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <?php echo form_open_multipart('user/do_upload');?>
+            <input type="file" name="usr_image" class="btn btn-info"  size="20" />
+            <input type="submit" value="upload" class="btn btn-info" />
+        </form>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
