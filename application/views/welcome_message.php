@@ -101,7 +101,7 @@
           <div class="services">
             <div class="col-sm-3 wow fadeInUp" data-wow-delay="0.2s">
               <div>
-                <img src="<?= base_url(); ?>/assets/image/group_member/MOHD FAHMY IZWAN BIN ZULKHAFRI.png" height="150" width="150" alt="Team Leader" />
+                <img src="<?= base_url(); ?>/assets/image/group_member/MOHD FAHMY IZWAN BIN ZULKHAFRI.png" style="border-radius: 50%" height="150" width="150" alt="Team Leader" />
               </div>
               <div class="services-description">
                 <h1>MOHD FAHMY IZWAN BIN ZULKHAFRI</h1>
@@ -112,7 +112,7 @@
             </div>
             <div class="col-sm-3 wow fadeInUp" data-wow-delay="0.3s">
               <div>
-                <img class="icon-2" src="<?= base_url(); ?>/assets/image/group_member/MUHAMMAD SYAMIM BIN SAMSUDIN.png" height="150" width="150"/>
+                <img class="icon-2" src="<?= base_url(); ?>/assets/image/group_member/MUHAMMAD SYAMIM BIN SAMSUDIN.png" style="border-radius: 50%" height="150" width="150"/>
               </div>
               <div class="services-description">
                 <h1>MUHAMMAD SYAMIM BIN SAMSUDIN</h1>
@@ -123,7 +123,7 @@
             </div>
             <div class="col-sm-3 wow fadeInUp" data-wow-delay="0.4s">
               <div>
-                <img class="icon-3" src="<?= base_url(); ?>/assets/image/group_member/AMRULLAH BIN ABDUL RAHMAN.png" height="150" width="150" />
+                <img class="icon-3" src="<?= base_url(); ?>/assets/image/group_member/AMRULLAH BIN ABDUL RAHMAN.png" style="border-radius: 50%" height="150" width="150" />
               </div>
               <div class="services-description">
                 <h1>AMRULLAH BIN ABDUL RAHMAN</h1>
@@ -134,7 +134,7 @@
             </div>
             <div class="col-sm-3 wow fadeInUp" data-wow-delay="0.4s">
               <div>
-                <img class="icon-3" src="<?= base_url(); ?>/assets/image/group_member/NOR FAEZAH BINTI ABDUL RAZAK.png" height="150" width="150" />
+                <img class="icon-3" src="<?= base_url(); ?>/assets/image/group_member/NOR FAEZAH BINTI ABDUL RAZAK.png" style="border-radius: 50%" height="150" width="150" />
               </div>
               <div class="services-description">
                 <h1>NOR FAEZAH BINTI ABDUL RAZAK</h1>
