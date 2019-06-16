@@ -76,6 +76,7 @@ Class Auth extends CI_Controller{
                 $name  = $data['usr_username'];
                 $current_password = $data['usr_password'];
                 $level = $data['usr_role'];
+                $image = $data['usr_image'];
                 $status = $data['usr_status'];
 
                 $detailUser = $this->User_detail_model->get_session_data($id);
@@ -91,6 +92,7 @@ Class Auth extends CI_Controller{
                             'userid'  => $id,
                             'username'=> $name,
                             'level'=> $level,
+                            'image'=> $image,
                             'status'=> $status,
                             'logged_in' => TRUE
                         );

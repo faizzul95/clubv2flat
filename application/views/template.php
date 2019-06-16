@@ -41,6 +41,12 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/icon/SVG-animated/svg-weather.css">
     <!-- Calender css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/pages/widget/calender/pignose.calendar.min.css">
+     <!-- Date-time picker css -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/assets/pages/advance-elements/css/bootstrap-datetimepicker.css">
+    <!-- Date-range picker css  -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+    <!-- Date-Dropper css -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/bower_components/datedropper/datedropper.min.css" />
    
     
 </head>
@@ -95,7 +101,7 @@
                     <ul class="nav-right">
                         <li class="user-profile header-notification">
                             <a href="#!">
-                                <img src="<?= base_url(); ?>/assets/image/user_upload/user.png" style="border-radius: 50%;" alt="User-Profile-Image">
+                                <img src="<?= base_url(); ?>/assets/image/user_upload/<?php echo $this->session->userdata('image'); ?>" style="border-radius: 50%;" alt="User-Profile-Image">
                                 <span><?php echo $this->session->userdata('userfname'); ?></span>
                                 <i class="fa fa-chevron-down"></i>
                             </a>
@@ -139,7 +145,7 @@
     <!-- Menu aside start -->
     <div class="main-menu">
         <div class="main-menu-header">
-            <img class="img-40" src="<?= base_url(); ?>/assets/image/user_upload/user.png" style="border-radius: 50%;" alt="User-Profile-Image">
+            <img class="img-40" src="<?= base_url(); ?>/assets/image/user_upload/<?php echo $this->session->userdata('image'); ?>" style="border-radius: 50%;" alt="User-Profile-Image">
             <div class="user-details">
                 <span id="more-details"><?php echo $this->session->userdata('userfname');; ?>
                 <i class="fa fa-chevron-down"></i>
@@ -293,7 +299,7 @@
           <h4 class="modal-title">Are your sure ?</h4>
         </div>
         <div class="modal-body">
-          <h6>This will end this session</h6>
+          <h6>Select "Logout" below if you are ready to end your current session.</h6>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

@@ -67,7 +67,9 @@
                         <?php echo form_dropdown('is_active',array('y'=>'ACTIVE','n'=>'INACTIVE'),$is_active,array('class'=>'form-control'))?>
                     </div>
             	    <input type="hidden" name="menu_id" value="<?php echo $menu_id; ?>" /> 
+                    
             	    <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
+
             	    <a href="<?php echo site_url('menu') ?>" class="btn btn-danger">Cancel</a>
             	</form>
                 </div>
