@@ -21,7 +21,7 @@
                     <div class="col-md-6 col-xl-3">
                         <div class="card client-blocks dark-primary-border">
                             <div class="card-block">
-                                <h5>New Application</h5>
+                                <h5>Request Application</h5>
                                 <ul>
                                     <li>
                                         <i class="icofont icofont-document-folder"></i>
@@ -41,14 +41,14 @@
                     <div class="col-md-6 col-xl-3">
                         <div class="card client-blocks warning-border">
                             <div class="card-block">
-                                <h5>Member</h5>
+                                <h5>Reject Application</h5>
                                 <ul>
                                     <li>
                                         <i class="icofont icofont-ui-user-group text-warning"></i>
                                     </li>
                                     <li class="text-right text-warning">
                                         <?php 
-                                            $query = $this->db->query('SELECT * FROM user WHERE usr_role = "member" && usr_status = "active"');
+                                             $query = $this->db->query('SELECT * FROM application WHERE  application_status ="reject"');
                                             echo $query->num_rows(); 
                                         ?>
                                     </li>
@@ -61,14 +61,14 @@
                     <div class="col-md-6 col-xl-3">
                         <div class="card client-blocks success-border">
                             <div class="card-block">
-                                <h5>Public Activity</h5>
+                                <h5>Request Activity</h5>
                                 <ul>
                                     <li>
                                         <i class="icofont icofont-files text-success"></i>
                                     </li>
                                     <li class="text-right text-success">
                                         <?php 
-                                            $query = $this->db->query('SELECT * FROM activity WHERE act_category = "guest"');
+                                            $query = $this->db->query('SELECT * FROM join_member_activity WHERE join_status = "pending"');
                                             echo $query->num_rows(); 
                                         ?>
                                     </li>
@@ -81,14 +81,14 @@
                     <div class="col-md-6 col-xl-3">
                         <div class="card client-blocks">
                             <div class="card-block">
-                                <h5>Member Activity</h5>
+                                <h5>Total Activity</h5>
                                 <ul>
                                     <li>
                                         <i class="icofont icofont-ui-folder text-primary"></i>
                                     </li>
                                     <li class="text-right text-primary">
                                         <?php 
-                                            $query = $this->db->query('SELECT * FROM activity WHERE act_category = "member"');
+                                            $query = $this->db->query('SELECT * FROM activity');
                                             echo $query->num_rows(); 
                                         ?>
                                     </li>

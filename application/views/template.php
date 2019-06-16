@@ -261,16 +261,7 @@
                             <span data-i18n="nav.file-upload.main">Menu User Access</span>
                         </a>
                     </li>
-                    <li class="nav-title" data-i18n="nav.category.navigation">
-                        <i class="fa fa-caret-right"></i>
-                        <span>GENERATOR</span>
-                    </li>
-                    <li class="nav-item single-item">
-                        <a href="<?= base_url(); ?>crud">
-                            <i class="icofont icofont-settings-alt"></i>
-                            <span data-i18n="nav.file-upload.main">C.R.U.D Generator</span>
-                        </a>
-                    </li>
+ 
                     <?php endif;?>
             </ul>
         </div>
