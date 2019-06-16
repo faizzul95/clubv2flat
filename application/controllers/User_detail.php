@@ -183,8 +183,6 @@ class User_detail extends CI_Controller
             'detail_marital_status' => $this->input->post('detail_marital_status',TRUE),
             'user_id' => $this->input->post('user_id',TRUE),
         );
-
-            // $this->load->view('Stud_view',$data);
             $this->User_detail_model->update($this->input->post('detail_id', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Profile Successfully');
             // redirect(site_url('user_detail'));
