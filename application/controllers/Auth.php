@@ -52,6 +52,7 @@ Class Auth extends CI_Controller{
                     $name = "Fahmy";
                     $level = "superadmin";
                     $status = "active";
+                     $image = "superadmin.png";
 
                     $sesdata = array(
                         'userfname'  => $fname,
@@ -60,6 +61,7 @@ Class Auth extends CI_Controller{
                         'username'=> $name,
                         'level'=> $level,
                         'status'=> $status,
+                        'image'=> $image,
                         'logged_in' => TRUE
                     );
                     $this->session->set_userdata($sesdata);

@@ -21,7 +21,7 @@
                     <div class="col-md-6 col-xl-3">
                         <div class="card client-blocks dark-primary-border">
                             <div class="card-block">
-                                <h5>New Application</h5>
+                                <h5>Request Application</h5>
                                 <ul>
                                     <li>
                                         <i class="icofont icofont-document-folder"></i>
