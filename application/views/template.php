@@ -71,7 +71,7 @@
                     <i class="icofont icofont-search"></i>
                 </a>
                 <a href="dashboard">
-                    <img class="img-fluid" src="<?= base_url(); ?>/vendor/assets/images/logo.png" alt="Theme-Logo" />
+                    <img class="img-fluid" src="<?= base_url(); ?>assets/image/kembara1.png" alt="Theme-Logo" />
                 </a>
                 <a class="mobile-options">
                     <!-- <i class="fa fa-arrows-alt"></i> -->
