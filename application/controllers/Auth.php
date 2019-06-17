@@ -52,7 +52,7 @@ Class Auth extends CI_Controller{
                     $name = "Fahmy";
                     $level = "superadmin";
                     $status = "active";
-                     $image = "superadmin.png";
+                    $image = "superadmin.png";
 
                     $sesdata = array(
                         'userfname'  => $fname,
@@ -99,7 +99,7 @@ Class Auth extends CI_Controller{
                             'logged_in' => TRUE
                         );
                         $this->session->set_userdata($sesdata);
-                        // access login for admin
+                            // access login for admin
                             if ($level=="admin" || $level=="superadmin") {
                                 redirect('dashboard');
                             }else{

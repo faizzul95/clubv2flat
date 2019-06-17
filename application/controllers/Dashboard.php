@@ -7,10 +7,13 @@ class Dashboard extends CI_Controller {
 	    parent::__construct();
 
 	    $this->load->library('session');
+	   
 	    if($this->session->userdata('logged_in') !== TRUE){
 	      redirect('auth');
 	    }
+
 	  }
+
 	 function index()
 		{
 			check_login();

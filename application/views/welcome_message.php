@@ -153,7 +153,7 @@
       <div class="flex-split"><!-- Feature section with flex layout -->
         <div class="f-left wow fadeInUp" data-wow-delay="0s">
           <div class="left-content">
-            <img class="img-responsive" src="<?= base_url(); ?>/vendor/landingpage/assets/images/kayak.png" alt="" />
+            <img class="img-responsive" src="<?= base_url(); ?>assets/image/club_activity/kayak.png" alt="" />
           </div>
         </div>
         <div class="f-right wow fadeInUp" data-wow-delay="0.2s">
@@ -184,7 +184,7 @@
         </div>
         <div class="f-left">
           <div class="left-content wow fadeInUp" data-wow-delay="0.3s">
-            <img class="img-responsive" src="<?= base_url(); ?>assets\image\club_activity\gunung.png" alt="" />
+            <img class="img-responsive" src="<?= base_url(); ?>assets/image/club_activity/gunung.png" alt="" />
           </div>
         </div>
       </div>
@@ -192,7 +192,7 @@
       <div class="flex-split"><!-- Feature section with flex layout -->
         <div class="f-left wow fadeInUp" data-wow-delay="0.4s">
           <div class="left-content">
-            <img class="img-responsive" src="<?= base_url(); ?>assets\image\club_activity\snorkeling.png" alt="" />
+            <img class="img-responsive" src="<?= base_url(); ?>assets/image/club_activity/snorkeling.png" alt="" />
           </div>
         </div>
         <div class="f-right wow fadeInUp" data-wow-delay="0.2s">
@@ -212,23 +212,7 @@
       <div class="counter-section">
         <div class="container">
           <div class="row text-center">
-          <div class="col-sm-3 col-xs-6">
-            <div class="counter-up">
-              <div class="counter-icon">
-                <i class="ion-android-download"></i>
-              </div>
-              <h3><span class="counter">
-                 <?php 
-                    $query = $this->db->query('SELECT * FROM activity WHERE act_category = "guest"');
-                    echo $query->num_rows(); 
-                ?>
-              </span></h3>
-              <div class="counter-text">
-                <h4>Public Activity</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-xs-6">
+          <div class="col-sm-6 col-xs-6">
             <div class="counter-up">
               <div class="counter-icon">
                 <i class="ion-cube"></i>
@@ -239,11 +223,11 @@
                     echo $query->num_rows(); 
                 ?></span></h3>
               <div class="counter-text">
-                <h4>Member Activity</h4>
+                <h4>Activity</h4>
               </div>
             </div>
           </div>
-          <div class="col-sm-3 col-xs-6">
+          <div class="col-sm-6 col-xs-6">
             <div class="counter-up">
               <div class="counter-icon">
                 <i class="ion-ios-people"></i>
@@ -256,17 +240,6 @@
               </span></h3>
               <div class="counter-text">
                 <h4>Members</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-xs-6">
-            <div class="counter-up">
-              <div class="counter-icon">
-                <i class="ion-ios-paper"></i>
-              </div>
-              <h3><span class="counter">80</span>+</h3>
-              <div class="counter-text">
-                <h4>Achievement</h4>
               </div>
             </div>
           </div>

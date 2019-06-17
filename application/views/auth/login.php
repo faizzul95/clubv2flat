@@ -42,7 +42,7 @@
 
                         <div class="text-center">
                             <a href="<?= base_url(); ?>welcome">
-                                <img src="<?= base_url(); ?>/assets/image/logouitm.png" height="50%" width="50%" alt="logo.png">
+                                <img src="<?= base_url(); ?>/assets/image/kembara1.png" alt="kembara1.png" height="50%" width="50%" alt="logo.png">
                             </a>
                         </div>
 
