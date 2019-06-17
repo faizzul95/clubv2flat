@@ -1,10 +1,10 @@
 # clubv2flat
 
-Club Management System
+Club Management System (Kembara Club)
 
 Framework : CodeIgniter v3.1.10
 
-Template : Flat Able v1.0.1
+Bootstrap Template : Flat Able v1.0.1
 
 CRUD Generator : Harviacode v1.4
 
