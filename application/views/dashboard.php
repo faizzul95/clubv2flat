@@ -28,7 +28,7 @@
                                     </li>
                                     <li class="text-right text-success">
                                         <?php 
-                                            $query = $this->db->query('SELECT * FROM application WHERE  application_status ="pending"');
+                                            $query = $this->db->query('SELECT * FROM application WHERE application_status ="pending"');
                                             echo $query->num_rows(); 
                                         ?>
                                     </li>

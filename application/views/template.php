@@ -102,7 +102,7 @@
                         <li class="user-profile header-notification">
                             <a href="#!">
                                 <img src="<?= base_url(); ?>/assets/image/user_upload/<?php echo $this->session->userdata('image'); ?>" style="border-radius: 50%;" alt="User-Profile-Image">
-                                <span><?php echo $this->session->userdata('userfname'); ?></span>
+                                <span><?php echo strtoupper($this->session->userdata('userfname')); ?></span>
                                 <i class="fa fa-chevron-down"></i>
                             </a>
                             <ul class="show-notification profile-notification">
