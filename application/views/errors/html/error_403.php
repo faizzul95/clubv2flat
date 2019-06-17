@@ -141,9 +141,9 @@
                 $level_session = $this->session->userdata('level');
 
                 if ($level_session == "member") { ?>
-                      <a href="<?= base_url(); ?>profile">Back to Profile</a>
+                      <a href="<?= base_url(); ?>profile">Back to Profile</a> OR <a href="<?= base_url(); ?>auth/logout">Back to Login</a>
             <?php } else { ?>
-                     <a href="<?= base_url(); ?>dashboard">Back to dashboard</a>
+                     <a href="<?= base_url(); ?>dashboard">Back to dashboard</a> OR <a href="<?= base_url(); ?>auth/logout">Back to Login</a>
             <?php  } ?>
         </div>
     </div>
