@@ -160,13 +160,13 @@ class Activity extends CI_Controller
     public function _rules() 
     {
 	$this->form_validation->set_rules('act_name', 'act name', 'trim|required');
-	$this->form_validation->set_rules('act_post_by', 'act post by', 'trim|required');
+	$this->form_validation->set_rules('act_post_by', 'act post by', 'trim');
 	$this->form_validation->set_rules('act_description', 'act description', 'trim|required');
 	$this->form_validation->set_rules('act_date', 'act date', 'trim|required');
 	$this->form_validation->set_rules('act_time', 'act time', 'trim|required');
 	$this->form_validation->set_rules('act_venue', 'act venue', 'trim|required');
-	$this->form_validation->set_rules('act_category', 'act category', 'trim|required');
-	$this->form_validation->set_rules('act_image', 'act image', 'trim|required');
+	$this->form_validation->set_rules('act_category', 'act category', 'trim');
+	$this->form_validation->set_rules('act_image', 'act image', 'trim');
 	$this->form_validation->set_rules('act_fee', 'act fee', 'trim|required');
 
 	$this->form_validation->set_rules('act_id', 'act_id', 'trim');

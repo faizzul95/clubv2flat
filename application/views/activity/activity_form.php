@@ -33,10 +33,6 @@
                                 <input type="text" class="form-control" name="act_name" id="act_name" placeholder="Act Name" value="<?php echo $act_name; ?>" />
                             </div>
 	    <div class="form-group">
-                                <label for="act_post_by">Act Post By <?php echo form_error('act_post_by') ?></label>
-                                <textarea class="form-control" rows="3" name="act_post_by" id="act_post_by" placeholder="Act Post By"><?php echo $act_post_by; ?></textarea>
-                            </div>
-	    <div class="form-group">
                                 <label for="act_description">Act Description <?php echo form_error('act_description') ?></label>
                                 <textarea class="form-control" rows="3" name="act_description" id="act_description" placeholder="Act Description"><?php echo $act_description; ?></textarea>
                             </div>
@@ -51,14 +47,6 @@
 	    <div class="form-group">
                                 <label for="varchar">Act Venue <?php echo form_error('act_venue') ?></label>
                                 <input type="text" class="form-control" name="act_venue" id="act_venue" placeholder="Act Venue" value="<?php echo $act_venue; ?>" />
-                            </div>
-	    <div class="form-group">
-                                <label for="enum">Act Category <?php echo form_error('act_category') ?></label>
-                                <input type="text" class="form-control" name="act_category" id="act_category" placeholder="Act Category" value="<?php echo $act_category; ?>" />
-                            </div>
-	    <div class="form-group">
-                                <label for="varchar">Act Image <?php echo form_error('act_image') ?></label>
-                                <input type="text" class="form-control" name="act_image" id="act_image" placeholder="Act Image" value="<?php echo $act_image; ?>" />
                             </div>
 	    <div class="form-group">
                                 <label for="int">Act Fee <?php echo form_error('act_fee') ?></label>

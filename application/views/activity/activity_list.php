@@ -30,7 +30,7 @@
 <!-- Basic Button table start -->
             <div class="card">
                 <div class="card-header">
-                        <?php echo anchor(site_url('activity/create'), '<i class="fa fa-wpforms"></i> Add Data', 'class="btn btn-info"'); ?>
+                        <?php echo anchor(site_url('activity/create'), '<i class="fa fa-wpforms"></i> Add New Activity', 'class="btn btn-info"'); ?>
 		<?php echo anchor(site_url('activity/excel'), '<i class="fa fa-file-excel-o"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
 		<?php echo anchor(site_url('activity/word'), '<i class="fa fa-file-word-o"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
                 </div>
@@ -42,31 +42,25 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-		    <th>Act Name</th>
-		    <th>Act Post By</th>
-		    <th>Act Description</th>
-		    <th>Act Date</th>
-		    <th>Act Time</th>
-		    <th>Act Venue</th>
-		    <th>Act Category</th>
-		    <th>Act Image</th>
-		    <th>Act Fee</th>
-		    <th>Action</th>
+                        		    <th>Name</th>
+                        		    <th>Description</th>
+                        		    <th>Date</th>
+                        		    <th>Time</th>
+                        		    <th>Venue</th>
+                        		    <th>Fee</th>
+                        		    <th>Action</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th>No</th>
-						<th>Act Name</th>
-						<th>Act Post By</th>
-						<th>Act Description</th>
-						<th>Act Date</th>
-						<th>Act Time</th>
-						<th>Act Venue</th>
-						<th>Act Category</th>
-						<th>Act Image</th>
-						<th>Act Fee</th>
-						<th>Action</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Venue</th>
+                                    <th>Fee</th>
+                                    <th>Action</th>
                                 </tr>
                             </tfoot>
 	    
@@ -156,7 +150,7 @@
                         {
                             "data": "act_id",
                             "orderable": false
-                        },{"data": "act_name"},{"data": "act_post_by"},{"data": "act_description"},{"data": "act_date"},{"data": "act_time"},{"data": "act_venue"},{"data": "act_category"},{"data": "act_image"},{"data": "act_fee"},
+                        },{"data": "act_name"},{"data": "act_description"},{"data": "act_date"},{"data": "act_time"},{"data": "act_venue"},{"data": "act_fee"},
                         {
                             "data" : "action",
                             "orderable": false,

@@ -30,9 +30,8 @@
 <!-- Basic Button table start -->
             <div class="card">
                 <div class="card-header">
-                        <?php echo anchor(site_url('join_member_activity/create'), '<i class="fa fa-wpforms"></i> Add Data', 'class="btn btn-info"'); ?>
-		<?php echo anchor(site_url('join_member_activity/excel'), '<i class="fa fa-file-excel-o"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
-		<?php echo anchor(site_url('join_member_activity/word'), '<i class="fa fa-file-word-o"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
+        		<?php echo anchor(site_url('join_member_activity/excel'), '<i class="fa fa-file-excel-o"></i> Export as Excel', 'class="btn btn-success btn-square"'); ?>
+        		<?php echo anchor(site_url('join_member_activity/word'), '<i class="fa fa-file-word-o"></i> Export as Word', 'class="btn btn-inverse btn-square"'); ?>
                 </div>
                 <div class="card-block">
                     <div class="table-responsive">

@@ -28,15 +28,11 @@
         <div class="card">
             <div class="card-block">
             <form action="<?php echo $action; ?>" method="post">
-											      <div class="form-group">
+						<div class="form-group">
                             <label for="varchar">Act Name <?php echo form_error('act_name') ?></label>
                             <input type="text" <?php if (form_error('act_name')) { echo 'class="form-control form-control-danger"'; } else { echo 'class="form-control"'; }  ?> name="act_name" id="act_name" autocomplete="off" placeholder="Act Name" value="<?php echo $act_name; ?>" />
                         </div>
-											     <div class="form-group">
-                            <label for="act_post_by">Act Post By <?php echo form_error('act_post_by') ?></label>
-                            <textarea  <?php if (form_error('act_post_by')) { echo 'class="form-control form-control-danger"'; } else { echo 'class="form-control"'; }  ?> rows="5" name="act_post_by" id="act_post_by" placeholder="Act Post By"><?php echo $act_post_by; ?></textarea>
-                        </div>
-											     <div class="form-group">
+						<div class="form-group">
                             <label for="act_description">Act Description <?php echo form_error('act_description') ?></label>
                             <textarea  <?php if (form_error('act_description')) { echo 'class="form-control form-control-danger"'; } else { echo 'class="form-control"'; }  ?> rows="5" name="act_description" id="act_description" placeholder="Act Description"><?php echo $act_description; ?></textarea>
                         </div>
@@ -48,33 +44,24 @@
                             <label for="time">Act Time <?php echo form_error('act_time') ?></label>
                             <input type="time"  <?php if (form_error('act_time')) { echo 'class="form-control form-control-danger"'; } else { echo 'class="form-control"'; }  ?> name="act_time" id="act_time" placeholder="Act Time" value="<?php echo $act_time; ?>" />
                             </div>
-											      <div class="form-group">
+						<div class="form-group">
                             <label for="varchar">Act Venue <?php echo form_error('act_venue') ?></label>
                             <input type="text" <?php if (form_error('act_venue')) { echo 'class="form-control form-control-danger"'; } else { echo 'class="form-control"'; }  ?> name="act_venue" id="act_venue" autocomplete="off" placeholder="Act Venue" value="<?php echo $act_venue; ?>" />
                         </div>
-											    <div class="form-group">
-                            <label for="enum">Act Category <?php echo form_error('act_category') ?></label>
-                           
-                            <?php 
-                                $id = 'id="act_category" class="form-control"';
-                                echo form_dropdown("act_category", $this->db->enum_select("activity","act_category"),'',$id); 
-                            ?>
 
-                            </div>
-											      <div class="form-group">
-                            <label for="varchar">Act Image <?php echo form_error('act_image') ?></label>
-                            <input type="text" <?php if (form_error('act_image')) { echo 'class="form-control form-control-danger"'; } else { echo 'class="form-control"'; }  ?> name="act_image" id="act_image" autocomplete="off" placeholder="Act Image" value="<?php echo $act_image; ?>" />
-                        </div>
-											      <div class="form-group">
+
+                            <input type="hidden" <?php if (form_error('act_post_by')) { echo 'class="form-control form-control-danger"'; } else { echo 'class="form-control"'; }  ?> name="act_post_by" id="act_name" autocomplete="off" placeholder="Act Name" value="<?php echo $act_post_by; ?>" />   
+                            <input type="hidden" <?php if (form_error('act_category')) { echo 'class="form-control form-control-danger"'; } else { echo 'class="form-control"'; }  ?> name="act_category" id="act_category" autocomplete="off" placeholder="Act Image" value="member" />
+                            <input type="hidden" <?php if (form_error('act_image')) { echo 'class="form-control form-control-danger"'; } else { echo 'class="form-control"'; }  ?> name="act_image" id="act_image" autocomplete="off" placeholder="Act Image" value="<?php echo $act_image; ?>" />
+							
+                        <div class="form-group">
                             <label for="int">Act Fee <?php echo form_error('act_fee') ?></label>
                             <input type="number"  <?php if (form_error('act_fee')) { echo 'class="form-control form-control-danger"'; } else { echo 'class="form-control"'; }  ?> name="act_fee" id="act_fee" min="0" placeholder="Act Fee" value="<?php echo $act_fee; ?>" />
-                            </div>
-											     <input type="hidden" name="act_id" value="<?php echo $act_id; ?>" /> 
-											     <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
-											     <a href="<?php echo site_url('activity') ?>" class="btn btn-danger">Cancel</a>
-											 </form>
-
-
+                        </div>
+				     <input type="hidden" name="act_id" value="<?php echo $act_id; ?>" /> 
+				     <button type="submit" class="btn btn-info"><?php echo $button ?></button> 
+				     <a href="<?php echo site_url('activity') ?>" class="btn btn-danger">Cancel</a>
+				 </form>
             </div>
         </div>
         <!-- Basic Form Inputs card end -->

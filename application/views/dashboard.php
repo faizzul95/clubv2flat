@@ -98,34 +98,9 @@
                     </div>
                     <!-- Open Project card end -->
 
-                    <!-- Blur user-card start -->
-                    <div class="col-md-12 col-xl-4 m-b-30">
-                        <div class="widget-main-card blur-user-card">
-                            <img src="<?= base_url(); ?>/assets/image/user_upload/<?php echo $this->session->userdata('image'); ?>" style="border-radius: 50%;"  width="150" height="150" alt="">
-                            <h3><?php echo $this->session->userdata('userfname'); ?></h3>
-                            
-                            <a href="profile">
-                                <button class="btn btn-info">Settings</button>
-                            </a>
-
-                            <div class="blur-footer">
-                                <div class="row text-center">
-                                    <div class="col-xs-6 col-sm-6 col-lg-6">
-                                        <h4>15</h4>
-                                        <span>Public Activity</span>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-lg-6">
-                                        <h4>32</h4>
-                                        <span>Member Activity</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Blur user-card end -->
 
                     <!-- Calender card start -->
-                    <div class="col-md-12 col-xl-8">
+                    <div class="col-md-12 col-xl-12">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card borderless-card">
